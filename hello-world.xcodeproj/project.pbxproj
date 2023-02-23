@@ -24,6 +24,8 @@
 		82B1B0D229A6E53C0012ADE3 /* CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B1B0D129A6E53C0012ADE3 /* CustomColors.swift */; };
 		82B1B0D529A6E95C0012ADE3 /* FormatTripID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B1B0D429A6E95C0012ADE3 /* FormatTripID.swift */; };
 		82B1B0D729A6EA6F0012ADE3 /* RouteIdToName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B1B0D629A6EA6F0012ADE3 /* RouteIdToName.swift */; };
+		82B1B0E029A6F4010012ADE3 /* TrainsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B1B0DF29A6F4010012ADE3 /* TrainsListView.swift */; };
+		82B1B0E229A6F4240012ADE3 /* TrainDetailedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B1B0E129A6F4240012ADE3 /* TrainDetailedView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +66,8 @@
 		82B1B0D129A6E53C0012ADE3 /* CustomColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColors.swift; sourceTree = "<group>"; };
 		82B1B0D429A6E95C0012ADE3 /* FormatTripID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatTripID.swift; sourceTree = "<group>"; };
 		82B1B0D629A6EA6F0012ADE3 /* RouteIdToName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteIdToName.swift; sourceTree = "<group>"; };
+		82B1B0DF29A6F4010012ADE3 /* TrainsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainsListView.swift; sourceTree = "<group>"; };
+		82B1B0E129A6F4240012ADE3 /* TrainDetailedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainDetailedView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,10 +118,11 @@
 		826EC4F629A6AEEA00F9E50D /* hello-world */ = {
 			isa = PBXGroup;
 			children = (
+				82B1B0DA29A6F3060012ADE3 /* views */,
+				82B1B0D929A6F2F20012ADE3 /* structs */,
 				82B1B0D329A6E9460012ADE3 /* utils */,
 				826EC4F729A6AEEA00F9E50D /* hello_worldApp.swift */,
 				826EC4F929A6AEEA00F9E50D /* ContentView.swift */,
-				82B1B0CC29A6C6170012ADE3 /* API_STRUCTS */,
 				826EC52129A6B60600F9E50D /* apiCall.swift */,
 				826EC4FB29A6AEED00F9E50D /* Assets.xcassets */,
 				826EC4FD29A6AEED00F9E50D /* Preview Content */,
@@ -150,7 +155,16 @@
 			path = "hello-worldUITests";
 			sourceTree = "<group>";
 		};
-		82B1B0CC29A6C6170012ADE3 /* API_STRUCTS */ = {
+		82B1B0D329A6E9460012ADE3 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				82B1B0D429A6E95C0012ADE3 /* FormatTripID.swift */,
+				82B1B0D629A6EA6F0012ADE3 /* RouteIdToName.swift */,
+			);
+			path = utils;
+			sourceTree = "<group>";
+		};
+		82B1B0D929A6F2F20012ADE3 /* structs */ = {
 			isa = PBXGroup;
 			children = (
 				82B1B0C829A6C57C0012ADE3 /* vehicle.swift */,
@@ -161,16 +175,16 @@
 				82B1B0CF29A6C8E20012ADE3 /* APIHeader.swift */,
 				82B1B0D129A6E53C0012ADE3 /* CustomColors.swift */,
 			);
-			path = API_STRUCTS;
+			path = structs;
 			sourceTree = "<group>";
 		};
-		82B1B0D329A6E9460012ADE3 /* utils */ = {
+		82B1B0DA29A6F3060012ADE3 /* views */ = {
 			isa = PBXGroup;
 			children = (
-				82B1B0D429A6E95C0012ADE3 /* FormatTripID.swift */,
-				82B1B0D629A6EA6F0012ADE3 /* RouteIdToName.swift */,
+				82B1B0DF29A6F4010012ADE3 /* TrainsListView.swift */,
+				82B1B0E129A6F4240012ADE3 /* TrainDetailedView.swift */,
 			);
-			path = utils;
+			path = views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -306,6 +320,8 @@
 				826EC52229A6B60600F9E50D /* apiCall.swift in Sources */,
 				82B1B0CB29A6C5CD0012ADE3 /* trip.swift in Sources */,
 				826EC4FA29A6AEEA00F9E50D /* ContentView.swift in Sources */,
+				82B1B0E229A6F4240012ADE3 /* TrainDetailedView.swift in Sources */,
+				82B1B0E029A6F4010012ADE3 /* TrainsListView.swift in Sources */,
 				82B1B0C729A6C0E60012ADE3 /* TrainData.swift in Sources */,
 				826EC4F829A6AEEA00F9E50D /* hello_worldApp.swift in Sources */,
 				82B1B0C929A6C57C0012ADE3 /* vehicle.swift in Sources */,
