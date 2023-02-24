@@ -9,7 +9,7 @@ import SwiftUI
 
 struct position: Codable, Identifiable {
     let id = UUID()
-    let latitude: Float
-    let longitude: Float
+    let latitude: Double
+    let longitude: Double
 
 }
