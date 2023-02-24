@@ -32,7 +32,7 @@ struct TrainsListView: View {
                             Image(systemName: "arrow.right")
                             .font(.system(size: 24, weight: .light))
 
-                            NavigationLink(destination: TrainDetailedView(train: train)) {
+                            NavigationLink(destination: TrainDetailedView(tripId: train.vehicle.trip.tripId)) {
                               EmptyView()
                             }
                             .frame(width: 0)
@@ -51,7 +51,7 @@ struct TrainsListView: View {
                     self.trains = trains
                 }
             }
-        }.navigationBarTitleDisplayMode(.inline).padding(.top, -135)
+        }.navigationBarTitleDisplayMode(.inline).padding(.top, -20)
         
     }
 }

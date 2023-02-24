@@ -27,6 +27,26 @@ class apiCall {
             }
         }
         .resume()
-        print("-----")
+    }
+    func getTripUpdates(completion:@escaping ([tripUpdate]) -> ()) {
+        guard let url = URL(string: "https://api.marcmap.app/tripUpdatesAPI") else {
+            return }
+        
+        URLSession.shared.dataTask(with: url) { (data, _, _) in
+            print(data)
+            let tData = try! JSONDecoder().decode(TripUpdateData.self, from: data!)
+            var updates : [tripUpdate] = []
+            for t in tData.entity {
+                var tmp = t.tripUpdate
+                updates.append(tmp)
+            }
+                       
+                        
+            DispatchQueue.main.async {
+                completion(updates)
+            }
+        }
+        .resume()
+        
     }
 }

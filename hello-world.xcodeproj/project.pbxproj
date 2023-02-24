@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		825E68CF29A836F60049BF3C /* Brunswick.json in Resources */ = {isa = PBXBuildFile; fileRef = 825E68CB29A836F60049BF3C /* Brunswick.json */; };
+		825E68D029A836F60049BF3C /* FredrickBranch.json in Resources */ = {isa = PBXBuildFile; fileRef = 825E68CC29A836F60049BF3C /* FredrickBranch.json */; };
+		825E68D129A836F60049BF3C /* Penn.json in Resources */ = {isa = PBXBuildFile; fileRef = 825E68CD29A836F60049BF3C /* Penn.json */; };
+		825E68D229A836F60049BF3C /* Camden.json in Resources */ = {isa = PBXBuildFile; fileRef = 825E68CE29A836F60049BF3C /* Camden.json */; };
+		825E68D429A837200049BF3C /* route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825E68D329A837200049BF3C /* route.swift */; };
+		825E68D629A838F70049BF3C /* getRouteFromFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825E68D529A838F70049BF3C /* getRouteFromFile.swift */; };
+		825E68D829A839CB0049BF3C /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825E68D729A839CB0049BF3C /* MapView.swift */; };
+		825E68DA29A8495F0049BF3C /* TripUpdateData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825E68D929A8495F0049BF3C /* TripUpdateData.swift */; };
+		825E68DC29A849A80049BF3C /* tu_entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825E68DB29A849A80049BF3C /* tu_entity.swift */; };
+		825E68DE29A849D30049BF3C /* tripUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825E68DD29A849D30049BF3C /* tripUpdate.swift */; };
+		825E68E029A849F40049BF3C /* stopTimeUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825E68DF29A849F40049BF3C /* stopTimeUpdate.swift */; };
+		825E68E529A84AB30049BF3C /* departure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825E68E429A84AB30049BF3C /* departure.swift */; };
+		825E68E729A84B070049BF3C /* arrival.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825E68E629A84B070049BF3C /* arrival.swift */; };
 		826EC4F829A6AEEA00F9E50D /* hello_worldApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826EC4F729A6AEEA00F9E50D /* hello_worldApp.swift */; };
 		826EC4FA29A6AEEA00F9E50D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826EC4F929A6AEEA00F9E50D /* ContentView.swift */; };
 		826EC4FC29A6AEED00F9E50D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 826EC4FB29A6AEED00F9E50D /* Assets.xcassets */; };
@@ -46,6 +59,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		825E68C829A823640049BF3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		825E68CB29A836F60049BF3C /* Brunswick.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Brunswick.json; sourceTree = "<group>"; };
+		825E68CC29A836F60049BF3C /* FredrickBranch.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = FredrickBranch.json; sourceTree = "<group>"; };
+		825E68CD29A836F60049BF3C /* Penn.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Penn.json; sourceTree = "<group>"; };
+		825E68CE29A836F60049BF3C /* Camden.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Camden.json; sourceTree = "<group>"; };
+		825E68D329A837200049BF3C /* route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = route.swift; sourceTree = "<group>"; };
+		825E68D529A838F70049BF3C /* getRouteFromFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getRouteFromFile.swift; sourceTree = "<group>"; };
+		825E68D729A839CB0049BF3C /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		825E68D929A8495F0049BF3C /* TripUpdateData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripUpdateData.swift; sourceTree = "<group>"; };
+		825E68DB29A849A80049BF3C /* tu_entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tu_entity.swift; sourceTree = "<group>"; };
+		825E68DD29A849D30049BF3C /* tripUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tripUpdate.swift; sourceTree = "<group>"; };
+		825E68DF29A849F40049BF3C /* stopTimeUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stopTimeUpdate.swift; sourceTree = "<group>"; };
+		825E68E429A84AB30049BF3C /* departure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = departure.swift; sourceTree = "<group>"; };
+		825E68E629A84B070049BF3C /* arrival.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = arrival.swift; sourceTree = "<group>"; };
 		826EC4F429A6AEEA00F9E50D /* hello-world.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "hello-world.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		826EC4F729A6AEEA00F9E50D /* hello_worldApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hello_worldApp.swift; sourceTree = "<group>"; };
 		826EC4F929A6AEEA00F9E50D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -95,6 +122,50 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		825E68C929A836A40049BF3C /* data */ = {
+			isa = PBXGroup;
+			children = (
+				825E68CA29A836F60049BF3C /* LineData */,
+			);
+			path = data;
+			sourceTree = "<group>";
+		};
+		825E68CA29A836F60049BF3C /* LineData */ = {
+			isa = PBXGroup;
+			children = (
+				825E68CB29A836F60049BF3C /* Brunswick.json */,
+				825E68CC29A836F60049BF3C /* FredrickBranch.json */,
+				825E68CD29A836F60049BF3C /* Penn.json */,
+				825E68CE29A836F60049BF3C /* Camden.json */,
+			);
+			path = LineData;
+			sourceTree = "<group>";
+		};
+		825E68E229A84A770049BF3C /* train-location */ = {
+			isa = PBXGroup;
+			children = (
+				82B1B0C829A6C57C0012ADE3 /* vehicle.swift */,
+				82B1B0CD29A6C6410012ADE3 /* position.swift */,
+				82B1B0CA29A6C5CD0012ADE3 /* trip.swift */,
+				826EC52F29A6B81400F9E50D /* Train.swift */,
+				82B1B0C629A6C0E60012ADE3 /* TrainData.swift */,
+			);
+			path = "train-location";
+			sourceTree = "<group>";
+		};
+		825E68E329A84A940049BF3C /* trip-updates */ = {
+			isa = PBXGroup;
+			children = (
+				825E68D929A8495F0049BF3C /* TripUpdateData.swift */,
+				825E68DB29A849A80049BF3C /* tu_entity.swift */,
+				825E68DD29A849D30049BF3C /* tripUpdate.swift */,
+				825E68DF29A849F40049BF3C /* stopTimeUpdate.swift */,
+				825E68E429A84AB30049BF3C /* departure.swift */,
+				825E68E629A84B070049BF3C /* arrival.swift */,
+			);
+			path = "trip-updates";
+			sourceTree = "<group>";
+		};
 		826EC4EB29A6AEEA00F9E50D = {
 			isa = PBXGroup;
 			children = (
@@ -118,6 +189,8 @@
 		826EC4F629A6AEEA00F9E50D /* hello-world */ = {
 			isa = PBXGroup;
 			children = (
+				825E68C929A836A40049BF3C /* data */,
+				825E68C829A823640049BF3C /* Info.plist */,
 				82B1B0DA29A6F3060012ADE3 /* views */,
 				82B1B0D929A6F2F20012ADE3 /* structs */,
 				82B1B0D329A6E9460012ADE3 /* utils */,
@@ -160,6 +233,7 @@
 			children = (
 				82B1B0D429A6E95C0012ADE3 /* FormatTripID.swift */,
 				82B1B0D629A6EA6F0012ADE3 /* RouteIdToName.swift */,
+				825E68D529A838F70049BF3C /* getRouteFromFile.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -167,13 +241,11 @@
 		82B1B0D929A6F2F20012ADE3 /* structs */ = {
 			isa = PBXGroup;
 			children = (
-				82B1B0C829A6C57C0012ADE3 /* vehicle.swift */,
-				82B1B0CD29A6C6410012ADE3 /* position.swift */,
-				82B1B0CA29A6C5CD0012ADE3 /* trip.swift */,
-				826EC52F29A6B81400F9E50D /* Train.swift */,
-				82B1B0C629A6C0E60012ADE3 /* TrainData.swift */,
+				825E68E329A84A940049BF3C /* trip-updates */,
+				825E68E229A84A770049BF3C /* train-location */,
 				82B1B0CF29A6C8E20012ADE3 /* APIHeader.swift */,
 				82B1B0D129A6E53C0012ADE3 /* CustomColors.swift */,
+				825E68D329A837200049BF3C /* route.swift */,
 			);
 			path = structs;
 			sourceTree = "<group>";
@@ -183,6 +255,7 @@
 			children = (
 				82B1B0DF29A6F4010012ADE3 /* TrainsListView.swift */,
 				82B1B0E129A6F4240012ADE3 /* TrainDetailedView.swift */,
+				825E68D729A839CB0049BF3C /* MapView.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -291,8 +364,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				825E68CF29A836F60049BF3C /* Brunswick.json in Resources */,
 				826EC4FF29A6AEED00F9E50D /* Preview Assets.xcassets in Resources */,
+				825E68D129A836F60049BF3C /* Penn.json in Resources */,
 				826EC4FC29A6AEED00F9E50D /* Assets.xcassets in Resources */,
+				825E68D029A836F60049BF3C /* FredrickBranch.json in Resources */,
+				825E68D229A836F60049BF3C /* Camden.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,14 +398,23 @@
 				82B1B0CB29A6C5CD0012ADE3 /* trip.swift in Sources */,
 				826EC4FA29A6AEEA00F9E50D /* ContentView.swift in Sources */,
 				82B1B0E229A6F4240012ADE3 /* TrainDetailedView.swift in Sources */,
+				825E68E529A84AB30049BF3C /* departure.swift in Sources */,
+				825E68D629A838F70049BF3C /* getRouteFromFile.swift in Sources */,
 				82B1B0E029A6F4010012ADE3 /* TrainsListView.swift in Sources */,
 				82B1B0C729A6C0E60012ADE3 /* TrainData.swift in Sources */,
 				826EC4F829A6AEEA00F9E50D /* hello_worldApp.swift in Sources */,
 				82B1B0C929A6C57C0012ADE3 /* vehicle.swift in Sources */,
+				825E68DC29A849A80049BF3C /* tu_entity.swift in Sources */,
+				825E68DA29A8495F0049BF3C /* TripUpdateData.swift in Sources */,
+				825E68D829A839CB0049BF3C /* MapView.swift in Sources */,
+				825E68E729A84B070049BF3C /* arrival.swift in Sources */,
 				82B1B0D729A6EA6F0012ADE3 /* RouteIdToName.swift in Sources */,
 				82B1B0D229A6E53C0012ADE3 /* CustomColors.swift in Sources */,
 				82B1B0D029A6C8E20012ADE3 /* APIHeader.swift in Sources */,
 				82B1B0CE29A6C6410012ADE3 /* position.swift in Sources */,
+				825E68D429A837200049BF3C /* route.swift in Sources */,
+				825E68E029A849F40049BF3C /* stopTimeUpdate.swift in Sources */,
+				825E68DE29A849D30049BF3C /* tripUpdate.swift in Sources */,
 				82B1B0D529A6E95C0012ADE3 /* FormatTripID.swift in Sources */,
 				826EC53029A6B81400F9E50D /* Train.swift in Sources */,
 			);
@@ -489,8 +575,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"hello-world/Preview Content\"";
+				DEVELOPMENT_TEAM = HJCD65FY5D;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "hello-world/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -517,8 +605,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"hello-world/Preview Content\"";
+				DEVELOPMENT_TEAM = HJCD65FY5D;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "hello-world/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
