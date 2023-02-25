@@ -6,9 +6,12 @@
 //
 
 import SwiftUI
+import CoreLocation
 
 @main
+
 struct hello_worldApp: App {
+   
     var body: some Scene {
         WindowGroup {
             ContentView()

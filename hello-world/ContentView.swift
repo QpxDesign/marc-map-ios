@@ -6,13 +6,16 @@
 //
 
 import SwiftUI
+import CoreLocation
 
 struct ContentView: View {
     //1.
+
     init() {
         UITabBar.appearance().backgroundColor = UIColor.black
         UITabBar.appearance().unselectedItemTintColor = UIColor.gray
     }
+    
     @State var trains = [Train]()
     var body: some View {
         

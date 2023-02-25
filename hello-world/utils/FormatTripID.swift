@@ -8,5 +8,5 @@
 import Foundation
 
 func FormatTripId(tripId : String) -> String {
-    return tripId.replacingOccurrences(of: "Train", with: "Train ")
+    return tripId.replacingOccurrences(of: "Train", with: "Train ").replacingOccurrences(of: "Saturday", with: " Saturday")
 }
