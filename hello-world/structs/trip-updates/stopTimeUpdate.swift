@@ -8,9 +8,7 @@
 import Foundation
 struct stopTimeUpdate: Codable, Identifiable {
     let id=UUID()
-    let stopSequence: Int
-    let departure: departure
-    let arrival: arrival
+    let departure: departure?
+    let arrival: arrival?
     let stopId: String
-    
 }
