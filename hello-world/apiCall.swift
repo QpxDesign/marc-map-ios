@@ -12,18 +12,20 @@ class apiCall {
         guard let url = URL(string: "https://api.marcmap.app/mtaAPI") else {
             return }
         
-        URLSession.shared.dataTask(with: url) { (data, _, _) in
-            let tData = try! JSONDecoder().decode(TrainData.self, from: data!)
-            var trains : [Train] = []
-            for t in tData.entity {
-                var tmp = Train(vehicle: t.vehicle)
-                trains.append(tmp)
-            }
-                       
-                        
-            DispatchQueue.main.async {
-                completion(trains)
-            }
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            if ((error) != nil) {return}
+            guard let tData = try? JSONDecoder().decode(TrainData?.self, from: data!) else {return}
+               var trains : [Train] = []
+                for t in tData.entity  {
+                    var tmp = Train(vehicle: t.vehicle)
+                    trains.append(tmp)
+                }
+                          
+                           
+                DispatchQueue.main.async {
+                    completion(trains)
+                }
+            
         }
         .resume()
     }
@@ -32,9 +34,9 @@ class apiCall {
             return }
         
         URLSession.shared.dataTask(with: url) { (data, _, _) in
-            let tData = try! JSONDecoder().decode(TripUpdateData.self, from: data!)
+            guard let tData = try? JSONDecoder().decode(TripUpdateData.self, from: data!) else {return}
             var updates : [tripUpdate] = []
-            for t in tData.entity {
+            for t in tData.entity  {
                 var tmp = t.tripUpdate
                 updates.append(tmp)
             }

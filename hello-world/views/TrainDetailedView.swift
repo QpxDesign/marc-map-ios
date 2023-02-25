@@ -17,7 +17,8 @@ struct TrainDetailedView: View {
         center: CLLocationCoordinate2D(latitude:38.9072, longitude:  -77.0369),
         latitudinalMeters: 15000,
         longitudinalMeters: 15000)
-    
+    var timer1 = Timer()
+    var timer2 = Timer()
     let brunswick : [CLLocationCoordinate2D] = getRouteFromFile(filename: "Brunswick")!
     let penn : [CLLocationCoordinate2D] = getRouteFromFile(filename: "Penn")!
     let fred : [CLLocationCoordinate2D] = getRouteFromFile(filename: "FredrickBranch")!
@@ -38,6 +39,17 @@ struct TrainDetailedView: View {
                             self.details = trains.filter{
                                 $0.vehicle.trip.tripId == tripId
                             }
+                            Timer.scheduledTimer(withTimeInterval: 10, repeats: true) { timer1 in
+                                apiCall().getTrains { (trains) in
+                                    if (!trains.isEmpty){
+                                        region.center.longitude = trains[0].vehicle.position.longitude
+                                        region.center.latitude = trains[0].vehicle.position.latitude
+                                    }
+                                    self.details = trains.filter{
+                                        $0.vehicle.trip.tripId == tripId
+                                    }
+                                }
+                            }
                         }
                         apiCall().getTripUpdates{(updates) in
                             self.tripDetails = updates.filter{
@@ -45,8 +57,17 @@ struct TrainDetailedView: View {
                             }
                             tripDetails[0].stopTimeUpdate = tripDetails[0].stopTimeUpdate.reversed()
                         }
+                        Timer.scheduledTimer(withTimeInterval: 10, repeats: true) { timer2 in
+                            apiCall().getTripUpdates { (updates) in
+                                self.tripDetails = updates.filter{
+                                    $0.trip.tripId == tripId
+                                }
+                                tripDetails[0].stopTimeUpdate = tripDetails[0].stopTimeUpdate.reversed()
+                            }}
+                        
                     }
                     if (!details.isEmpty) {
+                        Text("Last Updated: " + FormatTime(timestamp: details[0].vehicle.timestamp))
                         NavigationLink(destination: FullScreenMap(tripId:tripId, trains:details, region: region)) {
                             MapView(region: region, BrunswickLineCoordinates: brunswick, PennLineCoordinates: penn, CamdenLineCoordinates: camd, FredrickBranchLineCoordinates: fred,trains:details, tripId: tripId).frame(width:geometry.size.width * 0.90,height:geometry.size.height*0.35).cornerRadius(15).padding(.bottom, 0)
                             

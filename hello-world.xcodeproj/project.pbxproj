@@ -26,6 +26,7 @@
 		825E68EF29A96E720049BF3C /* FormatTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825E68EE29A96E720049BF3C /* FormatTime.swift */; };
 		825E68F129A97E740049BF3C /* FullScreenMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825E68F029A97E740049BF3C /* FullScreenMap.swift */; };
 		825E68F529A9828D0049BF3C /* TaskbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825E68F429A9828D0049BF3C /* TaskbarView.swift */; };
+		825E68FD29AA927E0049BF3C /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825E68FC29AA927E0049BF3C /* LocationManager.swift */; };
 		826EC4F829A6AEEA00F9E50D /* hello_worldApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826EC4F729A6AEEA00F9E50D /* hello_worldApp.swift */; };
 		826EC4FA29A6AEEA00F9E50D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826EC4F929A6AEEA00F9E50D /* ContentView.swift */; };
 		826EC4FC29A6AEED00F9E50D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 826EC4FB29A6AEED00F9E50D /* Assets.xcassets */; };
@@ -85,6 +86,7 @@
 		825E68EE29A96E720049BF3C /* FormatTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatTime.swift; sourceTree = "<group>"; };
 		825E68F029A97E740049BF3C /* FullScreenMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenMap.swift; sourceTree = "<group>"; };
 		825E68F429A9828D0049BF3C /* TaskbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskbarView.swift; sourceTree = "<group>"; };
+		825E68FC29AA927E0049BF3C /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		826EC4F429A6AEEA00F9E50D /* hello-world.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "hello-world.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		826EC4F729A6AEEA00F9E50D /* hello_worldApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hello_worldApp.swift; sourceTree = "<group>"; };
 		826EC4F929A6AEEA00F9E50D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -249,6 +251,7 @@
 				825E68D529A838F70049BF3C /* getRouteFromFile.swift */,
 				825E68E829A966D50049BF3C /* GetStationFromStopId.swift */,
 				825E68EE29A96E720049BF3C /* FormatTime.swift */,
+				825E68FC29AA927E0049BF3C /* LocationManager.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -419,6 +422,7 @@
 				82B1B0E229A6F4240012ADE3 /* TrainDetailedView.swift in Sources */,
 				825E68E529A84AB30049BF3C /* departure.swift in Sources */,
 				825E68D629A838F70049BF3C /* getRouteFromFile.swift in Sources */,
+				825E68FD29AA927E0049BF3C /* LocationManager.swift in Sources */,
 				825E68F129A97E740049BF3C /* FullScreenMap.swift in Sources */,
 				82B1B0E029A6F4010012ADE3 /* TrainsListView.swift in Sources */,
 				825E68EB29A966F10049BF3C /* station.swift in Sources */,
@@ -596,6 +600,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"hello-world/Preview Content\"";
@@ -603,17 +608,21 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "hello-world/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = MarcMap;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location to help you use this app.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "qpxdesign.hello-world";
+				PRODUCT_BUNDLE_IDENTIFIER = "qpxdesign.marc-map";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -626,6 +635,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"hello-world/Preview Content\"";
@@ -633,17 +643,21 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "hello-world/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = MarcMap;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location to help you use this app.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "qpxdesign.hello-world";
+				PRODUCT_BUNDLE_IDENTIFIER = "qpxdesign.marc-map";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
