@@ -13,7 +13,6 @@ class apiCall {
             return }
         
         URLSession.shared.dataTask(with: url) { (data, _, _) in
-            print(data)
             let tData = try! JSONDecoder().decode(TrainData.self, from: data!)
             var trains : [Train] = []
             for t in tData.entity {
@@ -33,7 +32,6 @@ class apiCall {
             return }
         
         URLSession.shared.dataTask(with: url) { (data, _, _) in
-            print(data)
             let tData = try! JSONDecoder().decode(TripUpdateData.self, from: data!)
             var updates : [tripUpdate] = []
             for t in tData.entity {

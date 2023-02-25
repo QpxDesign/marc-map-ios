@@ -9,6 +9,6 @@ import Foundation
 struct tripUpdate: Codable, Identifiable {
     let id = UUID()
     let trip: trip
-    let stopTimeUpdate: [stopTimeUpdate]
+    var stopTimeUpdate: [stopTimeUpdate]
     let timestamp : String
 }
