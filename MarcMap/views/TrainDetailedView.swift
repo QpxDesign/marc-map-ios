@@ -70,12 +70,7 @@ struct TrainDetailedView: View {
                         Text("Last Updated: " + FormatTime(timestamp: details[0].vehicle.timestamp))
                         NavigationLink(destination: FullScreenMap(tripId:tripId, trains:details, region: region)) {
                             MapView(region: region, BrunswickLineCoordinates: brunswick, PennLineCoordinates: penn, CamdenLineCoordinates: camd, FredrickBranchLineCoordinates: fred,trains:details, tripId: tripId).frame(width:geometry.size.width * 0.90,height:geometry.size.height*0.35).cornerRadius(15).padding(.bottom, 0)
-                            
-                            
-                         
-                            
                         }
-                        
                     } else {
                         Text("Loading")
                     }

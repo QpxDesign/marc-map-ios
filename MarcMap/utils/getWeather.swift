@@ -11,16 +11,17 @@ import CoreLocation
 
 @available(iOS 16.0, *) 
 func getWeather() async -> CurrentWeather? {
+    let manager = LocationManager()
+    manager.requestLocation()
+    var userLocation = manager.location
     let weatherService = WeatherService()
         // Fallback on earlier versions
-
+  
         do {
-            let location = CLLocation(latitude:38.9072, longitude:  -77.0369)
-            let weather = try await weatherService.weather(for: location)
-            print(weather.currentWeather)
+            let location = userLocation
+            let weather = try await weatherService.weather(for: location ?? CLLocation(latitude: 38.9072, longitude: -77.0369))
             return weather.currentWeather
         } catch {
-            print(error.localizedDescription)
             return nil
         }
    

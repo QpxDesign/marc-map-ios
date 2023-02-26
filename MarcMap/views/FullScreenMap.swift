@@ -24,7 +24,7 @@ struct FullScreenMap: View {
     let penn : [CLLocationCoordinate2D] = getRouteFromFile(filename: "Penn")!
     let fred : [CLLocationCoordinate2D] = getRouteFromFile(filename: "FredrickBranch")!
     let camd : [CLLocationCoordinate2D] = getRouteFromFile(filename: "Camden")!
-    
+    var detailedViewStationId : String = ""
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
          print("Location manager failed with error: \(error.localizedDescription)")
      }
@@ -32,7 +32,7 @@ struct FullScreenMap: View {
     var body: some View {
             GeometryReader { geometry in
                 
-                    MapView(region: region, BrunswickLineCoordinates: brunswick, PennLineCoordinates: penn, CamdenLineCoordinates: camd, FredrickBranchLineCoordinates: fred, trains: trains, tripId:"tripId").padding(.bottom, 0).edgesIgnoringSafeArea(.all)
+                MapView(region: region, BrunswickLineCoordinates: brunswick, PennLineCoordinates: penn, CamdenLineCoordinates: camd, FredrickBranchLineCoordinates: fred, trains: trains, tripId:"tripId" ).padding(.bottom, 0).edgesIgnoringSafeArea(.all)
         
                           
                 }

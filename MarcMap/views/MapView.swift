@@ -11,10 +11,10 @@ struct MapView: UIViewRepresentable {
     let FredrickBranchLineCoordinates : [CLLocationCoordinate2D]
     @State var trains : [Train]
     let tripId: String
+    @State private var selectedAnnotation: MKAnnotation?
     var timer = Timer()
     func makeUIView(context: Context) -> MKMapView {
-    let mapView = MKMapView()
-
+        let mapView = MKMapView()
         let button = MKUserTrackingButton(mapView: mapView)
         button.layer.backgroundColor = UIColor(white: 0, alpha: 0.8).cgColor
         button.layer.borderColor = UIColor.black.cgColor
@@ -24,68 +24,63 @@ struct MapView: UIViewRepresentable {
         button.layer.position.y = UIScreen.main.bounds.height-125;
         mapView.addSubview(button)
 
-    mapView.delegate = context.coordinator
-    mapView.region = region
-    let BrunswickPolyline = MKPolyline(coordinates: BrunswickLineCoordinates, count: BrunswickLineCoordinates.count)
-    let PennPolyline = MKPolyline(coordinates: PennLineCoordinates, count: PennLineCoordinates.count)
-    let CamdenPolyline = MKPolyline(coordinates: CamdenLineCoordinates, count: CamdenLineCoordinates.count)
-        // get user location from ip
-    let FredrickPolyline = MKPolyline(coordinates: FredrickBranchLineCoordinates, count: FredrickBranchLineCoordinates.count)
-        apiCall().getTrains { (trains) in
-            for t in trains {
-                 if (!mapView.annotations.filter{$0.title == FormatTripId(tripId: t.vehicle.trip.tripId) }.isEmpty) {
-                    if let annotation = mapView.annotations.filter{$0.title == FormatTripId(tripId: t.vehicle.trip.tripId) }[0] as? MKPointAnnotation {
+        mapView.delegate = context.coordinator
+        mapView.region = region
+        let BrunswickPolyline = MKPolyline(coordinates: BrunswickLineCoordinates, count: BrunswickLineCoordinates.count)
+        let PennPolyline = MKPolyline(coordinates: PennLineCoordinates, count: PennLineCoordinates.count)
+        let CamdenPolyline = MKPolyline(coordinates: CamdenLineCoordinates, count: CamdenLineCoordinates.count)
+        let FredrickPolyline = MKPolyline(coordinates: FredrickBranchLineCoordinates, count: FredrickBranchLineCoordinates.count)
+            apiCall().getTrains { (trains) in
+                for t in trains {
+                     if (!mapView.annotations.filter{$0.title == FormatTripId(tripId: t.vehicle.trip.tripId) }.isEmpty) {
+                        if let annotation = mapView.annotations.filter{$0.title == FormatTripId(tripId: t.vehicle.trip.tripId) }[0] as? MKPointAnnotation {
+                            annotation.coordinate = CLLocationCoordinate2D(latitude: t.vehicle.position.latitude, longitude: t.vehicle.position.longitude)
+                        }
+                    } else {
+                        let annotation = MKPointAnnotation()
                         annotation.coordinate = CLLocationCoordinate2D(latitude: t.vehicle.position.latitude, longitude: t.vehicle.position.longitude)
+                        annotation.title = FormatTripId(tripId: t.vehicle.trip.tripId)
+                        if (tripId != "Null" && t.vehicle.trip.tripId == tripId) {
+                            let coordinateRegion = MKCoordinateRegion(center: annotation.coordinate, latitudinalMeters: 2000, longitudinalMeters: 2000)
+                        }
+                        let annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: "MyMarker")
+                        mapView.addAnnotation(annotation)
                     }
-                } else {
-                    let annotation = MKPointAnnotation()
-                    annotation.coordinate = CLLocationCoordinate2D(latitude: t.vehicle.position.latitude, longitude: t.vehicle.position.longitude)
-                    annotation.title = FormatTripId(tripId: t.vehicle.trip.tripId)
-                    if (tripId != "Null" && t.vehicle.trip.tripId == tripId) {
-                        let coordinateRegion = MKCoordinateRegion(center: annotation.coordinate, latitudinalMeters: 2000, longitudinalMeters: 2000)
-                    }
-                    let annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: "MyMarker")
-                    mapView.addAnnotation(annotation)
                 }
             }
-        }
-        Timer.scheduledTimer(withTimeInterval: 10, repeats: true) { timer in
-            apiCall().getTrains { (trains) in
-                //add all train
-                  for t in trains {
-                      if (!mapView.annotations.filter{$0.title == FormatTripId(tripId: t.vehicle.trip.tripId) }.isEmpty) {
-                          if let annotation = mapView.annotations.filter{$0.title == FormatTripId(tripId: t.vehicle.trip.tripId) }[0] as? MKPointAnnotation {
+            Timer.scheduledTimer(withTimeInterval: 10, repeats: true) { timer in
+                apiCall().getTrains { (trains) in
+                    //add all train
+                      for t in trains {
+                          if (!mapView.annotations.filter{$0.title == FormatTripId(tripId: t.vehicle.trip.tripId) }.isEmpty) {
+                              if let annotation = mapView.annotations.filter{$0.title == FormatTripId(tripId: t.vehicle.trip.tripId) }[0] as? MKPointAnnotation {
+                                  annotation.coordinate = CLLocationCoordinate2D(latitude: t.vehicle.position.latitude, longitude: t.vehicle.position.longitude)
+                                  if (tripId != "Null" && t.vehicle.trip.tripId == tripId) {
+                                      let coordinateRegion = MKCoordinateRegion(center: annotation.coordinate, latitudinalMeters: 2000, longitudinalMeters: 2000)
+                                      mapView.setRegion(coordinateRegion, animated: true)
+                                  }
+                               
+                              }
+                        
+                          } else {
+                              let annotation = MKPointAnnotation()
                               annotation.coordinate = CLLocationCoordinate2D(latitude: t.vehicle.position.latitude, longitude: t.vehicle.position.longitude)
-                              if (tripId != "Null" && t.vehicle.trip.tripId == tripId) {
-                                  let coordinateRegion = MKCoordinateRegion(center: annotation.coordinate, latitudinalMeters: 2000, longitudinalMeters: 2000)
+                              annotation.title = FormatTripId(tripId: t.vehicle.trip.tripId)
+                              let coordinateRegion = MKCoordinateRegion(center: annotation.coordinate, latitudinalMeters: 2000, longitudinalMeters: 2000)
+                              if (tripId != "null" && t.vehicle.trip.tripId == tripId) {
                                   mapView.setRegion(coordinateRegion, animated: true)
                               }
+                              let annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: "MyMarker")
+                              mapView.addAnnotation(annotation)
+                          }
                            
-                          }
-                    
-                      } else {
-                          let annotation = MKPointAnnotation()
-                          annotation.coordinate = CLLocationCoordinate2D(latitude: t.vehicle.position.latitude, longitude: t.vehicle.position.longitude)
-                          annotation.title = FormatTripId(tripId: t.vehicle.trip.tripId)
-                          let coordinateRegion = MKCoordinateRegion(center: annotation.coordinate, latitudinalMeters: 2000, longitudinalMeters: 2000)
-                          if (tripId != "null" && t.vehicle.trip.tripId == tripId) {
-                              mapView.setRegion(coordinateRegion, animated: true)
-                          }
-                          let annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: "MyMarker")
-                          mapView.addAnnotation(annotation)
+                
+                          
                       }
-                       
-            
-                      
-                  }
-                self.trains = trains
-            }
+                    self.trains = trains
+                }
         }
 
-      
-      
-   
-    
     //add stations
       if let url = Bundle.main.url(forResource: "StopData", withExtension: "json") {
           do {
@@ -95,7 +90,8 @@ struct MapView: UIViewRepresentable {
               for i in jsonData {
                   let annotation = MKPointAnnotation()
                   annotation.coordinate = CLLocationCoordinate2D(latitude: i.stop_lat, longitude: i.stop_lon)
-                  annotation.title = i.stop_name ?? "error"
+                  annotation.title = i.stop_name
+                  print((latitude: i.stop_lat, longitude: i.stop_lon))
                   mapView.addAnnotation(annotation)
               }
            
@@ -154,21 +150,20 @@ class Coordinator: NSObject, MKMapViewDelegate {
             annotationView.displayPriority = .defaultHigh
             annotationView.zPriority = MKAnnotationViewZPriority(999)
             return annotationView
-        } else {
+        } else { // stations
             let annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: "MyMarker")
-               annotationView.markerTintColor = UIColor.blue
+            annotationView.markerTintColor = UIColor.blue
             annotationView.glyphImage = UIImage(named: "StationIcon")
             annotationView.frame.size = CGSize(width: 100, height: 100)
             annotationView.backgroundColor = UIColor.red
             annotationView.layer.cornerRadius = 80
             annotationView.displayPriority = .defaultLow
             annotationView.zPriority = MKAnnotationViewZPriority(1)
+            let rightButton = UIButton(type: .detailDisclosure)
+            annotationView.rightCalloutAccessoryView = rightButton
             return annotationView
         }
-     
-           
     }
-   
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
     if let routePolyline = overlay as? MKPolyline {
       let renderer = MKPolylineRenderer(polyline: routePolyline)
@@ -179,4 +174,11 @@ class Coordinator: NSObject, MKMapViewDelegate {
     return MKOverlayRenderer()
   }
     
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView){
+        print("Clicked")
+       // vc.view = StationDetailedView()
+    }
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotation, calloutAccessoryControlTapped control: UIControl) {
+       print("calloutAccessoryControlTapped")
+    }
 }
