@@ -18,7 +18,6 @@ struct TrainsListView: View {
     @State var tripDetails = [tripUpdate]()
     @State var currentWeather : CurrentWeather?
     var body: some View {
-        NavigationView {
         VStack {
             HStack {
                 Text("Trains").bold().multilineTextAlignment(.leading).padding(.leading,20).padding(.bottom, 15).foregroundColor(Color.white).font(.system(size: 34)).padding(.top,8).onAppear() {
@@ -28,8 +27,8 @@ struct TrainsListView: View {
                     }
                 Spacer()
                 HStack {
-                    Image(systemName: ((currentWeather?.symbolName ?? "icloud.slash") + ".fill") ?? "icloud.slash")
-                    Text(String(floor(CelciusToFahrenheit(C: currentWeather?.apparentTemperature.value ?? 0)))+"° F").bold().font(.system(size: 20))
+                    Image(systemName: ((currentWeather?.symbolName ?? "icloud.slash") + ".fill") ?? "icloud.slash").foregroundColor(Color.white)
+                    Text(String(Int(floor(CelciusToFahrenheit(C: currentWeather?.apparentTemperature.value ?? 0))))+"° F").bold().font(.system(size: 20)).foregroundColor(Color.white)
                 }.padding(.trailing,25)
              
                 
@@ -82,7 +81,7 @@ struct TrainsListView: View {
                     self.tripDetails = updates
                 }
             }
-        }.navigationBarTitleDisplayMode(.inline).padding(.top, -20).navigationViewStyle(StackNavigationViewStyle())
+        
         
     }
 }

@@ -11,7 +11,7 @@ import CoreLocation
 class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     let manager = CLLocationManager()
 
-    @Published var location: CLLocationCoordinate2D?
+    @Published var location: CLLocation?
 
     override init() {
         super.init()
@@ -40,8 +40,10 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
                         manager.requestWhenInUseAuthorization()
                     case .restricted, .denied:
                         // Show an alert letting the user know they need to enable location services
+                        print("location denied")
                         break
                     case .authorizedAlways, .authorizedWhenInUse:
+                        print("location allowed")
                         // Do nothing
                         break
                     @unknown default:
@@ -58,7 +60,7 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     //        let locValue:CLLocationCoordinate2D = manager.location!.coordinate
     //        print("locations = \(locValue.latitude) \(locValue.longitude)")
             if locations.first != nil {
-                print("location:: \(locations.first?.coordinate)")
+                location = locations.first
             }
             
         }

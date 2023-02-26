@@ -20,20 +20,26 @@ struct ContentView: View {
     var body: some View {
         
         if #available(iOS 16.0, *) {
+            NavigationView {
             TabView {
                 TrainsListView()
                     .tabItem {
-                        Label("Menu", systemImage: "list.dash")
+                        Label("Trains", systemImage: "list.dash")
                     }
                 FullScreenMap(tripId:"Null", trains:trains)
                     .tabItem {
                         Label("Map", systemImage: "map.fill")
+                    }
+                StationListView()
+                    .tabItem {
+                        Label("Stations", systemImage: "pin.circle.fill")
                     }
             }.onAppear() {
                 apiCall().getTrains{(Trains) in
                     self.trains = Trains
                 }
             }
+        }.navigationBarTitleDisplayMode(.inline).padding(.top, -20).navigationViewStyle(StackNavigationViewStyle())
         } else {
             // Fallback on earlier versions
         }
