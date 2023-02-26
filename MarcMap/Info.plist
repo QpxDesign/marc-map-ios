@@ -5,17 +5,21 @@
 	<key>CFBundleDocumentTypes</key>
 	<array>
 		<dict>
+			<key>CFBundleTypeIconFiles</key>
+			<array/>
 			<key>CFBundleTypeName</key>
-			<string>MKDirectionsRequest</string>
+			<string>Text</string>
+			<key>LSHandlerRank</key>
+			<string>Alternate</string>
 			<key>LSItemContentTypes</key>
 			<array>
-				<string>com.apple.maps.directionsrequest</string>
+				<string>public.plain-text</string>
 			</array>
 		</dict>
 	</array>
-	<key>MKDirectionsApplicationSupportedModes</key>
-	<array>
-		<string>MKDirectionsModeSubway</string>
-	</array>
+	<key>LSSupportsOpeningDocumentsInPlace</key>
+	<false/>
+	<key>UISupportsDocumentBrowser</key>
+	<false/>
 </dict>
 </plist>

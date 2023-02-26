@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8232D7FB29ABA291001549B6 /* getWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8232D7FA29ABA291001549B6 /* getWeather.swift */; };
 		825E68CF29A836F60049BF3C /* Brunswick.json in Resources */ = {isa = PBXBuildFile; fileRef = 825E68CB29A836F60049BF3C /* Brunswick.json */; };
 		825E68D029A836F60049BF3C /* FredrickBranch.json in Resources */ = {isa = PBXBuildFile; fileRef = 825E68CC29A836F60049BF3C /* FredrickBranch.json */; };
 		825E68D129A836F60049BF3C /* Penn.json in Resources */ = {isa = PBXBuildFile; fileRef = 825E68CD29A836F60049BF3C /* Penn.json */; };
@@ -31,7 +32,7 @@
 		826EC4FA29A6AEEA00F9E50D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826EC4F929A6AEEA00F9E50D /* ContentView.swift */; };
 		826EC4FC29A6AEED00F9E50D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 826EC4FB29A6AEED00F9E50D /* Assets.xcassets */; };
 		826EC4FF29A6AEED00F9E50D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 826EC4FE29A6AEED00F9E50D /* Preview Assets.xcassets */; };
-		826EC50929A6AEED00F9E50D /* hello_worldTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826EC50829A6AEED00F9E50D /* hello_worldTests.swift */; };
+		826EC50929A6AEED00F9E50D /* MarcMapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826EC50829A6AEED00F9E50D /* MarcMapTests.swift */; };
 		826EC51329A6AEED00F9E50D /* hello_worldUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826EC51229A6AEED00F9E50D /* hello_worldUITests.swift */; };
 		826EC51529A6AEED00F9E50D /* hello_worldUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826EC51429A6AEED00F9E50D /* hello_worldUITestsLaunchTests.swift */; };
 		826EC52229A6B60600F9E50D /* apiCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826EC52129A6B60600F9E50D /* apiCall.swift */; };
@@ -66,6 +67,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8232D7F929AB9F97001549B6 /* MarcMapDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MarcMapDebug.entitlements; sourceTree = "<group>"; };
+		8232D7FA29ABA291001549B6 /* getWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getWeather.swift; sourceTree = "<group>"; };
 		825E68C829A823640049BF3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		825E68CB29A836F60049BF3C /* Brunswick.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Brunswick.json; sourceTree = "<group>"; };
 		825E68CC29A836F60049BF3C /* FredrickBranch.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = FredrickBranch.json; sourceTree = "<group>"; };
@@ -87,14 +90,14 @@
 		825E68F029A97E740049BF3C /* FullScreenMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenMap.swift; sourceTree = "<group>"; };
 		825E68F429A9828D0049BF3C /* TaskbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskbarView.swift; sourceTree = "<group>"; };
 		825E68FC29AA927E0049BF3C /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
-		826EC4F429A6AEEA00F9E50D /* hello-world.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "hello-world.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		826EC4F429A6AEEA00F9E50D /* MarcMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarcMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		826EC4F729A6AEEA00F9E50D /* hello_worldApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hello_worldApp.swift; sourceTree = "<group>"; };
 		826EC4F929A6AEEA00F9E50D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		826EC4FB29A6AEED00F9E50D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		826EC4FE29A6AEED00F9E50D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		826EC50429A6AEED00F9E50D /* hello-worldTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "hello-worldTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		826EC50829A6AEED00F9E50D /* hello_worldTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hello_worldTests.swift; sourceTree = "<group>"; };
-		826EC50E29A6AEED00F9E50D /* hello-worldUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "hello-worldUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		826EC50429A6AEED00F9E50D /* MarcMapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarcMapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		826EC50829A6AEED00F9E50D /* MarcMapTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarcMapTests.swift; sourceTree = "<group>"; };
+		826EC50E29A6AEED00F9E50D /* MarcMapUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarcMapUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		826EC51229A6AEED00F9E50D /* hello_worldUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hello_worldUITests.swift; sourceTree = "<group>"; };
 		826EC51429A6AEED00F9E50D /* hello_worldUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hello_worldUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		826EC52129A6B60600F9E50D /* apiCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = apiCall.swift; sourceTree = "<group>"; };
@@ -184,9 +187,9 @@
 		826EC4EB29A6AEEA00F9E50D = {
 			isa = PBXGroup;
 			children = (
-				826EC4F629A6AEEA00F9E50D /* hello-world */,
-				826EC50729A6AEED00F9E50D /* hello-worldTests */,
-				826EC51129A6AEED00F9E50D /* hello-worldUITests */,
+				826EC4F629A6AEEA00F9E50D /* MarcMap */,
+				826EC50729A6AEED00F9E50D /* MarcMapTests */,
+				826EC51129A6AEED00F9E50D /* MarcMapUITests */,
 				826EC4F529A6AEEA00F9E50D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -194,16 +197,17 @@
 		826EC4F529A6AEEA00F9E50D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				826EC4F429A6AEEA00F9E50D /* hello-world.app */,
-				826EC50429A6AEED00F9E50D /* hello-worldTests.xctest */,
-				826EC50E29A6AEED00F9E50D /* hello-worldUITests.xctest */,
+				826EC4F429A6AEEA00F9E50D /* MarcMap.app */,
+				826EC50429A6AEED00F9E50D /* MarcMapTests.xctest */,
+				826EC50E29A6AEED00F9E50D /* MarcMapUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		826EC4F629A6AEEA00F9E50D /* hello-world */ = {
+		826EC4F629A6AEEA00F9E50D /* MarcMap */ = {
 			isa = PBXGroup;
 			children = (
+				8232D7F929AB9F97001549B6 /* MarcMapDebug.entitlements */,
 				825E68C929A836A40049BF3C /* data */,
 				825E68C829A823640049BF3C /* Info.plist */,
 				82B1B0DA29A6F3060012ADE3 /* views */,
@@ -215,7 +219,7 @@
 				826EC4FB29A6AEED00F9E50D /* Assets.xcassets */,
 				826EC4FD29A6AEED00F9E50D /* Preview Content */,
 			);
-			path = "hello-world";
+			path = MarcMap;
 			sourceTree = "<group>";
 		};
 		826EC4FD29A6AEED00F9E50D /* Preview Content */ = {
@@ -226,27 +230,28 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		826EC50729A6AEED00F9E50D /* hello-worldTests */ = {
+		826EC50729A6AEED00F9E50D /* MarcMapTests */ = {
 			isa = PBXGroup;
 			children = (
-				826EC50829A6AEED00F9E50D /* hello_worldTests.swift */,
+				826EC50829A6AEED00F9E50D /* MarcMapTests.swift */,
 			);
-			path = "hello-worldTests";
+			path = MarcMapTests;
 			sourceTree = "<group>";
 		};
-		826EC51129A6AEED00F9E50D /* hello-worldUITests */ = {
+		826EC51129A6AEED00F9E50D /* MarcMapUITests */ = {
 			isa = PBXGroup;
 			children = (
 				826EC51229A6AEED00F9E50D /* hello_worldUITests.swift */,
 				826EC51429A6AEED00F9E50D /* hello_worldUITestsLaunchTests.swift */,
 			);
-			path = "hello-worldUITests";
+			path = MarcMapUITests;
 			sourceTree = "<group>";
 		};
 		82B1B0D329A6E9460012ADE3 /* utils */ = {
 			isa = PBXGroup;
 			children = (
 				82B1B0D429A6E95C0012ADE3 /* FormatTripID.swift */,
+				8232D7FA29ABA291001549B6 /* getWeather.swift */,
 				82B1B0D629A6EA6F0012ADE3 /* RouteIdToName.swift */,
 				825E68D529A838F70049BF3C /* getRouteFromFile.swift */,
 				825E68E829A966D50049BF3C /* GetStationFromStopId.swift */,
@@ -284,9 +289,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		826EC4F329A6AEEA00F9E50D /* hello-world */ = {
+		826EC4F329A6AEEA00F9E50D /* MarcMap */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 826EC51829A6AEED00F9E50D /* Build configuration list for PBXNativeTarget "hello-world" */;
+			buildConfigurationList = 826EC51829A6AEED00F9E50D /* Build configuration list for PBXNativeTarget "MarcMap" */;
 			buildPhases = (
 				826EC4F029A6AEEA00F9E50D /* Sources */,
 				826EC4F129A6AEEA00F9E50D /* Frameworks */,
@@ -296,14 +301,14 @@
 			);
 			dependencies = (
 			);
-			name = "hello-world";
+			name = MarcMap;
 			productName = "hello-world";
-			productReference = 826EC4F429A6AEEA00F9E50D /* hello-world.app */;
+			productReference = 826EC4F429A6AEEA00F9E50D /* MarcMap.app */;
 			productType = "com.apple.product-type.application";
 		};
-		826EC50329A6AEED00F9E50D /* hello-worldTests */ = {
+		826EC50329A6AEED00F9E50D /* MarcMapTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 826EC51B29A6AEED00F9E50D /* Build configuration list for PBXNativeTarget "hello-worldTests" */;
+			buildConfigurationList = 826EC51B29A6AEED00F9E50D /* Build configuration list for PBXNativeTarget "MarcMapTests" */;
 			buildPhases = (
 				826EC50029A6AEED00F9E50D /* Sources */,
 				826EC50129A6AEED00F9E50D /* Frameworks */,
@@ -314,14 +319,14 @@
 			dependencies = (
 				826EC50629A6AEED00F9E50D /* PBXTargetDependency */,
 			);
-			name = "hello-worldTests";
+			name = MarcMapTests;
 			productName = "hello-worldTests";
-			productReference = 826EC50429A6AEED00F9E50D /* hello-worldTests.xctest */;
+			productReference = 826EC50429A6AEED00F9E50D /* MarcMapTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		826EC50D29A6AEED00F9E50D /* hello-worldUITests */ = {
+		826EC50D29A6AEED00F9E50D /* MarcMapUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 826EC51E29A6AEED00F9E50D /* Build configuration list for PBXNativeTarget "hello-worldUITests" */;
+			buildConfigurationList = 826EC51E29A6AEED00F9E50D /* Build configuration list for PBXNativeTarget "MarcMapUITests" */;
 			buildPhases = (
 				826EC50A29A6AEED00F9E50D /* Sources */,
 				826EC50B29A6AEED00F9E50D /* Frameworks */,
@@ -332,9 +337,9 @@
 			dependencies = (
 				826EC51029A6AEED00F9E50D /* PBXTargetDependency */,
 			);
-			name = "hello-worldUITests";
+			name = MarcMapUITests;
 			productName = "hello-worldUITests";
-			productReference = 826EC50E29A6AEED00F9E50D /* hello-worldUITests.xctest */;
+			productReference = 826EC50E29A6AEED00F9E50D /* MarcMapUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -360,7 +365,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 826EC4EF29A6AEEA00F9E50D /* Build configuration list for PBXProject "hello-world" */;
+			buildConfigurationList = 826EC4EF29A6AEEA00F9E50D /* Build configuration list for PBXProject "MarcMap" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -373,9 +378,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				826EC4F329A6AEEA00F9E50D /* hello-world */,
-				826EC50329A6AEED00F9E50D /* hello-worldTests */,
-				826EC50D29A6AEED00F9E50D /* hello-worldUITests */,
+				826EC4F329A6AEEA00F9E50D /* MarcMap */,
+				826EC50329A6AEED00F9E50D /* MarcMapTests */,
+				826EC50D29A6AEED00F9E50D /* MarcMapUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -441,6 +446,7 @@
 				82B1B0CE29A6C6410012ADE3 /* position.swift in Sources */,
 				825E68D429A837200049BF3C /* route.swift in Sources */,
 				825E68E029A849F40049BF3C /* stopTimeUpdate.swift in Sources */,
+				8232D7FB29ABA291001549B6 /* getWeather.swift in Sources */,
 				825E68DE29A849D30049BF3C /* tripUpdate.swift in Sources */,
 				82B1B0D529A6E95C0012ADE3 /* FormatTripID.swift in Sources */,
 				826EC53029A6B81400F9E50D /* Train.swift in Sources */,
@@ -452,7 +458,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				826EC50929A6AEED00F9E50D /* hello_worldTests.swift in Sources */,
+				826EC50929A6AEED00F9E50D /* MarcMapTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,12 +476,12 @@
 /* Begin PBXTargetDependency section */
 		826EC50629A6AEED00F9E50D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 826EC4F329A6AEEA00F9E50D /* hello-world */;
+			target = 826EC4F329A6AEEA00F9E50D /* MarcMap */;
 			targetProxy = 826EC50529A6AEED00F9E50D /* PBXContainerItemProxy */;
 		};
 		826EC51029A6AEED00F9E50D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 826EC4F329A6AEEA00F9E50D /* hello-world */;
+			target = 826EC4F329A6AEEA00F9E50D /* MarcMap */;
 			targetProxy = 826EC50F29A6AEED00F9E50D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -601,27 +607,30 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_ENTITLEMENTS = MarcMap/MarcMapDebug.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"hello-world/Preview Content\"";
+				CURRENT_PROJECT_VERSION = 5;
+				DEVELOPMENT_ASSET_PATHS = "\"MarcMap/Preview Content\"";
 				DEVELOPMENT_TEAM = HJCD65FY5D;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "hello-world/Info.plist";
+				INFOPLIST_FILE = MarcMap/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = MarcMap;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location to help you use this app.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportsDocumentBrowser = NO;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "qpxdesign.marc-map";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -637,26 +646,28 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"hello-world/Preview Content\"";
+				CURRENT_PROJECT_VERSION = 5;
+				DEVELOPMENT_ASSET_PATHS = "\"MarcMap/Preview Content\"";
 				DEVELOPMENT_TEAM = HJCD65FY5D;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "hello-world/Info.plist";
+				INFOPLIST_FILE = MarcMap/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = MarcMap;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location to help you use this app.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportsDocumentBrowser = NO;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "qpxdesign.marc-map";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -680,7 +691,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/hello-world.app/hello-world";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MarcMap.app/MarcMap";
 			};
 			name = Debug;
 		};
@@ -699,7 +710,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/hello-world.app/hello-world";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MarcMap.app/MarcMap";
 			};
 			name = Release;
 		};
@@ -740,7 +751,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		826EC4EF29A6AEEA00F9E50D /* Build configuration list for PBXProject "hello-world" */ = {
+		826EC4EF29A6AEEA00F9E50D /* Build configuration list for PBXProject "MarcMap" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				826EC51629A6AEED00F9E50D /* Debug */,
@@ -749,7 +760,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		826EC51829A6AEED00F9E50D /* Build configuration list for PBXNativeTarget "hello-world" */ = {
+		826EC51829A6AEED00F9E50D /* Build configuration list for PBXNativeTarget "MarcMap" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				826EC51929A6AEED00F9E50D /* Debug */,
@@ -758,7 +769,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		826EC51B29A6AEED00F9E50D /* Build configuration list for PBXNativeTarget "hello-worldTests" */ = {
+		826EC51B29A6AEED00F9E50D /* Build configuration list for PBXNativeTarget "MarcMapTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				826EC51C29A6AEED00F9E50D /* Debug */,
@@ -767,7 +778,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		826EC51E29A6AEED00F9E50D /* Build configuration list for PBXNativeTarget "hello-worldUITests" */ = {
+		826EC51E29A6AEED00F9E50D /* Build configuration list for PBXNativeTarget "MarcMapUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				826EC51F29A6AEED00F9E50D /* Debug */,
