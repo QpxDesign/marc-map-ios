@@ -58,7 +58,6 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
         func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
             print("Did update location called")
     //        let locValue:CLLocationCoordinate2D = manager.location!.coordinate
-    //        print("locations = \(locValue.latitude) \(locValue.longitude)")
             if locations.first != nil {
                 location = locations.first
             }

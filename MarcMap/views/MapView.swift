@@ -30,12 +30,23 @@ struct MapView: UIViewRepresentable {
         let PennPolyline = MKPolyline(coordinates: PennLineCoordinates, count: PennLineCoordinates.count)
         let CamdenPolyline = MKPolyline(coordinates: CamdenLineCoordinates, count: CamdenLineCoordinates.count)
         let FredrickPolyline = MKPolyline(coordinates: FredrickBranchLineCoordinates, count: FredrickBranchLineCoordinates.count)
+ 
             apiCall().getTrains { (trains) in
+                var currentTrain = trains.filter{$0.vehicle.trip.tripId==tripId}
+                if (!currentTrain.isEmpty && currentTrain[0].vehicle.trip.tripId == tripId) {
+                    mapView.setRegion(MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: currentTrain[0].vehicle.position.latitude, longitude: currentTrain[0].vehicle.position.longitude), latitudinalMeters: 2000, longitudinalMeters: 2000), animated: true)
+                }
                 for t in trains {
                      if (!mapView.annotations.filter{$0.title == FormatTripId(tripId: t.vehicle.trip.tripId) }.isEmpty) {
                         if let annotation = mapView.annotations.filter{$0.title == FormatTripId(tripId: t.vehicle.trip.tripId) }[0] as? MKPointAnnotation {
                             annotation.coordinate = CLLocationCoordinate2D(latitude: t.vehicle.position.latitude, longitude: t.vehicle.position.longitude)
                         }
+                         
+                         if (t.vehicle.trip.tripId == tripId) {
+                             let coordinateRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: t.vehicle.position.latitude, longitude: t.vehicle.position.longitude), latitudinalMeters: 2000, longitudinalMeters: 2000)
+                             mapView.setRegion(coordinateRegion, animated: true)
+                         }
+                       
                     } else {
                         let annotation = MKPointAnnotation()
                         annotation.coordinate = CLLocationCoordinate2D(latitude: t.vehicle.position.latitude, longitude: t.vehicle.position.longitude)
@@ -91,7 +102,6 @@ struct MapView: UIViewRepresentable {
                   let annotation = MKPointAnnotation()
                   annotation.coordinate = CLLocationCoordinate2D(latitude: i.stop_lat, longitude: i.stop_lon)
                   annotation.title = i.stop_name
-                  print((latitude: i.stop_lat, longitude: i.stop_lon))
                   mapView.addAnnotation(annotation)
               }
            

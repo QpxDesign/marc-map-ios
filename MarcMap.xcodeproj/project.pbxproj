@@ -13,6 +13,7 @@
 		8232D80329ABC4CE001549B6 /* getStations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8232D80229ABC4CE001549B6 /* getStations.swift */; };
 		8232D80729ABE5AB001549B6 /* GetTrainsGoingToStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8232D80629ABE5AB001549B6 /* GetTrainsGoingToStation.swift */; };
 		8232D80929ABE653001549B6 /* StationTrainDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8232D80829ABE653001549B6 /* StationTrainDetails.swift */; };
+		8232D80D29AD5940001549B6 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8232D80C29AD5940001549B6 /* HeaderView.swift */; };
 		825E68CF29A836F60049BF3C /* Brunswick.json in Resources */ = {isa = PBXBuildFile; fileRef = 825E68CB29A836F60049BF3C /* Brunswick.json */; };
 		825E68D029A836F60049BF3C /* FredrickBranch.json in Resources */ = {isa = PBXBuildFile; fileRef = 825E68CC29A836F60049BF3C /* FredrickBranch.json */; };
 		825E68D129A836F60049BF3C /* Penn.json in Resources */ = {isa = PBXBuildFile; fileRef = 825E68CD29A836F60049BF3C /* Penn.json */; };
@@ -79,6 +80,7 @@
 		8232D80229ABC4CE001549B6 /* getStations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getStations.swift; sourceTree = "<group>"; };
 		8232D80629ABE5AB001549B6 /* GetTrainsGoingToStation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTrainsGoingToStation.swift; sourceTree = "<group>"; };
 		8232D80829ABE653001549B6 /* StationTrainDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationTrainDetails.swift; sourceTree = "<group>"; };
+		8232D80C29AD5940001549B6 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		825E68C829A823640049BF3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		825E68CB29A836F60049BF3C /* Brunswick.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Brunswick.json; sourceTree = "<group>"; };
 		825E68CC29A836F60049BF3C /* FredrickBranch.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = FredrickBranch.json; sourceTree = "<group>"; };
@@ -294,6 +296,7 @@
 				82B1B0E129A6F4240012ADE3 /* TrainDetailedView.swift */,
 				825E68D729A839CB0049BF3C /* MapView.swift */,
 				8232D7FE29ABBF83001549B6 /* StationListView.swift */,
+				8232D80C29AD5940001549B6 /* HeaderView.swift */,
 				8232D7FC29ABABA5001549B6 /* StationDetailedView.swift */,
 				825E68F029A97E740049BF3C /* FullScreenMap.swift */,
 				825E68F429A9828D0049BF3C /* TaskbarView.swift */,
@@ -455,6 +458,7 @@
 				825E68F529A9828D0049BF3C /* TaskbarView.swift in Sources */,
 				82B1B0C929A6C57C0012ADE3 /* vehicle.swift in Sources */,
 				825E68DC29A849A80049BF3C /* tu_entity.swift in Sources */,
+				8232D80D29AD5940001549B6 /* HeaderView.swift in Sources */,
 				825E68DA29A8495F0049BF3C /* TripUpdateData.swift in Sources */,
 				825E68D829A839CB0049BF3C /* MapView.swift in Sources */,
 				825E68E729A84B070049BF3C /* arrival.swift in Sources */,
@@ -629,7 +633,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = MarcMap/MarcMapDebug.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MarcMap/Preview Content\"";
 				DEVELOPMENT_TEAM = HJCD65FY5D;
 				ENABLE_PREVIEWS = YES;
@@ -650,7 +654,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "qpxdesign.marc-map";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -666,7 +670,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MarcMap/Preview Content\"";
 				DEVELOPMENT_TEAM = HJCD65FY5D;
 				ENABLE_PREVIEWS = YES;
@@ -687,7 +691,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "qpxdesign.marc-map";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
