@@ -18,34 +18,18 @@ struct StationListView: View {
     let manager = LocationManager()
     var body: some View {
         VStack {
-            HStack {
-                Text("Stations").bold().multilineTextAlignment(.leading).padding(.leading,20).padding(.bottom, 15).foregroundColor(Color.white).font(.system(size: 34)).padding(.top,8).onAppear() {
-                    Task {
-                        self.currentWeather =  await getWeather()
-                    }
-                }.onAppear() {
-                    manager.requestLocation()
-                    userLocation = manager.location
-                    stations.sort() {
-                        var a1 = CLLocation(latitude: $0.stop_lat, longitude: $0.stop_lon)
-                        var d1 = a1.distance(from: userLocation ?? CLLocation(latitude: 0, longitude: 0))
-                         var a2 = CLLocation(latitude: $0.stop_lat, longitude: $1.stop_lon)
-                         var d2 = a2.distance(from: userLocation ?? CLLocation(latitude: 0, longitude: 0))
-                        return d1 < d2
-                        
-                    }
-         
+            HeaderView(title:"Stations").onAppear() {
+                manager.requestLocation()
+                userLocation = manager.location
+                stations.sort() {
+                    let a1 = CLLocation(latitude: $0.stop_lat, longitude: $0.stop_lon)
+                    let d1 = a1.distance(from: userLocation ?? CLLocation(latitude: 38.9072, longitude: -77.0369))
+                    let a2 = CLLocation(latitude: $1.stop_lat, longitude: $1.stop_lon)
+                    let d2 = a2.distance(from: userLocation ?? CLLocation(latitude: 38.9072, longitude: -77.0369))
+                    return d1 < d2
                 }
-                Spacer()
-                HStack {
-                    Image(systemName: ((currentWeather?.symbolName ?? "icloud.slash") + ".fill") ?? "icloud.slash").foregroundColor(Color.white)
-                    Text(String(Int(floor(CelciusToFahrenheit(C: currentWeather?.apparentTemperature.value ?? 0))))+"° F").bold().font(.system(size: 20)).foregroundColor(Color.white)
-                }.padding(.trailing,25)
-                
-                
-                
-                
-            } .frame(maxWidth: .infinity, alignment: .leading).background(CustomColors.MarcOrange)
+     
+            }
             if (!stations.isEmpty) {
                 List(stations) { station  in
                     VStack(alignment: .leading) {

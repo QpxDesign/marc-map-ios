@@ -23,7 +23,6 @@ func GetStationFromStopId(stopID: Int) -> station {
             print("error:\(error)")
         }
     }
-    print(ans)
     if (ans.filter{$0.stop_id[0] == stopID || ($0.stop_id.count == 2 && $0.stop_id[1] == stopID)}.isEmpty) {
         return station(stop_id: [0,0], stop_name: "error", stop_lat: 0, stop_lon: 0);
     }

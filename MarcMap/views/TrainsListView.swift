@@ -19,22 +19,7 @@ struct TrainsListView: View {
     @State var currentWeather : CurrentWeather?
     var body: some View {
         VStack {
-            HStack {
-                Text("Trains").bold().multilineTextAlignment(.leading).padding(.leading,20).padding(.bottom, 15).foregroundColor(Color.white).font(.system(size: 34)).padding(.top,8).onAppear() {
-                        Task {
-                            self.currentWeather =  await getWeather()
-                        }
-                    }
-                Spacer()
-                HStack {
-                    Image(systemName: ((currentWeather?.symbolName ?? "icloud.slash") + ".fill") ?? "icloud.slash").foregroundColor(Color.white)
-                    Text(String(Int(floor(CelciusToFahrenheit(C: currentWeather?.apparentTemperature.value ?? 0))))+"° F").bold().font(.system(size: 20)).foregroundColor(Color.white)
-                }.padding(.trailing,25)
-             
-                
-                
-                
-            } .frame(maxWidth: .infinity, alignment: .leading).background(CustomColors.MarcOrange)
+            HeaderView(title:"Trains")
             if (!trains.isEmpty) {
                 List(trains) { train  in
                     VStack(alignment: .leading) {
