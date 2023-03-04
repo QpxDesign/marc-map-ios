@@ -32,9 +32,9 @@ struct FullScreenMap: View {
     var body: some View {
             GeometryReader { geometry in
                 
-                MapView(region: region, BrunswickLineCoordinates: brunswick, PennLineCoordinates: penn, CamdenLineCoordinates: camd, FredrickBranchLineCoordinates: fred, trains: trains, tripId:"tripId" ).padding(.bottom, 0).edgesIgnoringSafeArea(.all)
+                MapView(region: region, BrunswickLineCoordinates: brunswick, PennLineCoordinates: penn, CamdenLineCoordinates: camd, FredrickBranchLineCoordinates: fred, trains: trains, tripId:"tripId" ).padding(.bottom, 0)
         
                           
-                }
+            }.background(CustomColors.MarcOrange)
     }
 }

@@ -70,4 +70,3 @@ struct TrainsListView: View {
         
     }
 }
-
