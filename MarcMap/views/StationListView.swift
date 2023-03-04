@@ -15,12 +15,13 @@ struct StationListView: View {
     @State var userLocation: CLLocation?
     @State var stations : [station] = getStations()
     
-    let manager = LocationManager()
+   let manager = LocationManager()
     var body: some View {
         VStack {
             HeaderView(title:"Stations").onAppear() {
                 manager.requestLocation()
                 userLocation = manager.location
+          
                 stations.sort() {
                     let a1 = CLLocation(latitude: $0.stop_lat, longitude: $0.stop_lon)
                     let d1 = a1.distance(from: userLocation ?? CLLocation(latitude: 38.9072, longitude: -77.0369))
@@ -37,7 +38,7 @@ struct StationListView: View {
                             Text(station.stop_name).bold().font(.system(size: 20
                                                                        ))
                             Spacer()
-                            Text(String(getDistanceToStation(stop_lat: station.stop_lat, stop_lon: station.stop_lon, userLocation: userLocation)) + " miles")
+                            Text(getDistanceToStation(stop_lat: station.stop_lat, stop_lon: station.stop_lon, userLocation: userLocation))
                             HStack(spacing: 0) {
                                 Image(systemName: "arrow.right")
                                 .font(.system(size: 24, weight: .light))
@@ -66,11 +67,15 @@ struct StationListView_Previews: PreviewProvider {
     }
 }
 
-func getDistanceToStation(stop_lat : Double, stop_lon : Double,userLocation : CLLocation?) -> Double {
+func getDistanceToStation(stop_lat : Double, stop_lon : Double, userLocation : CLLocation?) -> String {
     var a1 = CLLocation(latitude: stop_lat, longitude: stop_lon)
     var d1 = a1.distance(from: userLocation ?? CLLocation(latitude: 0, longitude: 0))
+    if (userLocation == nil) {
+        return "n/a"
+    }
     d1 = d1/1000 //M TO KM
     d1 = d1/1.609 // KM TO MILES
     d1 = round(d1 * 100)/100.0
-    return d1
+    var ans = String(d1) + " miles"
+    return ans
 }

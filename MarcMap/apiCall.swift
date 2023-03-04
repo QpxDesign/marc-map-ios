@@ -39,9 +39,7 @@ class apiCall {
             for t in tData.entity  {
                 var tmp = t.tripUpdate
                 updates.append(tmp)
-            }
-                       
-                        
+            }           
             DispatchQueue.main.async {
                 completion(updates)
             }

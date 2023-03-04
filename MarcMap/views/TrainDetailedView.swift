@@ -33,18 +33,20 @@ struct TrainDetailedView: View {
                     } .frame(maxWidth: .infinity, alignment: .leading).background(CustomColors.MarcOrange).onAppear() {
                         apiCall().getTrains { (trains) in
                             if (!trains.isEmpty){
-                                region.center.longitude = trains[0].vehicle.position.longitude
-                                region.center.latitude = trains[0].vehicle.position.latitude
+                            //    region.center.longitude = trains[0].vehicle.position.longitude
+                              //  region.center.latitude = trains[0].vehicle.position.latitude
                             }
+                            
                             self.details = trains.filter{
                                 $0.vehicle.trip.tripId == tripId
                             }
-                            Timer.scheduledTimer(withTimeInterval: 10, repeats: true) { timer1 in
+                           Timer.scheduledTimer(withTimeInterval: 10, repeats: true) { timer1 in
                                 apiCall().getTrains { (trains) in
                                     if (!trains.isEmpty){
-                                        region.center.longitude = trains[0].vehicle.position.longitude
-                                        region.center.latitude = trains[0].vehicle.position.latitude
+                                   //     region.center.longitude = trains[0].vehicle.position.longitude
+                                   //     region.center.latitude = trains[0].vehicle.position.latitude
                                     }
+                                    print("updated trains in timer!")
                                     self.details = trains.filter{
                                         $0.vehicle.trip.tripId == tripId
                                     }
@@ -55,15 +57,16 @@ struct TrainDetailedView: View {
                             self.tripDetails = updates.filter{
                                 $0.trip.tripId == tripId
                             }
-                            tripDetails[0].stopTimeUpdate = tripDetails[0].stopTimeUpdate.reversed()
+                         
+                            tripDetails[0].stopTimeUpdate = tripDetails[0].stopTimeUpdate
                         }
                         Timer.scheduledTimer(withTimeInterval: 10, repeats: true) { timer2 in
                             apiCall().getTripUpdates { (updates) in
+                                print("updated trains in updates!")
                                 self.tripDetails = updates.filter{
                                     $0.trip.tripId == tripId
                                 }
-                                tripDetails[0].stopTimeUpdate = tripDetails[0].stopTimeUpdate.reversed()
-                            }}
+                        tripDetails[0].stopTimeUpdate = tripDetails[0].stopTimeUpdate                            }}
                         
                     }
                     if (!details.isEmpty) {
@@ -75,36 +78,52 @@ struct TrainDetailedView: View {
                         Text("Loading")
                     }
                     if (!tripDetails.isEmpty && !tripDetails[0].stopTimeUpdate.isEmpty) {
-                        var tD = tripDetails[0].stopTimeUpdate
+                        var tD = tripDetails[0].stopTimeUpdate.filter{Double($0.departure?.time ?? "0")! > NSDate().timeIntervalSince1970 || Double($0.arrival?.time ?? "0") ?? 0 > NSDate().timeIntervalSince1970 }
+                        var tDa = tripDetails[0].stopTimeUpdate.filter{Double($0.departure?.time ?? "0")! < NSDate().timeIntervalSince1970 || Double($0.arrival?.time ?? "0") ?? 0 < NSDate().timeIntervalSince1970 }
+                        var t = removeDuplicates(arr: tD+tDa)
                         VStack(alignment: .trailing) {
-                            List(tD) { stop in
-                                
-                                HStack {
-                                    if (Double(stop.departure?.time ?? "0")! > NSDate().timeIntervalSince1970 || Double(stop.arrival?.time ?? "0")! > NSDate().timeIntervalSince1970 ) {
-                                        Text(GetStationFromStopId(stopID: Int(stop.stopId)!).stop_name)
-                                        Spacer()
-                                        Text(stop.arrival?.time != nil ? FormatTime(timestamp: stop.arrival!.time) : stop.departure?.time != nil ? FormatTime(timestamp: stop.departure!.time): "Unknown").bold()
-                                    } else {
-                                        Text(GetStationFromStopId(stopID: Int(stop.stopId)!).stop_name).foregroundColor(Color.gray)
-                                        Spacer()
-                                        Text(stop.arrival?.time != nil ? FormatTime(timestamp: stop.arrival!.time) : stop.departure?.time != nil ? FormatTime(timestamp: stop.departure!.time): "Unknown").bold().foregroundColor(Color.gray)
-                                    }
-                                  
+                            List(t) { stop in
+                            //    if (stop.departure.self != nil) {
+                                    HStack {
+                                        if (Double(stop.departure?.time ?? "0")! > NSDate().timeIntervalSince1970+30 || Double(stop.arrival?.time ?? "0")! > NSDate().timeIntervalSince1970+30 ) {
+                                            Text(GetStationFromStopId(stopID: Int(stop.stopId)!).stop_name)
+                                            Spacer()
+                                            Text(stop.arrival?.time != nil ? FormatTime(timestamp: stop.arrival!.time) : stop.departure?.time != nil ? FormatTime(timestamp: stop.departure!.time): "Unknown").bold()
+                                        } else {
+                                            Text(GetStationFromStopId(stopID: Int(stop.stopId)!).stop_name).foregroundColor(Color.gray)
+                                            Spacer()
+                                            Text(stop.arrival?.time != nil ? FormatTime(timestamp: stop.arrival!.time) : stop.departure?.time != nil ? FormatTime(timestamp: stop.departure!.time): "Unknown").bold().foregroundColor(Color.gray)
+                                        }
+                                        }
+                                  //  }
                                 }
-                            
+                           HStack {
+                               if #available(iOS 16.0, *) {
+                                   Text("Last Stop: " + GetStationFromStopId(stopID: Int(tripDetails[0].stopTimeUpdate.last?.stopId ?? "0")!).stop_name).foregroundColor(Color.white).padding(10).background(CustomColors.MarcBlue).bold().frame(maxWidth:.infinity)
+                               } else {
+                                   // Fallback on earlier versions
+                               }
+                           }.frame(maxWidth:.infinity, alignment:.center).font(.system(size: 18)).background(CustomColors.MarcBlue).padding(.horizontal, 10)
+                        }.frame(alignment: .leading).padding(.top, 0).onDisappear() {
+                            print("unloaded :(")
                         }
-                       
-                        }.frame(alignment: .leading).padding(.top, 0).background(Color.white)
                 
+                    } else {
+                        Text("Loading")
                     }
-                   
-                        
-                    
                     Spacer()
-                
-                
             }
             
         }
     }
+}
+ 
+func removeDuplicates(arr : Array<stopTimeUpdate>) -> Array<stopTimeUpdate> {
+    var a : [stopTimeUpdate] = []
+    for i in arr {
+        if (a.filter{$0.id.uuidString == i.id.uuidString}.count == 0) {
+            a.append(i)
+        }
+    }
+    return a;
 }
