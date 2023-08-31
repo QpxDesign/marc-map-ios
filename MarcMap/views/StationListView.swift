@@ -14,7 +14,7 @@ struct StationListView: View {
     @State var currentWeather : CurrentWeather?
     @State var userLocation: CLLocation?
     @State var stations : [station] = getStations()
-    
+
    let manager = LocationManager()
     var body: some View {
         VStack {
@@ -35,8 +35,7 @@ struct StationListView: View {
                 List(stations) { station  in
                     VStack(alignment: .leading) {
                         HStack {
-                            Text(station.stop_name).bold().font(.system(size: 20
-                                                                       ))
+                            Text(station.stop_name).bold().font(.system(size: 20))
                             Spacer()
                             Text(getDistanceToStation(stop_lat: station.stop_lat, stop_lon: station.stop_lon, userLocation: userLocation))
                             HStack(spacing: 0) {
@@ -50,11 +49,16 @@ struct StationListView: View {
                                 .opacity(0)
                               }
                         }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading).accentColor(CustomColors.MarcBlue)
+                       
                     }
+                    
                 }
             }
+            FooterView()
         }
+  
     }
+   
 }
 
 struct StationListView_Previews: PreviewProvider {

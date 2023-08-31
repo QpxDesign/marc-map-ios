@@ -26,7 +26,9 @@ struct TrainDetailedView: View {
 
         var body: some View {
             GeometryReader { geometry in
-        
+                if (!details.isEmpty && details.filter{$0.vehicle.trip.tripId == tripId}.isEmpty) {
+                    TrainsListView()
+                }
                 VStack {
                     HStack {
                         Text(details.isEmpty ? "Loading" : FormatTripId(tripId: details[0].vehicle.trip.tripId)).bold().multilineTextAlignment(.leading).padding(.leading,20).padding(.bottom, 15).foregroundColor(Color.white).font(.system(size: 34))
@@ -111,6 +113,7 @@ struct TrainDetailedView: View {
                     } else {
                         Text("Loading")
                     }
+                    
                     Spacer()
             }
             

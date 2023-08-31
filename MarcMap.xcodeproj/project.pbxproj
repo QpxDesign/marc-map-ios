@@ -14,6 +14,8 @@
 		8232D80729ABE5AB001549B6 /* GetTrainsGoingToStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8232D80629ABE5AB001549B6 /* GetTrainsGoingToStation.swift */; };
 		8232D80929ABE653001549B6 /* StationTrainDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8232D80829ABE653001549B6 /* StationTrainDetails.swift */; };
 		8232D80D29AD5940001549B6 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8232D80C29AD5940001549B6 /* HeaderView.swift */; };
+		824AFF7929B50D1300E02F75 /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824AFF7829B50D1300E02F75 /* FooterView.swift */; };
+		824AFF7F29B5100100E02F75 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824AFF7E29B5100100E02F75 /* SettingsView.swift */; };
 		825E68CF29A836F60049BF3C /* Brunswick.json in Resources */ = {isa = PBXBuildFile; fileRef = 825E68CB29A836F60049BF3C /* Brunswick.json */; };
 		825E68D029A836F60049BF3C /* FredrickBranch.json in Resources */ = {isa = PBXBuildFile; fileRef = 825E68CC29A836F60049BF3C /* FredrickBranch.json */; };
 		825E68D129A836F60049BF3C /* Penn.json in Resources */ = {isa = PBXBuildFile; fileRef = 825E68CD29A836F60049BF3C /* Penn.json */; };
@@ -53,6 +55,7 @@
 		82B1B0D729A6EA6F0012ADE3 /* RouteIdToName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B1B0D629A6EA6F0012ADE3 /* RouteIdToName.swift */; };
 		82B1B0E029A6F4010012ADE3 /* TrainsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B1B0DF29A6F4010012ADE3 /* TrainsListView.swift */; };
 		82B1B0E229A6F4240012ADE3 /* TrainDetailedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B1B0E129A6F4240012ADE3 /* TrainDetailedView.swift */; };
+		82E5EEE82A9F976B0017F59B /* TimeTableTrains.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E5EEE72A9F976B0017F59B /* TimeTableTrains.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +84,8 @@
 		8232D80629ABE5AB001549B6 /* GetTrainsGoingToStation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTrainsGoingToStation.swift; sourceTree = "<group>"; };
 		8232D80829ABE653001549B6 /* StationTrainDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationTrainDetails.swift; sourceTree = "<group>"; };
 		8232D80C29AD5940001549B6 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		824AFF7829B50D1300E02F75 /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
+		824AFF7E29B5100100E02F75 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		825E68C829A823640049BF3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		825E68CB29A836F60049BF3C /* Brunswick.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Brunswick.json; sourceTree = "<group>"; };
 		825E68CC29A836F60049BF3C /* FredrickBranch.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = FredrickBranch.json; sourceTree = "<group>"; };
@@ -124,6 +129,7 @@
 		82B1B0D629A6EA6F0012ADE3 /* RouteIdToName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteIdToName.swift; sourceTree = "<group>"; };
 		82B1B0DF29A6F4010012ADE3 /* TrainsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainsListView.swift; sourceTree = "<group>"; };
 		82B1B0E129A6F4240012ADE3 /* TrainDetailedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainDetailedView.swift; sourceTree = "<group>"; };
+		82E5EEE72A9F976B0017F59B /* TimeTableTrains.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTableTrains.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -285,6 +291,7 @@
 				825E68D329A837200049BF3C /* route.swift */,
 				8232D80829ABE653001549B6 /* StationTrainDetails.swift */,
 				825E68EA29A966F10049BF3C /* station.swift */,
+				82E5EEE72A9F976B0017F59B /* TimeTableTrains.swift */,
 			);
 			path = structs;
 			sourceTree = "<group>";
@@ -294,8 +301,10 @@
 			children = (
 				82B1B0DF29A6F4010012ADE3 /* TrainsListView.swift */,
 				82B1B0E129A6F4240012ADE3 /* TrainDetailedView.swift */,
+				824AFF7829B50D1300E02F75 /* FooterView.swift */,
 				825E68D729A839CB0049BF3C /* MapView.swift */,
 				8232D7FE29ABBF83001549B6 /* StationListView.swift */,
+				824AFF7E29B5100100E02F75 /* SettingsView.swift */,
 				8232D80C29AD5940001549B6 /* HeaderView.swift */,
 				8232D7FC29ABABA5001549B6 /* StationDetailedView.swift */,
 				825E68F029A97E740049BF3C /* FullScreenMap.swift */,
@@ -446,6 +455,8 @@
 				8232D80729ABE5AB001549B6 /* GetTrainsGoingToStation.swift in Sources */,
 				82B1B0E229A6F4240012ADE3 /* TrainDetailedView.swift in Sources */,
 				825E68E529A84AB30049BF3C /* departure.swift in Sources */,
+				824AFF7929B50D1300E02F75 /* FooterView.swift in Sources */,
+				82E5EEE82A9F976B0017F59B /* TimeTableTrains.swift in Sources */,
 				825E68D629A838F70049BF3C /* getRouteFromFile.swift in Sources */,
 				825E68FD29AA927E0049BF3C /* LocationManager.swift in Sources */,
 				825E68F129A97E740049BF3C /* FullScreenMap.swift in Sources */,
@@ -475,6 +486,7 @@
 				82B1B0D529A6E95C0012ADE3 /* FormatTripID.swift in Sources */,
 				826EC53029A6B81400F9E50D /* Train.swift in Sources */,
 				825E68EF29A96E720049BF3C /* FormatTime.swift in Sources */,
+				824AFF7F29B5100100E02F75 /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -633,7 +645,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = MarcMap/MarcMapDebug.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"MarcMap/Preview Content\"";
 				DEVELOPMENT_TEAM = HJCD65FY5D;
 				ENABLE_PREVIEWS = YES;
@@ -649,12 +661,12 @@
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportsDocumentBrowser = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.3;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "qpxdesign.marc-map";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -670,7 +682,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"MarcMap/Preview Content\"";
 				DEVELOPMENT_TEAM = HJCD65FY5D;
 				ENABLE_PREVIEWS = YES;
@@ -686,12 +698,12 @@
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportsDocumentBrowser = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.3;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "qpxdesign.marc-map";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

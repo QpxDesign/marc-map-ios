@@ -34,6 +34,10 @@ struct ContentView: View {
                     .tabItem {
                         Label("Stations", systemImage: "pin.circle.fill")
                     }
+                SettingsView()
+                    .tabItem {
+                        Label("Info", systemImage: "info.circle.fill")
+                    }
             }.onAppear() {
                 apiCall().getTrains{(Trains) in
                     self.trains = Trains

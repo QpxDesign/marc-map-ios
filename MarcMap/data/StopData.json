@@ -1,374 +1,5151 @@
 [
-   {
-      "stop_id":[
-         11940
-      ],
-      "stop_name":"MARTINSBURG W VA MARC",
-      "stop_lat":39.461113,
-      "stop_lon":-77.961655
-   },
-   {
-      "stop_id":[
-         11941,11975
-      ],
-      "stop_name":"DUFFIELDS W VA MARC",
-      "stop_lat":39.362262,
-      "stop_lon":-77.826636
-   },
-   {
-      "stop_id":[
-         11974,
-         11942
-      ],
-      "stop_name":"HARPERS FERRY W VA MARC",
-      "stop_lat":39.324586,
-      "stop_lon":-77.730548
-   },
-   {
-      "stop_id":[
-         11973,
-         11943
-      ],
-      "stop_name":"BRUNSWICK MD MARC",
-      "stop_lat":39.311949,
-      "stop_lon":-77.627027
-   },
-   {
-      "stop_id":[
-         11972,
-         11944
-      ],
-      "stop_name":"FREDERICK MARC",
-      "stop_lat":39.412722,
-      "stop_lon":-77.405447
-   },
-   {
-      "stop_id":[
-         11971,
-         11945
-      ],
-      "stop_name":"MONOCACY MARC",
-      "stop_lat":39.38356,
-      "stop_lon":-77.393761
-   },
-   {
-      "stop_id":[
-         11970,
-         11946
-      ],
-      "stop_name":"POINT OF ROCKS MARC",
-      "stop_lat":39.273493,
-      "stop_lon":-77.53337
-   },
-   {
-      "stop_id":[
-         11969,
-         11947
-      ],
-      "stop_name":"DICKERSON MARC",
-      "stop_lat":39.220195,
-      "stop_lon":-77.424031
-   },
-   {
-      "stop_id":[
-         11968,
-         11948
-      ],
-      "stop_name":"BARNESVILLE MARC",
-      "stop_lat":39.209542,
-      "stop_lon":-77.382234
-   },
-   {
-      "stop_id":[
-         11967,
-         11949
-      ],
-      "stop_name":"BOYDS MARC",
-      "stop_lat":39.183927,
-      "stop_lon":-77.312969
-   },
-   {
-      "stop_id":[
-         11966,
-         11950
-      ],
-      "stop_name":"GERMANTOWN MARC",
-      "stop_lat":39.172523,
-      "stop_lon":-77.269566
-   },
-   {
-      "stop_id":[
-         11965,
-         11951
-      ],
-      "stop_name":"METROPOLITAN GROVE MARC",
-      "stop_lat":39.149791,
-      "stop_lon":-77.22711
-   },
-   {
-      "stop_id":[
-         11964,
-         11952
-      ],
-      "stop_name":"GAITHERSBURG MARC",
-      "stop_lat":39.141532,
-      "stop_lon":-77.193339
-   },
-   {
-      "stop_id":[
-         11963,
-         11953
-      ],
-      "stop_name":"WASHINGTON GROVE MARC",
-      "stop_lat":39.135089,
-      "stop_lon":-77.176378
-   },
-   {
-      "stop_id":[
-         11962,
-         11954
-      ],
-      "stop_name":"ROCKVILLE MARC",
-      "stop_lat":39.085198,
-      "stop_lon":-77.146993
-   },
-   {
-      "stop_id":[
-         11961,
-         11955
-      ],
-      "stop_name":"GARRETT PARK MARC",
-      "stop_lat":39.038859,
-      "stop_lon":-77.093281
-   },
-   {
-      "stop_id":[
-         11960,
-         11956
-      ],
-      "stop_name":"KENSINGTON MARC",
-      "stop_lat":39.027125,
-      "stop_lon":-77.072188
-   },
-   {
-      "stop_id":[
-         11959,
-         11957
-      ],
-      "stop_name":"SILVER SPRING MARC",
-      "stop_lat":38.994459,
-      "stop_lon":-77.030698
-   },
-   {
-      "stop_id":[
-         11958
-      ],
-      "stop_name":"UNION STATION MARC Washington",
-      "stop_lat":38.899036,
-      "stop_lon":-77.006795
-   },
-   {
-      "stop_id":[
-         11976
-      ],
-      "stop_name":"PERRYVILLE MARC",
-      "stop_lat":39.558089,
-      "stop_lon":-76.07318
-   },
-   {
-      "stop_id":[
-         12005,
-         11977
-      ],
-      "stop_name":"ABERDEEN MARC",
-      "stop_lat":39.509146,
-      "stop_lon":-76.162588
-   },
-   {
-      "stop_id":[
-         12004,
-         11978
-      ],
-      "stop_name":"EDGEWOOD MARC",
-      "stop_lat":39.415967,
-      "stop_lon":-76.292139
-   },
-   {
-      "stop_id":[
-         12003,
-         11979
-      ],
-      "stop_name":"MARTIN AIRPORT MARC",
-      "stop_lat":39.338324,
-      "stop_lon":-76.419307
-   },
-   {
-      "stop_id":[
-         12002,
-         11980
-      ],
-      "stop_name":"PENN STATION MARC",
-      "stop_lat":39.307177,
-      "stop_lon":-76.615903
-   },
-   {
-      "stop_id":[
-         11995,
-         11981
-      ],
-      "stop_name":"WEST BALTIMORE MARC",
-      "stop_lat":39.293344,
-      "stop_lon":-76.653102
-   },
-   {
-      "stop_id":[
-         11994,
-         11982
-      ],
-      "stop_name":"HALETHORPE MARC",
-      "stop_lat":39.23878,
-      "stop_lon":-76.691196
-   },
-   {
-      "stop_id":[
-         11993,
-         11984
-      ],
-      "stop_name":"BWI RAIL STATION MARC",
-      "stop_lat":39.192327,
-      "stop_lon":-76.69456
-   },
-   {
-      "stop_id":[
-         11992,
-         11985
-      ],
-      "stop_name":"ODENTON MARC",
-      "stop_lat":39.08686,
-      "stop_lon":-76.706099
-   },
-   {
-      "stop_id":[
-         11991,
-         11986
-      ],
-      "stop_name":"BOWIE STATE MARC",
-      "stop_lat":39.020792,
-      "stop_lon":-76.762049
-   },
-   {
-      "stop_id":[
-         11990,
-         11987
-      ],
-      "stop_name":"SEABROOK MARC",
-      "stop_lat":38.973444,
-      "stop_lon":-76.842772
-   },
-   {
-      "stop_id":[
-         11989,
-         11988
-      ],
-      "stop_name":"NEW CARROLLTON MARC",
-      "stop_lat":38.946969,
-      "stop_lon":-76.873141
-   },
-   {
-      "stop_id":[
-         12006
-      ],
-      "stop_name":"CAMDEN STATION MARC",
-      "stop_lat":39.283877,
-      "stop_lon":-76.619664
-   },
-   {
-      "stop_id":[
-         12026,
-         12007
-      ],
-      "stop_name":"ST DENIS MARC",
-      "stop_lat":39.224047,
-      "stop_lon":-76.704818
-   },
-   {
-      "stop_id":[
-         12025,
-         12008
-      ],
-      "stop_name":"DORSEY MARC",
-      "stop_lat":39.18134,
-      "stop_lon":-76.745306
-   },
-   {
-      "stop_id":[
-         12024,
-         12009
-      ],
-      "stop_name":"JESSUP MARC",
-      "stop_lat":39.151525,
-      "stop_lon":-76.776332
-   },
-   {
-      "stop_id":[
-         12023,
-         12010
-      ],
-      "stop_name":"SAVAGE MARC",
-      "stop_lat":39.122855,
-      "stop_lon":-76.796351
-   },
-   {
-      "stop_id":[
-         12011
-      ],
-      "stop_name":"LAUREL RACETRACK MARC sb",
-      "stop_lat":39.105464,
-      "stop_lon":-76.834411
-   },
-   {
-      "stop_id":[
-         12021,
-         12012
-      ],
-      "stop_name":"LAUREL MARC",
-      "stop_lat":39.101817,
-      "stop_lon":-76.842109
-   },
-   {
-      "stop_id":[
-         12020,
-         12013
-      ],
-      "stop_name":"MUIRKIRK MARC",
-      "stop_lat":39.062044,
-      "stop_lon":-76.884971
-   },
-   {
-      "stop_id":[
-         12019,
-         12014
-      ],
-      "stop_name":"GREENBELT MARC",
-      "stop_lat":39.010192,
-      "stop_lon":-76.912127
-   },
-   {
-      "stop_id":[
-         12018,
-         12015
-      ],
-      "stop_name":"COLLEGE PARK MARC",
-      "stop_lat":38.976141,
-      "stop_lon":-76.929389
-   },
-   {
-      "stop_id":[
-         12017,
-         12016
-      ],
-      "stop_name":"RIVERDALE MARC",
-      "stop_lat":38.962906,
-      "stop_lon":-76.934863
-   }
+    {
+        "stop_id": [
+            11940
+        ],
+        "stop_name": "MARTINSBURG W VA MARC",
+        "stop_lat": 39.461113,
+        "stop_lon": -77.961655,
+        "static_stops": [
+            {
+                "trainID": "train 875 (r/r+)",
+                "time": "6:39pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 879",
+                "time": "7:50pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 881 (r)",
+                "time": "8:25pm",
+                "direction": "inbound"
+            },
+            {
+                "time": "6:39pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "7:50pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "8:25pm",
+                "direction": "outbound"
+            }
+        ]
+    },
+    {
+        "stop_id": [
+            11941,
+            11975
+        ],
+        "stop_name": "DUFFIELDS W VA MARC",
+        "stop_lat": 39.362262,
+        "stop_lon": -77.826636,
+        "static_stops": []
+    },
+    {
+        "stop_id": [
+            11974,
+            11942
+        ],
+        "stop_name": "HARPERS FERRY W VA MARC",
+        "stop_lat": 39.324586,
+        "stop_lon": -77.730548,
+        "static_stops": [
+            {
+                "trainID": "train 875 (r/r+)",
+                "time": "5:49pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 879",
+                "time": "7:09pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 881 (r)",
+                "time": "7:40pm",
+                "direction": "inbound"
+            },
+            {
+                "time": "5:49pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "7:09pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "7:40pm",
+                "direction": "outbound"
+            }
+        ]
+    },
+    {
+        "stop_id": [
+            11973,
+            11943
+        ],
+        "stop_name": "BRUNSWICK MD MARC",
+        "stop_lat": 39.311949,
+        "stop_lon": -77.627027,
+        "static_stops": [
+            {
+                "trainID": "train 873",
+                "time": "4:51pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 875 (r/r+)",
+                "time": "5:38pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 877 (r+)",
+                "time": "6:28pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 879",
+                "time": "6:57pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 881 (r)",
+                "time": "7:30pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 883",
+                "time": "8:47pm",
+                "direction": "inbound"
+            },
+            {
+                "time": "4:51pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "5:38pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "6:28pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "6:57pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "7:30pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "8:47pm",
+                "direction": "outbound"
+            }
+        ]
+    },
+    {
+        "stop_id": [
+            11972,
+            11944
+        ],
+        "stop_name": "FREDERICK MARC",
+        "stop_lat": 39.412722,
+        "stop_lon": -77.405447,
+        "static_stops": [
+            {
+                "trainID": "train 891",
+                "time": "5:29pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 893 (r)",
+                "time": "6:59pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 895",
+                "time": "8:21pm",
+                "direction": "inbound"
+            },
+            {
+                "time": "5:29pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "6:59pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "8:21pm",
+                "direction": "outbound"
+            }
+        ]
+    },
+    {
+        "stop_id": [
+            11971,
+            11945
+        ],
+        "stop_name": "MONOCACY MARC",
+        "stop_lat": 39.38356,
+        "stop_lon": -77.393761,
+        "static_stops": [
+            {
+                "trainID": "train 891",
+                "time": "5:19pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 893 (r)",
+                "time": "6:49pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 895",
+                "time": "8:11pm",
+                "direction": "inbound"
+            },
+            {
+                "time": "5:19pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "6:49pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "8:11pm",
+                "direction": "outbound"
+            }
+        ]
+    },
+    {
+        "stop_id": [
+            11970,
+            11946
+        ],
+        "stop_name": "POINT OF ROCKS MARC",
+        "stop_lat": 39.273493,
+        "stop_lon": -77.53337,
+        "static_stops": [
+            {
+                "trainID": "train 873",
+                "time": "4:28pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 875 (r/r+)",
+                "time": "5:28pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 877 (r+)",
+                "time": "6:04pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 879",
+                "time": "6:46pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 881 (r)",
+                "time": "7:20pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 883",
+                "time": "8:23pm",
+                "direction": "inbound"
+            },
+            {
+                "time": "4:28pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "5:28pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "6:04pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "6:46pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "7:20pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "8:23pm",
+                "direction": "outbound"
+            }
+        ]
+    },
+    {
+        "stop_id": [
+            11969,
+            11947
+        ],
+        "stop_name": "DICKERSON MARC",
+        "stop_lat": 39.220195,
+        "stop_lon": -77.424031,
+        "static_stops": [
+            {
+                "trainID": "train 891",
+                "time": "4:36pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 877 (r+)",
+                "time": "5:54pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 879",
+                "time": "6:37pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 895",
+                "time": "7:37pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 883",
+                "time": "8:15pm",
+                "direction": "inbound"
+            },
+            {
+                "time": "4:36pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "5:54pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "6:37pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "7:37pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "8:15pm",
+                "direction": "outbound"
+            }
+        ]
+    },
+    {
+        "stop_id": [
+            11968,
+            11948
+        ],
+        "stop_name": "BARNESVILLE MARC",
+        "stop_lat": 39.209542,
+        "stop_lon": -77.382234,
+        "static_stops": [
+            {
+                "trainID": "train 873",
+                "time": "4:17pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 875 (r/r+)",
+                "time": "5:16pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 877 (r+)",
+                "time": "5:51pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 893 (r)",
+                "time": "6:09pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 879",
+                "time": "6:34pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 881 (r)",
+                "time": "7:09pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 895",
+                "time": "7:33pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 883",
+                "time": "8:11pm",
+                "direction": "inbound"
+            },
+            {
+                "time": "4:17pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "5:16pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "5:51pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "6:09pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "6:34pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "7:09pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "7:33pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "8:11pm",
+                "direction": "outbound"
+            }
+        ]
+    },
+    {
+        "stop_id": [
+            11967,
+            11949
+        ],
+        "stop_name": "BOYDS MARC",
+        "stop_lat": 39.183927,
+        "stop_lon": -77.312969,
+        "static_stops": [
+            {
+                "trainID": "train 891",
+                "time": "4:28pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 877 (r+)",
+                "time": "5:45pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 879",
+                "time": "6:29pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 895",
+                "time": "7:28pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 883",
+                "time": "8:07pm",
+                "direction": "inbound"
+            },
+            {
+                "time": "4:28pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "5:45pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "6:29pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "7:28pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "8:07pm",
+                "direction": "outbound"
+            }
+        ]
+    },
+    {
+        "stop_id": [
+            11966,
+            11950
+        ],
+        "stop_name": "GERMANTOWN MARC",
+        "stop_lat": 39.172523,
+        "stop_lon": -77.269566,
+        "static_stops": [
+            {
+                "trainID": "train 873",
+                "time": "4:10pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 891",
+                "time": "4:25pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 875 (r/r+)",
+                "time": "5:09pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 877 (r+)",
+                "time": "5:41pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 893 (r)",
+                "time": "6:02pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 879",
+                "time": "6:25pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 881 (r)",
+                "time": "7:03pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 895",
+                "time": "7:25pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 883",
+                "time": "8:04pm",
+                "direction": "inbound"
+            },
+            {
+                "time": "4:10pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "4:25pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "5:09pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "5:41pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "6:02pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "6:25pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "7:03pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "7:25pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "8:04pm",
+                "direction": "outbound"
+            }
+        ]
+    },
+    {
+        "stop_id": [
+            11965,
+            11951
+        ],
+        "stop_name": "METROPOLITAN GROVE MARC",
+        "stop_lat": 39.149791,
+        "stop_lon": -77.22711,
+        "static_stops": [
+            {
+                "trainID": "train 873",
+                "time": "4:06pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 891",
+                "time": "4:21pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 875 (r/r+)",
+                "time": "5:04pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 877 (r+)",
+                "time": "5:37pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 893 (r)",
+                "time": "5:57pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 879",
+                "time": "6:21pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 881 (r)",
+                "time": "6:58pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 895",
+                "time": "7:21pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 883",
+                "time": "8:00pm",
+                "direction": "inbound"
+            },
+            {
+                "time": "4:06pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "4:21pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "5:04pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "5:37pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "5:57pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "6:21pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "6:58pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "7:21pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "8:00pm",
+                "direction": "outbound"
+            }
+        ]
+    },
+    {
+        "stop_id": [
+            11964,
+            11952
+        ],
+        "stop_name": "GAITHERSBURG MARC",
+        "stop_lat": 39.141532,
+        "stop_lon": -77.193339,
+        "static_stops": [
+            {
+                "trainID": "train 873",
+                "time": "4:01pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 891",
+                "time": "4:18pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 875 (r/r+)",
+                "time": "5:00pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 877 (r+)",
+                "time": "5:32pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 893 (r)",
+                "time": "5:53pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 879",
+                "time": "6:17pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 881 (r)",
+                "time": "6:54pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 895",
+                "time": "7:17pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 883",
+                "time": "7:56pm",
+                "direction": "inbound"
+            },
+            {
+                "time": "4:01pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "4:18pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "5:00pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "5:32pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "5:53pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "6:17pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "6:54pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "7:17pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "7:56pm",
+                "direction": "outbound"
+            }
+        ]
+    },
+    {
+        "stop_id": [
+            11963,
+            11953
+        ],
+        "stop_name": "WASHINGTON GROVE MARC",
+        "stop_lat": 39.135089,
+        "stop_lon": -77.176378,
+        "static_stops": [
+            {
+                "trainID": "train 891",
+                "time": "4:15pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 877 (r+)",
+                "time": "5:29pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 879",
+                "time": "6:15pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 895",
+                "time": "7:14pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 883",
+                "time": "7:54pm",
+                "direction": "inbound"
+            },
+            {
+                "time": "4:15pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "5:29pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "6:15pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "7:14pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "7:54pm",
+                "direction": "outbound"
+            }
+        ]
+    },
+    {
+        "stop_id": [
+            11962,
+            11954
+        ],
+        "stop_name": "ROCKVILLE MARC",
+        "stop_lat": 39.085198,
+        "stop_lon": -77.146993,
+        "static_stops": [
+            {
+                "trainID": "train 873",
+                "time": "3:54pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 891",
+                "time": "4:10pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 875 (r/r+)",
+                "time": "4:53pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 877 (r+)",
+                "time": "5:23pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 893 (r)",
+                "time": "5:47pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 879",
+                "time": "6:09pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 881 (r)",
+                "time": "6:48pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 895",
+                "time": "7:08pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 883",
+                "time": "7:50pm",
+                "direction": "inbound"
+            },
+            {
+                "time": "3:54pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "4:10pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "4:53pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "5:23pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "5:47pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "6:09pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "6:48pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "7:08pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "7:50pm",
+                "direction": "outbound"
+            }
+        ]
+    },
+    {
+        "stop_id": [
+            11961,
+            11955
+        ],
+        "stop_name": "GARRETT PARK MARC",
+        "stop_lat": 39.038859,
+        "stop_lon": -77.093281,
+        "static_stops": [
+            {
+                "trainID": "train 891",
+                "time": "4:04pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 877 (r+)",
+                "time": "5:17pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 879",
+                "time": "6:03pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 881 (r)",
+                "time": "6:42pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 895",
+                "time": "7:02pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 883",
+                "time": "7:45pm",
+                "direction": "inbound"
+            },
+            {
+                "time": "4:04pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "5:17pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "6:03pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "6:42pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "7:02pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "7:45pm",
+                "direction": "outbound"
+            }
+        ]
+    },
+    {
+        "stop_id": [
+            11960,
+            11956
+        ],
+        "stop_name": "KENSINGTON MARC",
+        "stop_lat": 39.027125,
+        "stop_lon": -77.072188,
+        "static_stops": [
+            {
+                "trainID": "train 873",
+                "time": "3:47pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 875 (r/r+)",
+                "time": "4:44pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 877 (r+)",
+                "time": "5:13pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 893 (r)",
+                "time": "5:40pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 879",
+                "time": "5:59pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 881 (r)",
+                "time": "6:38pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 895",
+                "time": "6:59pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 883",
+                "time": "7:42pm",
+                "direction": "inbound"
+            },
+            {
+                "time": "3:47pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "4:44pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "5:13pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "5:40pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "5:59pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "6:38pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "6:59pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "7:42pm",
+                "direction": "outbound"
+            }
+        ]
+    },
+    {
+        "stop_id": [
+            11959,
+            11957
+        ],
+        "stop_name": "SILVER SPRING MARC",
+        "stop_lat": 38.994459,
+        "stop_lon": -77.030698,
+        "static_stops": [
+            {
+                "trainID": "train 873",
+                "time": "3:42pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 891",
+                "time": "3:58pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 875 (r/r+)",
+                "time": "4:39pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 877 (r+)",
+                "time": "5:07pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 893 (r)",
+                "time": "5:34pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 879",
+                "time": "5:54pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 881 (r)",
+                "time": "6:33pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 895",
+                "time": "6:53pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 883",
+                "time": "7:37pm",
+                "direction": "inbound"
+            },
+            {
+                "time": "3:42pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "3:58pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "4:39pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "5:07pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "5:34pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "5:54pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "6:33pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "6:53pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "7:37pm",
+                "direction": "outbound"
+            }
+        ]
+    },
+    {
+        "stop_id": [
+            11958
+        ],
+        "stop_name": "UNION STATION MARC Washington",
+        "stop_lat": 38.899036,
+        "stop_lon": -77.006795,
+        "static_stops": [
+            {
+                "trainID": "train 840",
+                "time": "6:32am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "7:00am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 844",
+                "time": "7:40am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 846 (r)",
+                "time": "8:00am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 848",
+                "time": "3:30pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 850",
+                "time": "4:13pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 852 (r)",
+                "time": "4:43pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 854",
+                "time": "5:22pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 856 (r)",
+                "time": "5:58pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 858 (r)",
+                "time": "6:55pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 860",
+                "time": "7:45pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 400",
+                "time": "5:40am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 502 (r)",
+                "time": "6:15am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 404",
+                "time": "6:35am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 408",
+                "time": "7:05am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 410 (r)",
+                "time": "7:20am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 610",
+                "time": "7:50am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 612 (r)",
+                "time": "8:20am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 412",
+                "time": "9:05am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 414 (r)",
+                "time": "9:45am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 416 (r)",
+                "time": "10:15am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 418",
+                "time": "11:15am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 520 (r)",
+                "time": "12:15pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 422",
+                "time": "1:15pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 424 (r)",
+                "time": "2:20pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 426 (r)",
+                "time": "3:15pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 532",
+                "time": "4:10pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 430",
+                "time": "4:20pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 428 (r)",
+                "time": "4:30pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 634 (r)",
+                "time": "4:50pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 536",
+                "time": "5:12pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 438 (r)",
+                "time": "5:20pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 440 (r)",
+                "time": "5:35pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 642 (r)",
+                "time": "5:55pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 544 (r)",
+                "time": "6:30pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 446",
+                "time": "7:05pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 448 (r)",
+                "time": "8:05pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 548",
+                "time": "9:00pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 452 (r)",
+                "time": "10:55pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 873",
+                "time": "3:30pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 891",
+                "time": "3:45pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 875 (r/r+)",
+                "time": "4:25pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 877 (r+)",
+                "time": "4:55pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 893 (r)",
+                "time": "5:20pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 879",
+                "time": "5:40pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 881 (r)",
+                "time": "6:20pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 895",
+                "time": "6:40pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 883",
+                "time": "7:25pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 452 (r)",
+                "time": "6:05am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 452 (r)",
+                "time": "6:29am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 452 (r)",
+                "time": "7:18am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 452 (r)",
+                "time": "7:44am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 452 (r)",
+                "time": "8:21am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 452 (r)",
+                "time": "9:12am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 452 (r)",
+                "time": "4:50pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 452 (r)",
+                "time": "5:35pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 452 (r)",
+                "time": "6:28pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 452 (r)",
+                "time": "7:23pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 452 (r)",
+                "time": "6:32am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 452 (r)",
+                "time": "7:00am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 452 (r)",
+                "time": "7:40am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 452 (r)",
+                "time": "8:00am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 452 (r)",
+                "time": "3:30pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 452 (r)",
+                "time": "4:13pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 452 (r)",
+                "time": "4:43pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 452 (r)",
+                "time": "5:22pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 452 (r)",
+                "time": "5:58pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 452 (r)",
+                "time": "6:55pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 452 (r)",
+                "time": "7:45pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 452 (r)",
+                "time": "5:40am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 452 (r)",
+                "time": "6:15am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 452 (r)",
+                "time": "6:35am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 452 (r)",
+                "time": "7:05am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 452 (r)",
+                "time": "7:20am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 452 (r)",
+                "time": "7:50am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 452 (r)",
+                "time": "8:20am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 452 (r)",
+                "time": "9:05am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 452 (r)",
+                "time": "9:45am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 452 (r)",
+                "time": "10:15am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 452 (r)",
+                "time": "11:15am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 452 (r)",
+                "time": "12:15pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 452 (r)",
+                "time": "1:15pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 452 (r)",
+                "time": "2:20pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 452 (r)",
+                "time": "3:15pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 452 (r)",
+                "time": "4:10pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 452 (r)",
+                "time": "4:20pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 452 (r)",
+                "time": "4:30pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 452 (r)",
+                "time": "4:50pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 452 (r)",
+                "time": "5:12pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 452 (r)",
+                "time": "5:20pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 452 (r)",
+                "time": "5:35pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 452 (r)",
+                "time": "5:55pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 452 (r)",
+                "time": "6:30pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 452 (r)",
+                "time": "7:05pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 452 (r)",
+                "time": "8:05pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 452 (r)",
+                "time": "9:00pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 452 (r)",
+                "time": "10:55pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 452 (r)",
+                "time": "3:30pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 452 (r)",
+                "time": "3:45pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 452 (r)",
+                "time": "4:25pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 452 (r)",
+                "time": "4:55pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 452 (r)",
+                "time": "5:20pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 452 (r)",
+                "time": "5:40pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 452 (r)",
+                "time": "6:20pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 452 (r)",
+                "time": "6:40pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 452 (r)",
+                "time": "7:25pm",
+                "direction": "outbound"
+            }
+        ]
+    },
+    {
+        "stop_id": [
+            11976
+        ],
+        "stop_name": "PERRYVILLE MARC",
+        "stop_lat": 39.558089,
+        "stop_lon": -76.07318,
+        "static_stops": [
+            {
+                "trainID": "train 554",
+                "time": "6:12am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 502 (r)",
+                "time": "8:17am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 520 (r)",
+                "time": "2:00pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 532",
+                "time": "5:48pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 536",
+                "time": "6:49pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 544 (r)",
+                "time": "8:18pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 548",
+                "time": "10:47pm",
+                "direction": "inbound"
+            },
+            {
+                "time": "6:12am",
+                "direction": "outbound"
+            },
+            {
+                "time": "8:17am",
+                "direction": "outbound"
+            },
+            {
+                "time": "2:00pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "5:48pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "6:49pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "8:18pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "10:47pm",
+                "direction": "outbound"
+            }
+        ]
+    },
+    {
+        "stop_id": [
+            12005,
+            11977
+        ],
+        "stop_name": "ABERDEEN MARC",
+        "stop_lat": 39.509146,
+        "stop_lon": -76.162588,
+        "static_stops": [
+            {
+                "trainID": "train 554",
+                "time": "6:05am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 502 (r)",
+                "time": "8:05am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 520 (r)",
+                "time": "1:49pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 532",
+                "time": "5:37pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 536",
+                "time": "6:32pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 544 (r)",
+                "time": "8:06pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 548",
+                "time": "10:35pm",
+                "direction": "inbound"
+            },
+            {
+                "time": "6:05am",
+                "direction": "outbound"
+            },
+            {
+                "time": "8:05am",
+                "direction": "outbound"
+            },
+            {
+                "time": "1:49pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "5:37pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "6:32pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "8:06pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "10:35pm",
+                "direction": "outbound"
+            }
+        ]
+    },
+    {
+        "stop_id": [
+            12004,
+            11978
+        ],
+        "stop_name": "EDGEWOOD MARC",
+        "stop_lat": 39.415967,
+        "stop_lon": -76.292139,
+        "static_stops": [
+            {
+                "trainID": "train 554",
+                "time": "5:57am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 502 (r)",
+                "time": "7:57am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 520 (r)",
+                "time": "1:41pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 532",
+                "time": "5:27pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 536",
+                "time": "6:22pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 544 (r)",
+                "time": "7:58pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 548",
+                "time": "10:27pm",
+                "direction": "inbound"
+            },
+            {
+                "time": "5:57am",
+                "direction": "outbound"
+            },
+            {
+                "time": "7:57am",
+                "direction": "outbound"
+            },
+            {
+                "time": "1:41pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "5:27pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "6:22pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "7:58pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "10:27pm",
+                "direction": "outbound"
+            }
+        ]
+    },
+    {
+        "stop_id": [
+            12003,
+            11979
+        ],
+        "stop_name": "MARTIN AIRPORT MARC",
+        "stop_lat": 39.338324,
+        "stop_lon": -76.419307,
+        "static_stops": [
+            {
+                "trainID": "train 502 (r)",
+                "time": "7:34am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 610",
+                "time": "9:14am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 612 (r)",
+                "time": "9:39am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 520 (r)",
+                "time": "1:29pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 532",
+                "time": "5:14pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 634 (r)",
+                "time": "6:02pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 536",
+                "time": "6:09pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 642 (r)",
+                "time": "7:25pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 544 (r)",
+                "time": "7:43pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 548",
+                "time": "10:12pm",
+                "direction": "inbound"
+            },
+            {
+                "time": "7:34am",
+                "direction": "outbound"
+            },
+            {
+                "time": "9:14am",
+                "direction": "outbound"
+            },
+            {
+                "time": "9:39am",
+                "direction": "outbound"
+            },
+            {
+                "time": "1:29pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "5:14pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "6:02pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "6:09pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "7:25pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "7:43pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "10:12pm",
+                "direction": "outbound"
+            }
+        ]
+    },
+    {
+        "stop_id": [
+            12002,
+            11980
+        ],
+        "stop_name": "PENN STATION MARC",
+        "stop_lat": 39.307177,
+        "stop_lon": -76.615903,
+        "static_stops": [
+            {
+                "trainID": "train 554",
+                "time": "5:25am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 400",
+                "time": "6:41am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 502 (r)",
+                "time": "7:20am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 404",
+                "time": "7:31am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 408",
+                "time": "7:46am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 410 (r)",
+                "time": "8:20am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 610",
+                "time": "8:43am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 612 (r)",
+                "time": "9:18am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 412",
+                "time": "10:00am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 414 (r)",
+                "time": "10:41am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 416 (r)",
+                "time": "11:15am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 418",
+                "time": "12:15pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 520 (r)",
+                "time": "1:17pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 422",
+                "time": "2:20pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 424 (r)",
+                "time": "3:20pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 426 (r)",
+                "time": "4:21pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 532",
+                "time": "5:01pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 430",
+                "time": "5:15pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 428 (r)",
+                "time": "5:25pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 634 (r)",
+                "time": "5:41pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 536",
+                "time": "5:56pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 438 (r)",
+                "time": "6:19pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 440 (r)",
+                "time": "6:41pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 642 (r)",
+                "time": "7:04pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 544 (r)",
+                "time": "7:31pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 446",
+                "time": "8:03pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 448 (r)",
+                "time": "9:05pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 548",
+                "time": "10:00pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 452 (r)",
+                "time": "11:55pm",
+                "direction": "inbound"
+            },
+            {
+                "time": "5:25am",
+                "direction": "outbound"
+            },
+            {
+                "time": "6:41am",
+                "direction": "outbound"
+            },
+            {
+                "time": "7:20am",
+                "direction": "outbound"
+            },
+            {
+                "time": "7:31am",
+                "direction": "outbound"
+            },
+            {
+                "time": "7:46am",
+                "direction": "outbound"
+            },
+            {
+                "time": "8:20am",
+                "direction": "outbound"
+            },
+            {
+                "time": "8:43am",
+                "direction": "outbound"
+            },
+            {
+                "time": "9:18am",
+                "direction": "outbound"
+            },
+            {
+                "time": "10:00am",
+                "direction": "outbound"
+            },
+            {
+                "time": "10:41am",
+                "direction": "outbound"
+            },
+            {
+                "time": "11:15am",
+                "direction": "outbound"
+            },
+            {
+                "time": "12:15pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "1:17pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "2:20pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "3:20pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "4:21pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "5:01pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "5:15pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "5:25pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "5:41pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "5:56pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "6:19pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "6:41pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "7:04pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "7:31pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "8:03pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "9:05pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "10:00pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "11:55pm",
+                "direction": "outbound"
+            }
+        ]
+    },
+    {
+        "stop_id": [
+            11995,
+            11981
+        ],
+        "stop_name": "WEST BALTIMORE MARC",
+        "stop_lat": 39.293344,
+        "stop_lon": -76.653102,
+        "static_stops": [
+            {
+                "trainID": "train 400",
+                "time": "6:27am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 502 (r)",
+                "time": "7:08am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 404",
+                "time": "7:18am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 410 (r)",
+                "time": "8:06am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 610",
+                "time": "8:31am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 612 (r)",
+                "time": "9:06am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 414 (r)",
+                "time": "10:28am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 416 (r)",
+                "time": "11:01am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 418",
+                "time": "12:01pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 520 (r)",
+                "time": "1:01pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 422",
+                "time": "2:07pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 424 (r)",
+                "time": "3:06pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 426 (r)",
+                "time": "4:07pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 430",
+                "time": "5:05pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 634 (r)",
+                "time": "5:31pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 438 (r)",
+                "time": "6:04pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 440 (r)",
+                "time": "6:28pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 642 (r)",
+                "time": "6:51pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 544 (r)",
+                "time": "7:17pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 446",
+                "time": "7:51pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 448 (r)",
+                "time": "8:53pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 548",
+                "time": "9:46pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 452 (r)",
+                "time": "11:41pm",
+                "direction": "inbound"
+            },
+            {
+                "time": "6:27am",
+                "direction": "outbound"
+            },
+            {
+                "time": "7:08am",
+                "direction": "outbound"
+            },
+            {
+                "time": "7:18am",
+                "direction": "outbound"
+            },
+            {
+                "time": "8:06am",
+                "direction": "outbound"
+            },
+            {
+                "time": "8:31am",
+                "direction": "outbound"
+            },
+            {
+                "time": "9:06am",
+                "direction": "outbound"
+            },
+            {
+                "time": "10:28am",
+                "direction": "outbound"
+            },
+            {
+                "time": "11:01am",
+                "direction": "outbound"
+            },
+            {
+                "time": "12:01pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "1:01pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "2:07pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "3:06pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "4:07pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "5:05pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "5:31pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "6:04pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "6:28pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "6:51pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "7:17pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "7:51pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "8:53pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "9:46pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "11:41pm",
+                "direction": "outbound"
+            }
+        ]
+    },
+    {
+        "stop_id": [
+            11994,
+            11982
+        ],
+        "stop_name": "HALETHORPE MARC",
+        "stop_lat": 39.23878,
+        "stop_lon": -76.691196,
+        "static_stops": [
+            {
+                "trainID": "train 502 (r)",
+                "time": "7:01am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 410 (r)",
+                "time": "8:00am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 610",
+                "time": "8:25am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 612 (r)",
+                "time": "9:00am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 414 (r)",
+                "time": "10:22am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 416 (r)",
+                "time": "10:55am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 418",
+                "time": "11:55am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 520 (r)",
+                "time": "12:55pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 422",
+                "time": "2:01pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 424 (r)",
+                "time": "3:00pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 426 (r)",
+                "time": "4:00pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 430",
+                "time": "4:58pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 438 (r)",
+                "time": "5:58pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 440 (r)",
+                "time": "6:21pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 642 (r)",
+                "time": "6:44pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 544 (r)",
+                "time": "7:11pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 446",
+                "time": "7:45pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 448 (r)",
+                "time": "8:47pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 548",
+                "time": "9:40pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 452 (r)",
+                "time": "11:35pm",
+                "direction": "inbound"
+            },
+            {
+                "time": "7:01am",
+                "direction": "outbound"
+            },
+            {
+                "time": "8:00am",
+                "direction": "outbound"
+            },
+            {
+                "time": "8:25am",
+                "direction": "outbound"
+            },
+            {
+                "time": "9:00am",
+                "direction": "outbound"
+            },
+            {
+                "time": "10:22am",
+                "direction": "outbound"
+            },
+            {
+                "time": "10:55am",
+                "direction": "outbound"
+            },
+            {
+                "time": "11:55am",
+                "direction": "outbound"
+            },
+            {
+                "time": "12:55pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "2:01pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "3:00pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "4:00pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "4:58pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "5:58pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "6:21pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "6:44pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "7:11pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "7:45pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "8:47pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "9:40pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "11:35pm",
+                "direction": "outbound"
+            }
+        ]
+    },
+    {
+        "stop_id": [
+            11993,
+            11984
+        ],
+        "stop_name": "BWI RAIL STATION MARC",
+        "stop_lat": 39.192327,
+        "stop_lon": -76.69456,
+        "static_stops": [
+            {
+                "trainID": "train 400",
+                "time": "6:14am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 502 (r)",
+                "time": "6:54am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 404",
+                "time": "7:07am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 410 (r)",
+                "time": "7:54am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 610",
+                "time": "8:19am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 612 (r)",
+                "time": "8:54am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 412",
+                "time": "9:39am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 414 (r)",
+                "time": "10:16am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 416 (r)",
+                "time": "10:49am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 418",
+                "time": "11:49am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 520 (r)",
+                "time": "12:49pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 422",
+                "time": "1:55pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 424 (r)",
+                "time": "2:54pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 426 (r)",
+                "time": "3:53pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 430",
+                "time": "4:52pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 428 (r)",
+                "time": "5:05pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 536",
+                "time": "5:39pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 440 (r)",
+                "time": "6:15pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 642 (r)",
+                "time": "6:38pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 544 (r)",
+                "time": "7:05pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 446",
+                "time": "7:39pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 448 (r)",
+                "time": "8:41pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 548",
+                "time": "9:34pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 452 (r)",
+                "time": "11:29pm",
+                "direction": "inbound"
+            },
+            {
+                "time": "6:14am",
+                "direction": "outbound"
+            },
+            {
+                "time": "6:54am",
+                "direction": "outbound"
+            },
+            {
+                "time": "7:07am",
+                "direction": "outbound"
+            },
+            {
+                "time": "7:54am",
+                "direction": "outbound"
+            },
+            {
+                "time": "8:19am",
+                "direction": "outbound"
+            },
+            {
+                "time": "8:54am",
+                "direction": "outbound"
+            },
+            {
+                "time": "9:39am",
+                "direction": "outbound"
+            },
+            {
+                "time": "10:16am",
+                "direction": "outbound"
+            },
+            {
+                "time": "10:49am",
+                "direction": "outbound"
+            },
+            {
+                "time": "11:49am",
+                "direction": "outbound"
+            },
+            {
+                "time": "12:49pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "1:55pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "2:54pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "3:53pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "4:52pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "5:05pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "5:39pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "6:15pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "6:38pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "7:05pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "7:39pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "8:41pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "9:34pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "11:29pm",
+                "direction": "outbound"
+            }
+        ]
+    },
+    {
+        "stop_id": [
+            11992,
+            11985
+        ],
+        "stop_name": "ODENTON MARC",
+        "stop_lat": 39.08686,
+        "stop_lon": -76.706099,
+        "static_stops": [
+            {
+                "trainID": "train 400",
+                "time": "6:07am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 502 (r)",
+                "time": "6:42am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 404",
+                "time": "7:00am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 410 (r)",
+                "time": "7:47am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 610",
+                "time": "8:12am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 612 (r)",
+                "time": "8:47am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 412",
+                "time": "9:32am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 414 (r)",
+                "time": "10:09am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 416 (r)",
+                "time": "10:42am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 418",
+                "time": "11:42am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 520 (r)",
+                "time": "12:42pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 422",
+                "time": "1:47pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 424 (r)",
+                "time": "2:47pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 426 (r)",
+                "time": "3:44pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 532",
+                "time": "4:38pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 428 (r)",
+                "time": "4:57pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 634 (r)",
+                "time": "5:15pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 438 (r)",
+                "time": "5:46pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 440 (r)",
+                "time": "6:06pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 642 (r)",
+                "time": "6:29pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 544 (r)",
+                "time": "6:58pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 446",
+                "time": "7:32pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 448 (r)",
+                "time": "8:32pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 548",
+                "time": "9:27pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 452 (r)",
+                "time": "11:22pm",
+                "direction": "inbound"
+            },
+            {
+                "time": "6:07am",
+                "direction": "outbound"
+            },
+            {
+                "time": "6:42am",
+                "direction": "outbound"
+            },
+            {
+                "time": "7:00am",
+                "direction": "outbound"
+            },
+            {
+                "time": "7:47am",
+                "direction": "outbound"
+            },
+            {
+                "time": "8:12am",
+                "direction": "outbound"
+            },
+            {
+                "time": "8:47am",
+                "direction": "outbound"
+            },
+            {
+                "time": "9:32am",
+                "direction": "outbound"
+            },
+            {
+                "time": "10:09am",
+                "direction": "outbound"
+            },
+            {
+                "time": "10:42am",
+                "direction": "outbound"
+            },
+            {
+                "time": "11:42am",
+                "direction": "outbound"
+            },
+            {
+                "time": "12:42pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "1:47pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "2:47pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "3:44pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "4:38pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "4:57pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "5:15pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "5:46pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "6:06pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "6:29pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "6:58pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "7:32pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "8:32pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "9:27pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "11:22pm",
+                "direction": "outbound"
+            }
+        ]
+    },
+    {
+        "stop_id": [
+            11991,
+            11986
+        ],
+        "stop_name": "BOWIE STATE MARC",
+        "stop_lat": 39.020792,
+        "stop_lon": -76.762049,
+        "static_stops": [
+            {
+                "trainID": "train 400",
+                "time": "6:01am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 502 (r)",
+                "time": "6:36am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 410 (r)",
+                "time": "7:41am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 610",
+                "time": "8:06am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 612 (r)",
+                "time": "8:41am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 412",
+                "time": "9:26am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 416 (r)",
+                "time": "10:36am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 418",
+                "time": "11:36am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 520 (r)",
+                "time": "12:36pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 422",
+                "time": "1:41pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 424 (r)",
+                "time": "2:41pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 426 (r)",
+                "time": "3:38pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 428 (r)",
+                "time": "4:51pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 634 (r)",
+                "time": "5:07pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 440 (r)",
+                "time": "5:58pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 642 (r)",
+                "time": "6:21pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 544 (r)",
+                "time": "6:52pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 446",
+                "time": "7:26pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 448 (r)",
+                "time": "8:26pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 548",
+                "time": "9:21pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 452 (r)",
+                "time": "11:16pm",
+                "direction": "inbound"
+            },
+            {
+                "time": "6:01am",
+                "direction": "outbound"
+            },
+            {
+                "time": "6:36am",
+                "direction": "outbound"
+            },
+            {
+                "time": "7:41am",
+                "direction": "outbound"
+            },
+            {
+                "time": "8:06am",
+                "direction": "outbound"
+            },
+            {
+                "time": "8:41am",
+                "direction": "outbound"
+            },
+            {
+                "time": "9:26am",
+                "direction": "outbound"
+            },
+            {
+                "time": "10:36am",
+                "direction": "outbound"
+            },
+            {
+                "time": "11:36am",
+                "direction": "outbound"
+            },
+            {
+                "time": "12:36pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "1:41pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "2:41pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "3:38pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "4:51pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "5:07pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "5:58pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "6:21pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "6:52pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "7:26pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "8:26pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "9:21pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "11:16pm",
+                "direction": "outbound"
+            }
+        ]
+    },
+    {
+        "stop_id": [
+            11990,
+            11987
+        ],
+        "stop_name": "SEABROOK MARC",
+        "stop_lat": 38.973444,
+        "stop_lon": -76.842772,
+        "static_stops": [
+            {
+                "trainID": "train 400",
+                "time": "5:55am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 502 (r)",
+                "time": "6:30am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 410 (r)",
+                "time": "7:35am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 612 (r)",
+                "time": "8:35am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 412",
+                "time": "9:20am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 416 (r)",
+                "time": "10:30am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 418",
+                "time": "11:30am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 520 (r)",
+                "time": "12:30pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 422",
+                "time": "1:35pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 424 (r)",
+                "time": "2:35pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 426 (r)",
+                "time": "3:32pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 428 (r)",
+                "time": "4:44pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 440 (r)",
+                "time": "5:51pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 642 (r)",
+                "time": "6:14pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 544 (r)",
+                "time": "6:46pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 446",
+                "time": "7:20pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 448 (r)",
+                "time": "8:20pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 548",
+                "time": "9:15pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 452 (r)",
+                "time": "11:10pm",
+                "direction": "inbound"
+            },
+            {
+                "time": "5:55am",
+                "direction": "outbound"
+            },
+            {
+                "time": "6:30am",
+                "direction": "outbound"
+            },
+            {
+                "time": "7:35am",
+                "direction": "outbound"
+            },
+            {
+                "time": "8:35am",
+                "direction": "outbound"
+            },
+            {
+                "time": "9:20am",
+                "direction": "outbound"
+            },
+            {
+                "time": "10:30am",
+                "direction": "outbound"
+            },
+            {
+                "time": "11:30am",
+                "direction": "outbound"
+            },
+            {
+                "time": "12:30pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "1:35pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "2:35pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "3:32pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "4:44pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "5:51pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "6:14pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "6:46pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "7:20pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "8:20pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "9:15pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "11:10pm",
+                "direction": "outbound"
+            }
+        ]
+    },
+    {
+        "stop_id": [
+            11989,
+            11988
+        ],
+        "stop_name": "NEW CARROLLTON MARC",
+        "stop_lat": 38.946969,
+        "stop_lon": -76.873141,
+        "static_stops": [
+            {
+                "trainID": "train 400",
+                "time": "5:51am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 502 (r)",
+                "time": "6:26am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 404",
+                "time": "6:46am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 410 (r)",
+                "time": "7:31am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 612 (r)",
+                "time": "8:31am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 412",
+                "time": "9:16am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 414 (r)",
+                "time": "9:56am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 416 (r)",
+                "time": "10:26am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 418",
+                "time": "11:26am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 520 (r)",
+                "time": "12:26pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 422",
+                "time": "1:31pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 424 (r)",
+                "time": "2:31pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 426 (r)",
+                "time": "3:28pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 532",
+                "time": "4:22pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 430",
+                "time": "4:30pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 428 (r)",
+                "time": "4:40pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 438 (r)",
+                "time": "5:32pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 440 (r)",
+                "time": "5:47pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 642 (r)",
+                "time": "6:10pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 544 (r)",
+                "time": "6:42pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 446",
+                "time": "7:16pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 448 (r)",
+                "time": "8:16pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 548",
+                "time": "9:11pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 452 (r)",
+                "time": "11:06pm",
+                "direction": "inbound"
+            },
+            {
+                "time": "5:51am",
+                "direction": "outbound"
+            },
+            {
+                "time": "6:26am",
+                "direction": "outbound"
+            },
+            {
+                "time": "6:46am",
+                "direction": "outbound"
+            },
+            {
+                "time": "7:31am",
+                "direction": "outbound"
+            },
+            {
+                "time": "8:31am",
+                "direction": "outbound"
+            },
+            {
+                "time": "9:16am",
+                "direction": "outbound"
+            },
+            {
+                "time": "9:56am",
+                "direction": "outbound"
+            },
+            {
+                "time": "10:26am",
+                "direction": "outbound"
+            },
+            {
+                "time": "11:26am",
+                "direction": "outbound"
+            },
+            {
+                "time": "12:26pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "1:31pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "2:31pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "3:28pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "4:22pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "4:30pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "4:40pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "5:32pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "5:47pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "6:10pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "6:42pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "7:16pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "8:16pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "9:11pm",
+                "direction": "outbound"
+            },
+            {
+                "time": "11:06pm",
+                "direction": "outbound"
+            }
+        ]
+    },
+    {
+        "stop_id": [
+            12006
+        ],
+        "stop_name": "CAMDEN STATION MARC",
+        "stop_lat": 39.283877,
+        "stop_lon": -76.619664,
+        "static_stops": [
+            {
+                "trainID": "train 840",
+                "time": "7:43am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "8:12am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 844",
+                "time": "8:48am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 846 (r)",
+                "time": "9:08am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 850",
+                "time": "5:25pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 852 (r)",
+                "time": "6:00pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 854",
+                "time": "6:41pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 856 (r)",
+                "time": "7:13pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 858 (r)",
+                "time": "8:03pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 860",
+                "time": "8:55pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "5:00am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "5:30am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "6:10am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "6:30am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "7:10am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "8:05am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "3:40pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "5:20pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "6:15pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "7:43am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "8:12am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "8:48am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "9:08am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "5:25pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "6:00pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "6:41pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "7:13pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "8:03pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "8:55pm",
+                "direction": "outbound"
+            }
+        ]
+    },
+    {
+        "stop_id": [
+            12026,
+            12007
+        ],
+        "stop_name": "ST DENIS MARC",
+        "stop_lat": 39.224047,
+        "stop_lon": -76.704818,
+        "static_stops": [
+            {
+                "trainID": "train 852 (r)",
+                "time": "5:31pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 854",
+                "time": "6:13pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 858 (r)",
+                "time": "7:39pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "5:11am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "6:42am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "8:17am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "5:31pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "6:13pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "7:39pm",
+                "direction": "outbound"
+            }
+        ]
+    },
+    {
+        "stop_id": [
+            12025,
+            12008
+        ],
+        "stop_name": "DORSEY MARC",
+        "stop_lat": 39.18134,
+        "stop_lon": -76.745306,
+        "static_stops": [
+            {
+                "trainID": "train 840",
+                "time": "7:11am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "7:39am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 844",
+                "time": "8:18am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 846 (r)",
+                "time": "8:40am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 848",
+                "time": "4:20pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 850",
+                "time": "4:49pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 852 (r)",
+                "time": "5:23pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 854",
+                "time": "6:04pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 856 (r)",
+                "time": "6:35pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 858 (r)",
+                "time": "7:32pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 860",
+                "time": "8:24pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "5:18am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "5:48am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "6:27am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "6:50am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "7:29am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "8:24am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "3:58pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "4:45pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "5:37pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "6:34pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "7:11am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "7:39am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "8:18am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "8:40am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "4:20pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "4:49pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "5:23pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "6:04pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "6:35pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "7:32pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "8:24pm",
+                "direction": "outbound"
+            }
+        ]
+    },
+    {
+        "stop_id": [
+            12024,
+            12009
+        ],
+        "stop_name": "JESSUP MARC",
+        "stop_lat": 39.151525,
+        "stop_lon": -76.776332,
+        "static_stops": [
+            {
+                "trainID": "train 854",
+                "time": "5:59pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "6:53am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "5:59pm",
+                "direction": "outbound"
+            }
+        ]
+    },
+    {
+        "stop_id": [
+            12023,
+            12010
+        ],
+        "stop_name": "SAVAGE MARC",
+        "stop_lat": 39.122855,
+        "stop_lon": -76.796351,
+        "static_stops": [
+            {
+                "trainID": "train 840",
+                "time": "7:05am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "7:34am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 844",
+                "time": "8:13am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 846 (r)",
+                "time": "8:34am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 848",
+                "time": "4:02pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 850",
+                "time": "4:43pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 852 (r)",
+                "time": "5:17pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 854",
+                "time": "5:56pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 856 (r)",
+                "time": "6:29pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 858 (r)",
+                "time": "7:26pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 860",
+                "time": "8:18pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "5:24am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "5:54am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "6:33am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "6:57am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "7:35am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "8:31am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "4:04pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "4:51pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "5:43pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "6:40pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "7:05am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "7:34am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "8:13am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "8:34am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "4:02pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "4:43pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "5:17pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "5:56pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "6:29pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "7:26pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "8:18pm",
+                "direction": "outbound"
+            }
+        ]
+    },
+    {
+        "stop_id": [
+            12011
+        ],
+        "stop_name": "LAUREL RACETRACK MARC",
+        "stop_lat": 39.105464,
+        "stop_lon": -76.834411,
+        "static_stops": [
+            {
+                "trainID": "train 842",
+                "time": "4:09pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "5:48pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "6:44pm",
+                "direction": "outbound"
+            }
+        ]
+    },
+    {
+        "stop_id": [
+            12021,
+            12012
+        ],
+        "stop_name": "LAUREL MARC",
+        "stop_lat": 39.101817,
+        "stop_lon": -76.842109,
+        "static_stops": [
+            {
+                "trainID": "train 840",
+                "time": "7:00am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "7:28am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 844",
+                "time": "8:08am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 846 (r)",
+                "time": "8:27am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 848",
+                "time": "3:57pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 850",
+                "time": "4:37pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 852 (r)",
+                "time": "5:11pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 854",
+                "time": "5:50pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 856 (r)",
+                "time": "6:23pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 858 (r)",
+                "time": "7:21pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 860",
+                "time": "8:13pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "5:28am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "5:59am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "6:38am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "7:01am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "7:40am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "8:36am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "4:10pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "4:56pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "5:49pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "6:46pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "7:00am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "7:28am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "8:08am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "8:27am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "3:57pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "4:37pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "5:11pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "5:50pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "6:23pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "7:21pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "8:13pm",
+                "direction": "outbound"
+            }
+        ]
+    },
+    {
+        "stop_id": [
+            12020,
+            12013
+        ],
+        "stop_name": "MUIRKIRK MARC",
+        "stop_lat": 39.062044,
+        "stop_lon": -76.884971,
+        "static_stops": [
+            {
+                "trainID": "train 840",
+                "time": "6:54am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "7:22am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 844",
+                "time": "8:01am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 846 (r)",
+                "time": "8:21am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 848",
+                "time": "3:51pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 850",
+                "time": "4:32pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 852 (r)",
+                "time": "5:05pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 854",
+                "time": "5:45pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 856 (r)",
+                "time": "6:17pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 858 (r)",
+                "time": "7:15pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 860",
+                "time": "8:07pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "5:33am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "6:04am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "6:43am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "7:06am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "7:45am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "8:41am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "4:15pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "5:01pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "5:53pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "6:50pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "6:54am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "7:22am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "8:01am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "8:21am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "3:51pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "4:32pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "5:05pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "5:45pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "6:17pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "7:15pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "8:07pm",
+                "direction": "outbound"
+            }
+        ]
+    },
+    {
+        "stop_id": [
+            12019,
+            12014
+        ],
+        "stop_name": "GREENBELT MARC",
+        "stop_lat": 39.010192,
+        "stop_lon": -76.912127,
+        "static_stops": [
+            {
+                "trainID": "train 840",
+                "time": "6:48am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "7:16am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 844",
+                "time": "7:56am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 846 (r)",
+                "time": "8:16am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 848",
+                "time": "3:45pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 852 (r)",
+                "time": "4:59pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 854",
+                "time": "5:39pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 858 (r)",
+                "time": "7:10pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 860",
+                "time": "8:01pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "5:39am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "6:49am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "7:11am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "8:46am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "4:21pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "5:59pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "6:56pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "6:48am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "7:16am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "7:56am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "8:16am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "3:45pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "4:59pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "5:39pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "7:10pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "8:01pm",
+                "direction": "outbound"
+            }
+        ]
+    },
+    {
+        "stop_id": [
+            12018,
+            12015
+        ],
+        "stop_name": "COLLEGE PARK MARC",
+        "stop_lat": 38.976141,
+        "stop_lon": -76.929389,
+        "static_stops": [
+            {
+                "trainID": "train 840",
+                "time": "6:44am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "7:12am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 844",
+                "time": "7:52am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 846 (r)",
+                "time": "8:12am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 848",
+                "time": "3:42pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 850",
+                "time": "4:24pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 852 (r)",
+                "time": "4:55pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 854",
+                "time": "5:34pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 856 (r)",
+                "time": "6:08pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 858 (r)",
+                "time": "7:06pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 860",
+                "time": "7:57pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "5:43am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "6:55am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "7:15am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "7:52am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "8:50am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "4:25pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "5:08pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "6:03pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "7:00pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "6:44am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "7:12am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "7:52am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "8:12am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "3:42pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "4:24pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "4:55pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "5:34pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "6:08pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "7:06pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "7:57pm",
+                "direction": "outbound"
+            }
+        ]
+    },
+    {
+        "stop_id": [
+            12017,
+            12016
+        ],
+        "stop_name": "RIVERDALE MARC",
+        "stop_lat": 38.962906,
+        "stop_lon": -76.934863,
+        "static_stops": [
+            {
+                "trainID": "train 840",
+                "time": "6:41am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "7:09am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 844",
+                "time": "7:49am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 846 (r)",
+                "time": "8:09am",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 848",
+                "time": "3:39pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 852 (r)",
+                "time": "4:52pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 854",
+                "time": "5:32pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 858 (r)",
+                "time": "7:04pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 860",
+                "time": "7:54pm",
+                "direction": "inbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "5:45am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "6:57am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "7:17am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "8:52am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "4:27pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "6:05pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "7:02pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "6:41am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "7:09am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "7:49am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "8:09am",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "3:39pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "4:52pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "5:32pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "7:04pm",
+                "direction": "outbound"
+            },
+            {
+                "trainID": "train 842",
+                "time": "7:54pm",
+                "direction": "outbound"
+            }
+        ]
+    }
 ]
