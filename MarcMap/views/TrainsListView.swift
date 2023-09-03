@@ -8,7 +8,6 @@
 
 import Foundation
 import SwiftUI
-import WeatherKit
 import CoreLocation
 
 @available(iOS 16.0, *)
@@ -16,7 +15,6 @@ struct TrainsListView: View {
     //1.
     @State var trains = [Train]()
     @State var tripDetails = [tripUpdate]()
-    @State var currentWeather : CurrentWeather?
     @State var activeTrainId = ""
     @State var trainShowed : [Bool] = []
     var timer = Timer()
@@ -81,7 +79,6 @@ struct TrainsListView: View {
                 Spacer()
               
             }
-            FooterView()
             
         }
             //2.

@@ -1,0 +1,65 @@
+{
+  "_buildCommand2" : {
+    "command" : "prepareForIndexing",
+    "enableIndexBuildArena" : true,
+    "targets" : null
+  },
+  "buildCommand" : "build",
+  "configuredTargets" : [
+    {
+      "guid" : "9f02729d66d4427b3a0ac784a5782303cb58be891d59c3e0ea092e0407b2b188"
+    },
+    {
+      "guid" : "9f02729d66d4427b3a0ac784a5782303931f7f4aaabb1f19fa3b166a3e9b30dc"
+    },
+    {
+      "guid" : "9f02729d66d4427b3a0ac784a57823035ae894cf1ba1a647e1c27bc018d9888d"
+    }
+  ],
+  "containerPath" : "/Users/quinnpatwardhan/Desktop/MarcMap/MarcMap.xcodeproj",
+  "continueBuildingAfterErrors" : true,
+  "enableIndexBuildArena" : false,
+  "hideShellScriptEnvironment" : false,
+  "parameters" : {
+    "action" : "indexbuild",
+    "activeArchitecture" : "arm64",
+    "activeRunDestination" : {
+      "disableOnlyActiveArch" : false,
+      "platform" : "iphonesimulator",
+      "sdk" : "iphonesimulator16.2",
+      "sdkVariant" : "iphonesimulator",
+      "supportedArchitectures" : [
+        "arm64",
+        "x86_64"
+      ],
+      "targetArchitecture" : "arm64"
+    },
+    "arenaInfo" : {
+      "buildIntermediatesPath" : "/Users/quinnpatwardhan/Desktop/MarcMap/DerivedData/MarcMap/Index.noindex/Build/Intermediates.noindex",
+      "buildProductsPath" : "/Users/quinnpatwardhan/Desktop/MarcMap/DerivedData/MarcMap/Index.noindex/Build/Products",
+      "derivedDataPath" : "/Users/quinnpatwardhan/Desktop/MarcMap/DerivedData",
+      "indexDataStoreFolderPath" : "/Users/quinnpatwardhan/Desktop/MarcMap/DerivedData/MarcMap/Index.noindex/DataStore",
+      "indexEnableDataStore" : true,
+      "indexPCHPath" : "/Users/quinnpatwardhan/Desktop/MarcMap/DerivedData/MarcMap/Index.noindex/PrecompiledHeaders",
+      "pchPath" : "/Users/quinnpatwardhan/Desktop/MarcMap/DerivedData/MarcMap/Index.noindex/Build/Intermediates.noindex/PrecompiledHeaders"
+    },
+    "configurationName" : "Debug",
+    "overrides" : {
+      "synthesized" : {
+        "table" : {
+          "ENABLE_PREVIEWS" : "NO",
+          "INDEX_ARENA_INFO_REGULAR_BUILD_PRODUCTS_DIR" : "/Users/quinnpatwardhan/Desktop/MarcMap/DerivedData/MarcMap/Build/Products",
+          "ONLY_ACTIVE_ARCH" : "YES"
+        }
+      }
+    }
+  },
+  "qos" : "utility",
+  "schemeCommand" : "launch",
+  "schemeCommand2" : "launch",
+  "showNonLoggedProgress" : true,
+  "useDryRun" : false,
+  "useImplicitDependencies" : true,
+  "useLegacyBuildLocations" : false,
+  "useParallelTargets" : true
+}

@@ -13,6 +13,7 @@ struct station: Codable, Identifiable {
     let stop_lat: Double
     let stop_lon: Double
     let static_stops: [timetable_stop]
+    let defaultLine: [String]
 }
 
 struct timetable_stop: Codable, Identifiable {

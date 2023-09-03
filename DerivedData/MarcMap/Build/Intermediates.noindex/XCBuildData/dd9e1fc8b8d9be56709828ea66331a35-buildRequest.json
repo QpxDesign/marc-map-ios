@@ -1,0 +1,64 @@
+{
+  "_buildCommand2" : {
+    "command" : "build",
+    "skipDependencies" : false,
+    "style" : "buildAndRun"
+  },
+  "buildCommand" : "build",
+  "configuredTargets" : [
+    {
+      "guid" : "9f02729d66d4427b3a0ac784a5782303cb58be891d59c3e0ea092e0407b2b188"
+    }
+  ],
+  "containerPath" : "/Users/quinnpatwardhan/Desktop/MarcMap/MarcMap.xcodeproj",
+  "continueBuildingAfterErrors" : false,
+  "enableIndexBuildArena" : false,
+  "hideShellScriptEnvironment" : false,
+  "parameters" : {
+    "action" : "build",
+    "activeArchitecture" : "arm64",
+    "activeRunDestination" : {
+      "disableOnlyActiveArch" : false,
+      "platform" : "iphonesimulator",
+      "sdk" : "iphonesimulator16.2",
+      "sdkVariant" : "iphonesimulator",
+      "supportedArchitectures" : [
+        "arm64",
+        "x86_64"
+      ],
+      "targetArchitecture" : "arm64"
+    },
+    "arenaInfo" : {
+      "buildIntermediatesPath" : "/Users/quinnpatwardhan/Desktop/MarcMap/DerivedData/MarcMap/Build/Intermediates.noindex",
+      "buildProductsPath" : "/Users/quinnpatwardhan/Desktop/MarcMap/DerivedData/MarcMap/Build/Products",
+      "derivedDataPath" : "/Users/quinnpatwardhan/Desktop/MarcMap/DerivedData",
+      "indexDataStoreFolderPath" : "/Users/quinnpatwardhan/Desktop/MarcMap/DerivedData/MarcMap/Index.noindex/DataStore",
+      "indexEnableDataStore" : true,
+      "indexPCHPath" : "/Users/quinnpatwardhan/Desktop/MarcMap/DerivedData/MarcMap/Index.noindex/PrecompiledHeaders",
+      "pchPath" : "/Users/quinnpatwardhan/Desktop/MarcMap/DerivedData/MarcMap/Build/Intermediates.noindex/PrecompiledHeaders"
+    },
+    "configurationName" : "Debug",
+    "overrides" : {
+      "synthesized" : {
+        "table" : {
+          "ASSETCATALOG_FILTER_FOR_DEVICE_MODEL" : "iPhone10,5",
+          "ASSETCATALOG_FILTER_FOR_DEVICE_OS_VERSION" : "16.2",
+          "ASSETCATALOG_FILTER_FOR_THINNING_DEVICE_CONFIGURATION" : "iPhone10,5",
+          "BUILD_ACTIVE_RESOURCES_ONLY" : "YES",
+          "ENABLE_PREVIEWS" : "NO",
+          "TARGET_DEVICE_IDENTIFIER" : "758E99DC-02D4-4399-8754-EDC27A585079",
+          "TARGET_DEVICE_MODEL" : "iPhone10,5",
+          "TARGET_DEVICE_OS_VERSION" : "16.2",
+          "TARGET_DEVICE_PLATFORM_NAME" : "iphonesimulator"
+        }
+      }
+    }
+  },
+  "schemeCommand" : "launch",
+  "schemeCommand2" : "launch",
+  "showNonLoggedProgress" : true,
+  "useDryRun" : false,
+  "useImplicitDependencies" : true,
+  "useLegacyBuildLocations" : false,
+  "useParallelTargets" : true
+}

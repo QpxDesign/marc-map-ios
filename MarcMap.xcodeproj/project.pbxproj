@@ -7,14 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8232D7FB29ABA291001549B6 /* getWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8232D7FA29ABA291001549B6 /* getWeather.swift */; };
 		8232D7FD29ABABA5001549B6 /* StationDetailedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8232D7FC29ABABA5001549B6 /* StationDetailedView.swift */; };
 		8232D7FF29ABBF83001549B6 /* StationListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8232D7FE29ABBF83001549B6 /* StationListView.swift */; };
 		8232D80329ABC4CE001549B6 /* getStations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8232D80229ABC4CE001549B6 /* getStations.swift */; };
 		8232D80729ABE5AB001549B6 /* GetTrainsGoingToStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8232D80629ABE5AB001549B6 /* GetTrainsGoingToStation.swift */; };
 		8232D80929ABE653001549B6 /* StationTrainDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8232D80829ABE653001549B6 /* StationTrainDetails.swift */; };
 		8232D80D29AD5940001549B6 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8232D80C29AD5940001549B6 /* HeaderView.swift */; };
-		824AFF7929B50D1300E02F75 /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824AFF7829B50D1300E02F75 /* FooterView.swift */; };
 		824AFF7F29B5100100E02F75 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824AFF7E29B5100100E02F75 /* SettingsView.swift */; };
 		825E68CF29A836F60049BF3C /* Brunswick.json in Resources */ = {isa = PBXBuildFile; fileRef = 825E68CB29A836F60049BF3C /* Brunswick.json */; };
 		825E68D029A836F60049BF3C /* FredrickBranch.json in Resources */ = {isa = PBXBuildFile; fileRef = 825E68CC29A836F60049BF3C /* FredrickBranch.json */; };
@@ -55,7 +53,7 @@
 		82B1B0D729A6EA6F0012ADE3 /* RouteIdToName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B1B0D629A6EA6F0012ADE3 /* RouteIdToName.swift */; };
 		82B1B0E029A6F4010012ADE3 /* TrainsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B1B0DF29A6F4010012ADE3 /* TrainsListView.swift */; };
 		82B1B0E229A6F4240012ADE3 /* TrainDetailedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B1B0E129A6F4240012ADE3 /* TrainDetailedView.swift */; };
-		82E5EEE82A9F976B0017F59B /* TimeTableTrains.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E5EEE72A9F976B0017F59B /* TimeTableTrains.swift */; };
+		82E5EEF42AA4C0C80017F59B /* timetableResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E5EEF32AA4C0C80017F59B /* timetableResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,15 +74,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		8232D7F929AB9F97001549B6 /* MarcMapDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MarcMapDebug.entitlements; sourceTree = "<group>"; };
-		8232D7FA29ABA291001549B6 /* getWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getWeather.swift; sourceTree = "<group>"; };
 		8232D7FC29ABABA5001549B6 /* StationDetailedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationDetailedView.swift; sourceTree = "<group>"; };
 		8232D7FE29ABBF83001549B6 /* StationListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationListView.swift; sourceTree = "<group>"; };
 		8232D80229ABC4CE001549B6 /* getStations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getStations.swift; sourceTree = "<group>"; };
 		8232D80629ABE5AB001549B6 /* GetTrainsGoingToStation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTrainsGoingToStation.swift; sourceTree = "<group>"; };
 		8232D80829ABE653001549B6 /* StationTrainDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationTrainDetails.swift; sourceTree = "<group>"; };
 		8232D80C29AD5940001549B6 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
-		824AFF7829B50D1300E02F75 /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
 		824AFF7E29B5100100E02F75 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		825E68C829A823640049BF3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		825E68CB29A836F60049BF3C /* Brunswick.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Brunswick.json; sourceTree = "<group>"; };
@@ -129,7 +124,7 @@
 		82B1B0D629A6EA6F0012ADE3 /* RouteIdToName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteIdToName.swift; sourceTree = "<group>"; };
 		82B1B0DF29A6F4010012ADE3 /* TrainsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainsListView.swift; sourceTree = "<group>"; };
 		82B1B0E129A6F4240012ADE3 /* TrainDetailedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainDetailedView.swift; sourceTree = "<group>"; };
-		82E5EEE72A9F976B0017F59B /* TimeTableTrains.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTableTrains.swift; sourceTree = "<group>"; };
+		82E5EEF32AA4C0C80017F59B /* timetableResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = timetableResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,7 +220,6 @@
 		826EC4F629A6AEEA00F9E50D /* MarcMap */ = {
 			isa = PBXGroup;
 			children = (
-				8232D7F929AB9F97001549B6 /* MarcMapDebug.entitlements */,
 				825E68C929A836A40049BF3C /* data */,
 				825E68C829A823640049BF3C /* Info.plist */,
 				82B1B0DA29A6F3060012ADE3 /* views */,
@@ -269,7 +263,6 @@
 			isa = PBXGroup;
 			children = (
 				82B1B0D429A6E95C0012ADE3 /* FormatTripID.swift */,
-				8232D7FA29ABA291001549B6 /* getWeather.swift */,
 				8232D80629ABE5AB001549B6 /* GetTrainsGoingToStation.swift */,
 				82B1B0D629A6EA6F0012ADE3 /* RouteIdToName.swift */,
 				825E68D529A838F70049BF3C /* getRouteFromFile.swift */,
@@ -288,10 +281,10 @@
 				825E68E229A84A770049BF3C /* train-location */,
 				82B1B0CF29A6C8E20012ADE3 /* APIHeader.swift */,
 				82B1B0D129A6E53C0012ADE3 /* CustomColors.swift */,
+				82E5EEF32AA4C0C80017F59B /* timetableResponse.swift */,
 				825E68D329A837200049BF3C /* route.swift */,
 				8232D80829ABE653001549B6 /* StationTrainDetails.swift */,
 				825E68EA29A966F10049BF3C /* station.swift */,
-				82E5EEE72A9F976B0017F59B /* TimeTableTrains.swift */,
 			);
 			path = structs;
 			sourceTree = "<group>";
@@ -301,7 +294,6 @@
 			children = (
 				82B1B0DF29A6F4010012ADE3 /* TrainsListView.swift */,
 				82B1B0E129A6F4240012ADE3 /* TrainDetailedView.swift */,
-				824AFF7829B50D1300E02F75 /* FooterView.swift */,
 				825E68D729A839CB0049BF3C /* MapView.swift */,
 				8232D7FE29ABBF83001549B6 /* StationListView.swift */,
 				824AFF7E29B5100100E02F75 /* SettingsView.swift */,
@@ -455,8 +447,6 @@
 				8232D80729ABE5AB001549B6 /* GetTrainsGoingToStation.swift in Sources */,
 				82B1B0E229A6F4240012ADE3 /* TrainDetailedView.swift in Sources */,
 				825E68E529A84AB30049BF3C /* departure.swift in Sources */,
-				824AFF7929B50D1300E02F75 /* FooterView.swift in Sources */,
-				82E5EEE82A9F976B0017F59B /* TimeTableTrains.swift in Sources */,
 				825E68D629A838F70049BF3C /* getRouteFromFile.swift in Sources */,
 				825E68FD29AA927E0049BF3C /* LocationManager.swift in Sources */,
 				825E68F129A97E740049BF3C /* FullScreenMap.swift in Sources */,
@@ -481,9 +471,9 @@
 				82B1B0CE29A6C6410012ADE3 /* position.swift in Sources */,
 				825E68D429A837200049BF3C /* route.swift in Sources */,
 				825E68E029A849F40049BF3C /* stopTimeUpdate.swift in Sources */,
-				8232D7FB29ABA291001549B6 /* getWeather.swift in Sources */,
 				825E68DE29A849D30049BF3C /* tripUpdate.swift in Sources */,
 				82B1B0D529A6E95C0012ADE3 /* FormatTripID.swift in Sources */,
+				82E5EEF42AA4C0C80017F59B /* timetableResponse.swift in Sources */,
 				826EC53029A6B81400F9E50D /* Train.swift in Sources */,
 				825E68EF29A96E720049BF3C /* FormatTime.swift in Sources */,
 				824AFF7F29B5100100E02F75 /* SettingsView.swift in Sources */,
@@ -643,9 +633,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
-				CODE_SIGN_ENTITLEMENTS = MarcMap/MarcMapDebug.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_ASSET_PATHS = "\"MarcMap/Preview Content\"";
 				DEVELOPMENT_TEAM = HJCD65FY5D;
 				ENABLE_PREVIEWS = YES;
@@ -666,7 +655,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "qpxdesign.marc-map";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -682,7 +671,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_ASSET_PATHS = "\"MarcMap/Preview Content\"";
 				DEVELOPMENT_TEAM = HJCD65FY5D;
 				ENABLE_PREVIEWS = YES;
@@ -703,7 +692,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "qpxdesign.marc-map";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

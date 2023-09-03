@@ -5,12 +5,10 @@
 //  Created by Quinn Patwardhan on 3/5/23.
 //
 import SwiftUI
-import WeatherKit
 import CoreLocation
 
 @available(iOS 16.0, *)
 struct SettingsView: View {
-    @State var currentWeather : CurrentWeather?
     @State var userLocation: CLLocation?
    let manager = LocationManager()
     var body: some View {
@@ -30,7 +28,7 @@ struct SettingsView: View {
             Text("Made with ❤️ in Maryland").padding(.leading,15).frame(maxWidth: .infinity, alignment: .leading).padding(.bottom,1)
         
             Spacer()
-        FooterView()
+       
         }.frame(maxWidth: .infinity)
   
     }

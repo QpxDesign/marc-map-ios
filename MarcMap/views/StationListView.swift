@@ -6,12 +6,10 @@
 //
 
 import SwiftUI
-import WeatherKit
 import CoreLocation
 
 @available(iOS 16.0, *)
 struct StationListView: View {
-    @State var currentWeather : CurrentWeather?
     @State var userLocation: CLLocation?
     @State var stations : [station] = getStations()
 
@@ -42,7 +40,7 @@ struct StationListView: View {
                                 Image(systemName: "arrow.right")
                                 .font(.system(size: 24, weight: .light))
 
-                                NavigationLink(destination: StationDetailedView(stationObj: station)) {
+                                NavigationLink(destination: StationDetailedView(stationObj: station, dateInput: Date())) {
                                   EmptyView()
                                 }
                                 .frame(width: 0)
@@ -54,7 +52,6 @@ struct StationListView: View {
                     
                 }
             }
-            FooterView()
         }
   
     }

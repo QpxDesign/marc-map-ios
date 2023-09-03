@@ -15,16 +15,16 @@ class apiCall {
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             if ((error) != nil) {return}
             guard let tData = try? JSONDecoder().decode(TrainData?.self, from: data!) else {return}
-               var trains : [Train] = []
-                for t in tData.entity  {
-                    var tmp = Train(vehicle: t.vehicle)
-                    trains.append(tmp)
-                }
-                          
-                           
-                DispatchQueue.main.async {
-                    completion(trains)
-                }
+            var trains : [Train] = []
+            for t in tData.entity  {
+                var tmp = Train(vehicle: t.vehicle)
+                trains.append(tmp)
+            }
+            
+            
+            DispatchQueue.main.async {
+                completion(trains)
+            }
             
         }
         .resume()
@@ -39,7 +39,7 @@ class apiCall {
             for t in tData.entity  {
                 var tmp = t.tripUpdate
                 updates.append(tmp)
-            }           
+            }
             DispatchQueue.main.async {
                 completion(updates)
             }
@@ -47,4 +47,22 @@ class apiCall {
         .resume()
         
     }
+    func getTimetable( lineName: String, date: String,  direction :String, completion:@escaping ([timetableResponse]) -> ()) {
+        print("https://api.marcmap.app/getTimetable?line=\(lineName)&date=\(date.replacingOccurrences(of: "/", with: "%2F"))&direction=\(direction)")
+        guard let url = URL(string: "https://api.marcmap.app/getTimetable?line=\(lineName)&date=\(date.replacingOccurrences(of: "/", with: "%2F"))&direction=\(direction)") else {
+            return }
+        
+        URLSession.shared.dataTask(with: url) { (data, _, _) in
+            guard let tData = try? JSONDecoder().decode([timetableResponse].self, from: data!) else {
+                print("failed to fetch timetables")
+                return
+            }
+            DispatchQueue.main.async {
+                completion(tData)
+            }
+        }
+        .resume()
+        
+    }
+    
 }
