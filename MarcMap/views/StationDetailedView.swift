@@ -155,7 +155,7 @@ struct StationDetailedView: View {
                 } else {
                     HStack{
                         Picker("Line", selection: $lineInput) {
-                            Text("Penn").tag(lineChoice.Penn)
+                            Text("Penn ").tag(lineChoice.Penn)
                             Text("Camden").tag(lineChoice.Camden)
                             Text("Brunswick").tag(lineChoice.Brunswick)
                         }.background(CustomColors.MarcBlue).padding([.leading,.trailing],15).padding([.vertical,.horizontal],5).onChange(of: lineInput) { newValue in

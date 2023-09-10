@@ -9,10 +9,12 @@
 import Foundation
 import SwiftUI
 import CoreLocation
+import StoreKit
 
 @available(iOS 16.0, *)
 struct TrainsListView: View {
     //1.
+    
     @State var trains = [Train]()
     @State var tripDetails = [tripUpdate]()
     @State var activeTrainId = ""
@@ -83,6 +85,10 @@ struct TrainsListView: View {
         }
             //2.
             .onAppear() {
+                var count = UserDefaults.standard.integer(forKey: "processCompletedCountKey")
+                if count == 16  {
+                    SKStoreReviewController.requestReview()
+                     }
                     apiCall().getTrains { (trains) in
                         self.trains = trains
                     }

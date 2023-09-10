@@ -13,7 +13,7 @@ import CoreLocationUI
 @available(iOS 16.0, *)
 struct HeaderView: View {
     var title : String
-  
+
     let manager = LocationManager()
     var body: some View {
         HStack {

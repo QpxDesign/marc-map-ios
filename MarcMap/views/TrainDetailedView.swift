@@ -8,7 +8,6 @@ import Foundation
 import SwiftUI
 import MapKit
 
-
 struct TrainDetailedView: View {
     var tripId : String;
     @State var details = [Train]()
@@ -33,6 +32,8 @@ struct TrainDetailedView: View {
                     HStack {
                         Text(details.isEmpty ? "Loading" : FormatTripId(tripId: details[0].vehicle.trip.tripId)).bold().multilineTextAlignment(.leading).padding(.leading,20).padding(.bottom, 15).foregroundColor(Color.white).font(.system(size: 34))
                     } .frame(maxWidth: .infinity, alignment: .leading).background(CustomColors.MarcOrange).onAppear() {
+                        var count = UserDefaults.standard.integer(forKey: "processCompletedCountKey")
+                        UserDefaults.standard.set(count+1, forKey: "processCompletedCountKey")
                         apiCall().getTrains { (trains) in
                             if (!trains.isEmpty){
                             //    region.center.longitude = trains[0].vehicle.position.longitude
