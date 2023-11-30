@@ -53,7 +53,10 @@
 		82B1B0D729A6EA6F0012ADE3 /* RouteIdToName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B1B0D629A6EA6F0012ADE3 /* RouteIdToName.swift */; };
 		82B1B0E029A6F4010012ADE3 /* TrainsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B1B0DF29A6F4010012ADE3 /* TrainsListView.swift */; };
 		82B1B0E229A6F4240012ADE3 /* TrainDetailedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B1B0E129A6F4240012ADE3 /* TrainDetailedView.swift */; };
+		82BD3FA22AFFE4AB000983A1 /* NewMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82BD3FA12AFFE4AB000983A1 /* NewMapView.swift */; };
+		82BD3FA42AFFE5C0000983A1 /* TrainPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82BD3FA32AFFE5C0000983A1 /* TrainPopup.swift */; };
 		82E5EEF42AA4C0C80017F59B /* timetableResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E5EEF32AA4C0C80017F59B /* timetableResponse.swift */; };
+		82E9F5B42B181DE200737D50 /* NewNewMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E9F5B32B181DE200737D50 /* NewNewMapView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,7 +127,10 @@
 		82B1B0D629A6EA6F0012ADE3 /* RouteIdToName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteIdToName.swift; sourceTree = "<group>"; };
 		82B1B0DF29A6F4010012ADE3 /* TrainsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainsListView.swift; sourceTree = "<group>"; };
 		82B1B0E129A6F4240012ADE3 /* TrainDetailedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainDetailedView.swift; sourceTree = "<group>"; };
+		82BD3FA12AFFE4AB000983A1 /* NewMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMapView.swift; sourceTree = "<group>"; };
+		82BD3FA32AFFE5C0000983A1 /* TrainPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainPopup.swift; sourceTree = "<group>"; };
 		82E5EEF32AA4C0C80017F59B /* timetableResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = timetableResponse.swift; sourceTree = "<group>"; };
+		82E9F5B32B181DE200737D50 /* NewNewMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewNewMapView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -280,6 +286,7 @@
 				825E68E329A84A940049BF3C /* trip-updates */,
 				825E68E229A84A770049BF3C /* train-location */,
 				82B1B0CF29A6C8E20012ADE3 /* APIHeader.swift */,
+				82BD3FA32AFFE5C0000983A1 /* TrainPopup.swift */,
 				82B1B0D129A6E53C0012ADE3 /* CustomColors.swift */,
 				82E5EEF32AA4C0C80017F59B /* timetableResponse.swift */,
 				825E68D329A837200049BF3C /* route.swift */,
@@ -297,6 +304,8 @@
 				825E68D729A839CB0049BF3C /* MapView.swift */,
 				8232D7FE29ABBF83001549B6 /* StationListView.swift */,
 				824AFF7E29B5100100E02F75 /* SettingsView.swift */,
+				82BD3FA12AFFE4AB000983A1 /* NewMapView.swift */,
+				82E9F5B32B181DE200737D50 /* NewNewMapView.swift */,
 				8232D80C29AD5940001549B6 /* HeaderView.swift */,
 				8232D7FC29ABABA5001549B6 /* StationDetailedView.swift */,
 				825E68F029A97E740049BF3C /* FullScreenMap.swift */,
@@ -443,11 +452,13 @@
 				826EC52229A6B60600F9E50D /* apiCall.swift in Sources */,
 				82B1B0CB29A6C5CD0012ADE3 /* trip.swift in Sources */,
 				8232D7FD29ABABA5001549B6 /* StationDetailedView.swift in Sources */,
+				82E9F5B42B181DE200737D50 /* NewNewMapView.swift in Sources */,
 				826EC4FA29A6AEEA00F9E50D /* ContentView.swift in Sources */,
 				8232D80729ABE5AB001549B6 /* GetTrainsGoingToStation.swift in Sources */,
 				82B1B0E229A6F4240012ADE3 /* TrainDetailedView.swift in Sources */,
 				825E68E529A84AB30049BF3C /* departure.swift in Sources */,
 				825E68D629A838F70049BF3C /* getRouteFromFile.swift in Sources */,
+				82BD3FA42AFFE5C0000983A1 /* TrainPopup.swift in Sources */,
 				825E68FD29AA927E0049BF3C /* LocationManager.swift in Sources */,
 				825E68F129A97E740049BF3C /* FullScreenMap.swift in Sources */,
 				8232D7FF29ABBF83001549B6 /* StationListView.swift in Sources */,
@@ -466,6 +477,7 @@
 				825E68E929A966D50049BF3C /* GetStationFromStopId.swift in Sources */,
 				8232D80329ABC4CE001549B6 /* getStations.swift in Sources */,
 				82B1B0D729A6EA6F0012ADE3 /* RouteIdToName.swift in Sources */,
+				82BD3FA22AFFE4AB000983A1 /* NewMapView.swift in Sources */,
 				82B1B0D229A6E53C0012ADE3 /* CustomColors.swift in Sources */,
 				82B1B0D029A6C8E20012ADE3 /* APIHeader.swift in Sources */,
 				82B1B0CE29A6C6410012ADE3 /* position.swift in Sources */,

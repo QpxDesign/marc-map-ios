@@ -161,6 +161,7 @@ class Coordinator: NSObject, MKMapViewDelegate {
             annotationView.layer.cornerRadius = 80
             annotationView.displayPriority = .defaultHigh
             annotationView.zPriority = MKAnnotationViewZPriority(999)
+            annotationView
             return annotationView
         } else { // stations
             let annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: "MyMarker")

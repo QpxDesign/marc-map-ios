@@ -12,7 +12,7 @@ func FormatTime(timestamp: String) -> String {
     dateFormatter.timeStyle = .short
     dateFormatter.timeZone = TimeZone(identifier: "America/New_York")
 
-    let date = Date(timeIntervalSince1970: Double(timestamp)!)
+    let date = Date(timeIntervalSince1970: Double(timestamp) ?? 0)
     return dateFormatter.string(from: date)
     
 }

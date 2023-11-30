@@ -19,14 +19,14 @@ struct ContentView: View {
     @State var trains = [Train]()
     var body: some View {
         
-        if #available(iOS 16.0, *) {
+        if #available(iOS 17.0, *) {
             NavigationView {
             TabView {
                 TrainsListView()
                     .tabItem {
                         Label("Trains", systemImage: "list.dash")
                     }
-                FullScreenMap(tripId:"Null", trains:trains)
+                NewNewMapView()
                     .tabItem {
                         Label("Map", systemImage: "map.fill")
                     }
