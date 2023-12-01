@@ -32,11 +32,11 @@ struct MapView: UIViewRepresentable {
         let FredrickPolyline = MKPolyline(coordinates: FredrickBranchLineCoordinates, count: FredrickBranchLineCoordinates.count)
  
             apiCall().getTrains { (trains) in
-                var currentTrain = trains.filter{$0.vehicle.trip.tripId==tripId}
+                var currentTrain = (trains ?? []).filter{$0.vehicle.trip.tripId==tripId}
                 if (!currentTrain.isEmpty && currentTrain[0].vehicle.trip.tripId == tripId) {
                     mapView.setRegion(MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: currentTrain[0].vehicle.position.latitude, longitude: currentTrain[0].vehicle.position.longitude), latitudinalMeters: 2000, longitudinalMeters: 2000), animated: true)
                 }
-                for t in trains {
+                for t in (trains ?? []) {
                      if (!mapView.annotations.filter{$0.title == FormatTripId(tripId: t.vehicle.trip.tripId) }.isEmpty) {
                         if let annotation = mapView.annotations.filter{$0.title == FormatTripId(tripId: t.vehicle.trip.tripId) }[0] as? MKPointAnnotation {
                             annotation.coordinate = CLLocationCoordinate2D(latitude: t.vehicle.position.latitude, longitude: t.vehicle.position.longitude)
@@ -63,7 +63,7 @@ struct MapView: UIViewRepresentable {
                 if (self.tripId != "Null") {
                     apiCall().getTrains { (trains) in
                         //add all train
-                        for t in trains {
+                        for t in (trains ?? []) {
                             if (!mapView.annotations.filter{$0.title == FormatTripId(tripId: t.vehicle.trip.tripId) }.isEmpty) {
                                 if let annotation = mapView.annotations.filter{$0.title == FormatTripId(tripId: t.vehicle.trip.tripId) }[0] as? MKPointAnnotation {
                                     annotation.coordinate = CLLocationCoordinate2D(latitude: t.vehicle.position.latitude, longitude: t.vehicle.position.longitude)
@@ -89,7 +89,7 @@ struct MapView: UIViewRepresentable {
                             
                             
                         }
-                        self.trains = trains
+                        self.trains = trains ?? []
                     }
                 }
         }
@@ -153,7 +153,7 @@ class Coordinator: NSObject, MKMapViewDelegate {
               let pinImage = UIImage(named: "TrainIcon")
               let size = CGSize(width: 60, height: 60)
               UIGraphicsBeginImageContext(size)
-              pinImage!.draw(in: CGRect(x: 0, y: 0, width: size.width, height: size.height))
+              pinImage!.draw(at: CGPoint(x: 0, y: 0))
               let resizedImage = UIGraphicsGetImageFromCurrentImageContext()
             annotationView.image = resizedImage
             annotationView.glyphImage = UIImage(systemName: "circle.fill")

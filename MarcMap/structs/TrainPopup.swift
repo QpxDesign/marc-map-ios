@@ -27,4 +27,5 @@ struct StationPopup: Identifiable {
     let coordinate: CLLocationCoordinate2D
     var show = false
     let name: String
+    let station: station
 }

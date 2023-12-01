@@ -39,14 +39,21 @@ struct StationListView: View {
                             HStack(spacing: 0) {
                                 Image(systemName: "arrow.right")
                                 .font(.system(size: 24, weight: .light))
-
-                                NavigationLink(destination: StationDetailedView(stationObj: station, dateInput: Date())) {
-                                  EmptyView()
+                                if #available(iOS 17.0, *) {
+                                    NavigationLink(destination: NewStationDetailedView(stationObj: station, dateInput: Date())) {
+                                        EmptyView()
+                                    }.accentColor(Color.black)
+                                    .frame(width: 0)
+                                    .opacity(0)
+                                } else if #available(iOS 16.0, *) {
+                                    NavigationLink(destination: StationDetailedView(stationObj: station, dateInput: Date())) {
+                                        EmptyView()
+                                    }.accentColor(Color.black)
+                                    .frame(width: 0)
+                                    .opacity(0)
                                 }
-                                .frame(width: 0)
-                                .opacity(0)
                               }
-                        }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading).accentColor(CustomColors.MarcBlue)
+                        }
                        
                     }
                     

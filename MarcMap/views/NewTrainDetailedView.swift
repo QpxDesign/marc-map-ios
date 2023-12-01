@@ -7,8 +7,8 @@
 import Foundation
 import SwiftUI
 import MapKit
-
-struct TrainDetailedView: View {
+@available(iOS 17.0, *)
+struct NewTrainDetailedView: View {
     var tripId : String;
     @State var details = [Train]()
     @State var tripDetails = [tripUpdate]()
@@ -23,7 +23,7 @@ struct TrainDetailedView: View {
     let fred : [CLLocationCoordinate2D] = getRouteFromFile(filename: "FredrickBranch") ?? [CLLocationCoordinate2D(latitude: 0, longitude: 0)]
     let camd : [CLLocationCoordinate2D] = getRouteFromFile(filename: "Camden") ?? [CLLocationCoordinate2D(latitude: 0, longitude: 0)]
 
-        var body: some View {
+    var body: some View {
             GeometryReader { geometry in
                 if (!details.isEmpty && details.filter{$0.vehicle.trip.tripId == tripId}.isEmpty) {
                     TrainsListView()
@@ -74,7 +74,7 @@ struct TrainDetailedView: View {
                     }
                     if (!details.isEmpty) {
                         Text("Last Updated: " + FormatTime(timestamp: details[0].vehicle.timestamp))
-                        NavigationLink(destination: FullScreenMap(tripId:tripId, trains:details, region: region)) {
+                        NavigationLink(destination: NewNewMapView(suppliedLoc: region)) {
                             MapView(region: region, BrunswickLineCoordinates: brunswick, PennLineCoordinates: penn, CamdenLineCoordinates: camd, FredrickBranchLineCoordinates: fred,trains:details, tripId: tripId).frame(width:geometry.size.width * 0.90,height:geometry.size.height*0.35).cornerRadius(15).padding(.bottom, 0)
                         }.accentColor(Color.black)
                     } else {
@@ -121,4 +121,13 @@ struct TrainDetailedView: View {
         }
     }
 }
-
+ 
+func removeDuplicates(arr : Array<stopTimeUpdate>) -> Array<stopTimeUpdate> {
+    var a : [stopTimeUpdate] = []
+    for i in arr {
+        if (a.filter{$0.id.uuidString == i.id.uuidString}.count == 0) {
+            a.append(i)
+        }
+    }
+    return a;
+}

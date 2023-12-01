@@ -93,9 +93,9 @@ struct NewMapView: View {
             if didLoadTrains == false {
                 apiCall().getTrains { (trains) in
                     apiCall().getTripUpdates { (tripUpdates) in
-                        for train in trains {
-                            if tripUpdates.filter{$0.trip.tripId == train.vehicle.trip.tripId}.count != 0 {
-                                var relevantTripUpdate = tripUpdates.filter{$0.trip.tripId == train.vehicle.trip.tripId}[0]
+                        for train in (trains  ?? []) {
+                            if (tripUpdates ?? []).filter{$0.trip.tripId == train.vehicle.trip.tripId}.count != 0 {
+                                var relevantTripUpdate = (tripUpdates ?? []).filter{$0.trip.tripId == train.vehicle.trip.tripId}[0]
                                 var delay = ""
                                 var nextStop = ""
                                 var nextStopETA = ""

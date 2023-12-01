@@ -50,22 +50,37 @@ struct TrainsListView: View {
                                 HStack(spacing: 0) {
                                     Image(systemName: "arrow.right")
                                         .font(.system(size: 24, weight: .light))
-                                    NavigationLink(destination: TrainDetailedView(tripId: trains[i].vehicle.trip.tripId),isActive: $trainShowed[i]) {
-                                        EmptyView().onTapGesture {
-                                            print("triggered - user wanted to go to " + trains[i].vehicle.trip.tripId)
-                                            trainShowed[i] = trains[i].vehicle.trip.tripId == activeTrainId
-                                            
-                                            
+                                    if #available(iOS 17.0, *) {
+                                        NavigationLink(destination: NewTrainDetailedView(tripId: trains[i].vehicle.trip.tripId),isActive: $trainShowed[i]) {
+                                            EmptyView().onTapGesture {
+                                                print("triggered - user wanted to go to " + trains[i].vehicle.trip.tripId)
+                                                trainShowed[i] = trains[i].vehicle.trip.tripId == activeTrainId
+                                                
+                                                
+                                            }.background(Color.red)
+                                        }.onTapGesture {
+                                            print("wouhuu")
+                                        }.accentColor(Color.black)
+                                            .frame(width: 0)
+                                            .opacity(0)
+                                    } else {
+                                        NavigationLink(destination: TrainDetailedView(tripId: trains[i].vehicle.trip.tripId),isActive: $trainShowed[i]) {
+                                            EmptyView().onTapGesture {
+                                                print("triggered - user wanted to go to " + trains[i].vehicle.trip.tripId)
+                                                trainShowed[i] = trains[i].vehicle.trip.tripId == activeTrainId
+                                                
+                                                
+                                            }.background(Color.red)
+                                        }.accentColor(Color.black).onTapGesture {
+                                            print("wouhuu")
                                         }.background(Color.red)
-                                    }.onTapGesture {
-                                        print("wouhuu")
-                                    }.background(Color.red)
-                                        .frame(width: 0)
-                                        .opacity(0)
+                                            .frame(width: 0)
+                                            .opacity(0)
+                                    }
                                 }.onTapGesture {
                                     print("SLURRRP")
                                 }
-                            }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading).accentColor(CustomColors.MarcBlue)
+                            }
                             
                         }} else {
                             Text("Loading").onAppear() {
@@ -90,20 +105,20 @@ struct TrainsListView: View {
                     SKStoreReviewController.requestReview()
                      }
                     apiCall().getTrains { (trains) in
-                        self.trains = trains
+                        self.trains = trains ?? []
                     }
                 apiCall().getTripUpdates{(updates) in
-                    self.tripDetails = updates
+                    self.tripDetails = updates ?? []
                 }
                 Timer.scheduledTimer(withTimeInterval: 10, repeats: true) { timer in
                 
                     if (activeTrainId == "") {
                         print("updating train list details")
                         apiCall().getTrains { (trains) in
-                            self.trains = trains
+                            self.trains = trains ?? []
                         }
                         apiCall().getTripUpdates { (updates) in
-                            self.tripDetails = updates
+                            self.tripDetails = updates ?? []
                         }
                     }
      

@@ -10,23 +10,15 @@ import CoreLocation
 import CoreLocationUI
 import MapKit
 
-enum directionChocies: String, CaseIterable, Identifiable {
-    case inbound, outbound
-    var id: Self { self }
-}
-
-enum lineChoice: String, CaseIterable, Identifiable {
-    case Penn, Camden, Brunswick
-    var id: Self { self }
-}
-
-struct StationDetailedView: View {
+@available(iOS 17.0, *)
+struct NewStationDetailedView: View {
 
     var stationObj: station
     @State var trains = [Train]()
     @State var details = [tripUpdate]()
     @State var activeTrain = false
     @State var showAllTrains = false
+    @State var trainsGoingToStation : [StationTrainDetails] = []
     
     @State var directionInput: directionChocies = .outbound
     @State var dateInput: Date  = Date()
@@ -35,10 +27,11 @@ struct StationDetailedView: View {
     @State var timetableTrains: [String] = []
     @State var timetableTimes: [String] = []
     
-    let brunswick : [CLLocationCoordinate2D] = getRouteFromFile(filename: "Brunswick")!
-    let penn : [CLLocationCoordinate2D] = getRouteFromFile(filename: "Penn")!
-    let fred : [CLLocationCoordinate2D] = getRouteFromFile(filename: "FredrickBranch")!
-    let camd : [CLLocationCoordinate2D] = getRouteFromFile(filename: "Camden")!
+    let brunswick : [CLLocationCoordinate2D] = getRouteFromFile(filename: "Brunswick") ?? [CLLocationCoordinate2D(latitude: 0, longitude: 0)]
+    let penn : [CLLocationCoordinate2D] = getRouteFromFile(filename: "Penn") ?? [CLLocationCoordinate2D(latitude: 0, longitude: 0)]
+    let fred : [CLLocationCoordinate2D] = getRouteFromFile(filename: "FredrickBranch") ?? [CLLocationCoordinate2D(latitude: 0, longitude: 0)]
+    let camd : [CLLocationCoordinate2D] = getRouteFromFile(filename: "Camden") ?? [CLLocationCoordinate2D(latitude: 0, longitude: 0)]
+    
     var timer1 = Timer()
     var timer2 = Timer()
     
@@ -94,7 +87,7 @@ struct StationDetailedView: View {
                     }
               
                   //  Text("Last Updated: " + FormatTime(timestamp: trains[0].vehicle.timestamp))
-                    NavigationLink(destination: FullScreenMap(tripId:"Null", trains:trains, region:  MKCoordinateRegion(
+                    NavigationLink(destination: NewNewMapView(suppliedLoc:  MKCoordinateRegion(
                         center: CLLocationCoordinate2D(latitude:self.stationObj.stop_lat, longitude:  self.stationObj.stop_lon),
                        latitudinalMeters: 75,
                        longitudinalMeters: 75))) {
@@ -117,16 +110,15 @@ struct StationDetailedView: View {
                             }
                         }
                 if (!showAllTrains) {
-                    List( GetTrainsGoingToStation(stopId: stationObj.stop_id,trains:trains,details:details).indices) { i in
+                    List($trainsGoingToStation.indices, id: \.self) { i  in
                         VStack(alignment: .leading) {
-                            
                             HStack {
-                                Text(FormatTripId(tripId: GetTrainsGoingToStation(stopId: stationObj.stop_id,trains:trains,details:details)[i].tripId))
+                                Text(FormatTripId(tripId: trainsGoingToStation[i].tripId))
                                     .font(.title)
                                     .fontWeight(.bold)
                                 
-                                Text(RouteIdToName(routeId: GetTrainsGoingToStation(stopId: stationObj.stop_id,trains:trains,details:details)[i].line))
-                                if (GetTrainsGoingToStation(stopId: stationObj.stop_id,trains:trains,details:details)[i].delay ?? 0 > 300) {
+                                Text(RouteIdToName(routeId: trainsGoingToStation[i].line))
+                                if (trainsGoingToStation[i].delay ?? 0 > 300) {
                                     Rectangle().frame(width: 10, height: 10, alignment: .center).foregroundColor(Color.red).cornerRadius(1000)
                                 } else {
                                     Rectangle().frame(width: 10, height: 10, alignment: .center).foregroundColor(Color.green).cornerRadius(1000)
@@ -137,7 +129,7 @@ struct StationDetailedView: View {
                                     Image(systemName: "arrow.right")
                                         .font(.system(size: 24, weight: .light))
                                     
-                                    NavigationLink(destination: TrainDetailedView(tripId: GetTrainsGoingToStation(stopId: stationObj.stop_id,trains:trains,details:details)[i].tripId)) {
+                                    NavigationLink(destination: NewTrainDetailedView(tripId: GetTrainsGoingToStation(stopId: stationObj.stop_id,trains:trains,details:details)[i].tripId)) {
                                         EmptyView()
                                     }.accentColor(Color.black)
                                     .frame(width: 0)
@@ -146,7 +138,9 @@ struct StationDetailedView: View {
                                     activeTrain = true
                                 }
                                 
-                            }
+                            }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+                        }.onAppear() {
+                            print("list did appear 11/30")
                         }
                     }
                 
@@ -232,7 +226,7 @@ struct StationDetailedView: View {
                                 Spacer()
                                 Text(lineInput.rawValue).font(.system(size: 18))
                                 
-                            }
+                            }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
                        Spacer()
                         }
                     }.id(timetableTimes)
@@ -241,7 +235,14 @@ struct StationDetailedView: View {
                  
                 }
                 Spacer()
+        }.onAppear() {
+            apiCall().getTrains { trains_tmp in
+                apiCall().getTripUpdates { tripupdate_tmp in
+                    trainsGoingToStation = GetTrainsGoingToStation(stopId: stationObj.stop_id,trains:trains_tmp ?? [],details:tripupdate_tmp ?? [])
+                }
             }
+            
+        }
         }
     }
 
