@@ -64,7 +64,6 @@ struct NewNewMapView: View {
                                     .font(.title)
                                     .onTapGesture {
                                         print("did tap open")
-                                        let index: Int = TrainPopups.firstIndex(where: {$0.id == TrainPopups[index].id})!
                                         TrainPopups[index].show = false
                                     }
                             } else {
@@ -79,8 +78,6 @@ struct NewNewMapView: View {
                                             TrainPopups[idx2].show = false
                                             idx2 += 1
                                         }
-                                        let index: Int = TrainPopups.firstIndex(where: {$0.id == TrainPopups[index].id})!
-                                        print("did tap try to open - \(index)")
                                         TrainPopups[index].show = true
                                         print(TrainPopups[index].show)
                                     }
@@ -98,15 +95,7 @@ struct NewNewMapView: View {
                     if TrainPopups.filter{$0.show == true}.count != 0 {
                         var idx2 = 0
                         for tp in TrainPopups {
-                            TrainPopups[idx2].show = false
-                            idx2 += 1
-                        }
-                    }
-                    
-                    if StationPopups.filter{$0.show == true}.count != 0 {
-                        var idx2 = 0
-                        for tp in StationPopups {
-                            StationPopups[idx2].show = false
+                           // TrainPopups[idx2].show = false
                             idx2 += 1
                         }
                     }
@@ -132,11 +121,11 @@ struct NewNewMapView: View {
                                     var nextStopETA = ""
                                     relevantTripUpdate.stopTimeUpdate.forEach { stop in
                                         if delay == "" {
-                                            if (stop.departure != nil && stop.departure!.time > relevantTripUpdate.timestamp) || (stop.arrival != nil && stop.arrival!.time > relevantTripUpdate.timestamp) {
+                                            if (stop.departure != nil && stop.departure?.time ?? "0" > relevantTripUpdate.timestamp) || (stop.arrival != nil && stop.arrival?.time ?? "0" > relevantTripUpdate.timestamp) {
                                                 var d1 = stop.arrival?.delay ?? 0
                                                 delay = String(round(Double(d1/60)))
-                                                nextStop = GetStationFromStopId(stopID: Int(stop.stopId)!).stop_name
-                                                nextStopETA = stop.arrival!.time
+                                                nextStop = GetStationFromStopId(stopID: Int(stop.stopId) ?? 0).stop_name
+                                                nextStopETA = stop.arrival?.time ?? "0"
                                             }
                                         }
                                     }
@@ -160,11 +149,11 @@ struct NewNewMapView: View {
                                         var nextStopETA = ""
                                         relevantTripUpdate.stopTimeUpdate.forEach { stop in
                                             if delay == "" {
-                                                if (stop.departure != nil && stop.departure!.time > relevantTripUpdate.timestamp) || (stop.arrival != nil && stop.arrival!.time > relevantTripUpdate.timestamp) {
+                                                if (stop.departure != nil && stop.departure?.time ?? "0" > relevantTripUpdate.timestamp) || (stop.arrival != nil && stop.arrival?.time ?? "0" > relevantTripUpdate.timestamp) {
                                                     var d1 = stop.arrival?.delay ?? 0
                                                     delay = String(round(Double(d1/60)))
-                                                    nextStop = GetStationFromStopId(stopID: Int(stop.stopId)!).stop_name
-                                                    nextStopETA = stop.arrival!.time
+                                                    nextStop = GetStationFromStopId(stopID: Int(stop.stopId) ?? 0).stop_name
+                                                    nextStopETA = stop.arrival?.time ?? "0"
                                                 }
                                             }
                                         }
