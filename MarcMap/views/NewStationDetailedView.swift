@@ -87,10 +87,8 @@ struct NewStationDetailedView: View {
                     }
               
                   //  Text("Last Updated: " + FormatTime(timestamp: trains[0].vehicle.timestamp))
-                    NavigationLink(destination: NewNewMapView(suppliedLoc:  MKCoordinateRegion(
-                        center: CLLocationCoordinate2D(latitude:self.stationObj.stop_lat, longitude:  self.stationObj.stop_lon),
-                       latitudinalMeters: 75,
-                       longitudinalMeters: 75))) {
+                    NavigationLink(destination: NewNewMapView(suppliedLoc:  CLLocationCoordinate2D(
+                        latitude:self.stationObj.stop_lat, longitude:  self.stationObj.stop_lon),suppliedSpan:MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))) {
                         MapView(region:  MKCoordinateRegion(
                             center: CLLocationCoordinate2D(latitude:self.stationObj.stop_lat, longitude:  self.stationObj.stop_lon),
                            latitudinalMeters: 75,

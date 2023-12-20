@@ -69,7 +69,7 @@ struct TrainDetailedView: View {
                                 self.tripDetails = (updates ?? []).filter{
                                     $0.trip.tripId == tripId
                                 }
-                        tripDetails[0].stopTimeUpdate = tripDetails[0].stopTimeUpdate                            }}
+                                }}
                         
                     }
                     if (!details.isEmpty) {

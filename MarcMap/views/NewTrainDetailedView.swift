@@ -61,7 +61,6 @@ struct NewTrainDetailedView: View {
                                 $0.trip.tripId == tripId
                             }
                          
-                            tripDetails[0].stopTimeUpdate = tripDetails[0].stopTimeUpdate
                         }
                         Timer.scheduledTimer(withTimeInterval: 10, repeats: true) { timer2 in
                             apiCall().getTripUpdates { (updates) in
@@ -69,12 +68,12 @@ struct NewTrainDetailedView: View {
                                 self.tripDetails = (updates ?? []).filter{
                                     $0.trip.tripId == tripId
                                 }
-                        tripDetails[0].stopTimeUpdate = tripDetails[0].stopTimeUpdate                            }}
+                            }}
                         
                     }
                     if (!details.isEmpty) {
                         Text("Last Updated: " + FormatTime(timestamp: details[0].vehicle.timestamp))
-                        NavigationLink(destination: NewNewMapView(suppliedLoc: region)) {
+                        NavigationLink(destination: NewNewMapView(suppliedLoc: CLLocationCoordinate2D(latitude: details[0].vehicle.position.latitude, longitude: details[0].vehicle.position.longitude),suppliedSpan:MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))) {
                             MapView(region: region, BrunswickLineCoordinates: brunswick, PennLineCoordinates: penn, CamdenLineCoordinates: camd, FredrickBranchLineCoordinates: fred,trains:details, tripId: tripId).frame(width:geometry.size.width * 0.90,height:geometry.size.height*0.35).cornerRadius(15).padding(.bottom, 0)
                         }.accentColor(Color.black)
                     } else {

@@ -18,7 +18,8 @@ struct NewNewMapView: View {
     @State private var LastTimePopUpOpen: Double = 0
     @State private var didLoadTrains: Bool = false
     @State var trains = [Train]()
-    @State var suppliedLoc : MKCoordinateRegion?
+    @State var suppliedLoc : CLLocationCoordinate2D?
+    @State var suppliedSpan: MKCoordinateSpan?
     @State var loc :  CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 38.9072, longitude: -77.0369)
     @State var span : MKCoordinateSpan = MKCoordinateSpan(latitudeDelta: 0.25, longitudeDelta: 0.25)
     @State private var position: MapCameraPosition = .automatic
@@ -57,7 +58,7 @@ struct NewNewMapView: View {
                                 }.padding(.horizontal,15).padding(.vertical, 10).background(
                                     RoundedRectangle(cornerRadius: 20)
                                         .fill(Color.white)
-                                ).frame(width: 325,height:200).position(x: 50, y: 10).zIndex(1000)
+                                ).frame(width: 325,height:200).position(x: 0, y: 0).zIndex(1000)
                                 
                                 Image("TrainIcon")
                                     .zIndex(5)
@@ -102,11 +103,15 @@ struct NewNewMapView: View {
                     
                 }
             }.onAppear() {
-                position = .region(MKCoordinateRegion(center: loc, span: span))
+                if (suppliedLoc != nil) {
+                    print("killme1")
+                    position = .region(MKCoordinateRegion(center: suppliedLoc ?? loc, span:suppliedSpan ?? span ))
+                } else {
+                    position = .region(MKCoordinateRegion(center: loc, span: span))
+                }
                 let userLocation = manager.location
-                loc = CLLocationCoordinate2D(latitude: userLocation?.coordinate.latitude ?? 38.9072, longitude: userLocation?.coordinate.longitude ?? 77.0369)
-                span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
-                position = .region(MKCoordinateRegion(center: loc, span: span))
+                //loc = CLLocationCoordinate2D(latitude: userLocation?.coordinate.latitude ?? 38.9072, longitude: userLocation?.coordinate.longitude ?? 77.0369)
+                //span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
                 if didLoadTrains == false {
                     for station in getStations() {
                         StationPopups.append(StationPopup(coordinate: CLLocationCoordinate2D(latitude: station.stop_lat,longitude: station.stop_lon), name: station.stop_name, station: station))
