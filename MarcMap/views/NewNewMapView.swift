@@ -50,23 +50,25 @@ struct NewNewMapView: View {
                             var line1 = "Next Stop: \(TrainPopups[index].nextStop ?? "") @ \(FormatTime(timestamp: TrainPopups[index].nextStopETA ?? ""))"
                             var line2 = "Final Stop: \(TrainPopups[index].finalStop ?? "") @ \(FormatTime(timestamp: TrainPopups[index].finalStopETA ?? ""))"
                             if TrainPopups[index].show {
-                                VStack {
-                                    Text(FormatTripId(tripId: TrainPopups[index].tripID ?? "")).font(.system(size: 25)).fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/).padding(.horizontal,15).padding(.bottom,0).foregroundColor(Color.black)
-                                    Text(TrainPopups[index].line ?? "").padding(0).fontWeight(.light).foregroundColor(Color.black)
-                                    Text(line1).padding(0).multilineTextAlignment(.center).foregroundColor(Color.black)
-                                    Text(line2).padding(0).multilineTextAlignment(.center).padding(.top,5).foregroundColor(Color.black)
-                                }.padding(.horizontal,15).padding(.vertical, 10).background(
-                                    RoundedRectangle(cornerRadius: 20)
-                                        .fill(Color.white)
-                                ).frame(width: 325,height:200).position(x: 0, y: 0).zIndex(1000)
-                                
-                                Image("TrainIcon")
-                                    .zIndex(5)
-                                    .font(.title)
-                                    .onTapGesture {
-                                        print("did tap open")
-                                        TrainPopups[index].show = false
-                                    }
+                                ZStack {
+                                    VStack {
+                                        Text(FormatTripId(tripId: TrainPopups[index].tripID ?? "")).font(.system(size: 25)).fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/).padding(.horizontal,15).padding(.bottom,0).foregroundColor(Color.black)
+                                        Text(TrainPopups[index].line ?? "").padding(0).fontWeight(.light).foregroundColor(Color.black)
+                                        Text(line1).padding(0).multilineTextAlignment(.center).foregroundColor(Color.black)
+                                        Text(line2).padding(0).multilineTextAlignment(.center).padding(.top,5).foregroundColor(Color.black)
+                                    }.padding(.horizontal,15).padding(.vertical, 10).background(
+                                        RoundedRectangle(cornerRadius: 20)
+                                            .fill(Color.white)
+                                    ).frame(width: 325,height:200).position(x: 0, y: 0).zIndex(1000)
+                                    
+                                    Image("TrainIcon")
+                                        .zIndex(5)
+                                        .font(.title)
+                                        .onTapGesture {
+                                            print("did tap open")
+                                            TrainPopups[index].show = false
+                                        }
+                                }
                             } else {
                                 Image("TrainIcon")
                                     .font(.title)
