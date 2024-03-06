@@ -15,6 +15,7 @@
 		8232D80729ABE5AB001549B6 /* GetTrainsGoingToStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8232D80629ABE5AB001549B6 /* GetTrainsGoingToStation.swift */; };
 		8232D80929ABE653001549B6 /* StationTrainDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8232D80829ABE653001549B6 /* StationTrainDetails.swift */; };
 		8232D80D29AD5940001549B6 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8232D80C29AD5940001549B6 /* HeaderView.swift */; };
+		8240001C2B991CF50036DD74 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8240001B2B991CF50036DD74 /* StoreKit.framework */; };
 		824AFF7F29B5100100E02F75 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824AFF7E29B5100100E02F75 /* SettingsView.swift */; };
 		825E68CF29A836F60049BF3C /* Brunswick.json in Resources */ = {isa = PBXBuildFile; fileRef = 825E68CB29A836F60049BF3C /* Brunswick.json */; };
 		825E68D029A836F60049BF3C /* FredrickBranch.json in Resources */ = {isa = PBXBuildFile; fileRef = 825E68CC29A836F60049BF3C /* FredrickBranch.json */; };
@@ -89,6 +90,8 @@
 		8232D80629ABE5AB001549B6 /* GetTrainsGoingToStation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTrainsGoingToStation.swift; sourceTree = "<group>"; };
 		8232D80829ABE653001549B6 /* StationTrainDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationTrainDetails.swift; sourceTree = "<group>"; };
 		8232D80C29AD5940001549B6 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		8240001B2B991CF50036DD74 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		8240001D2B992F1A0036DD74 /* Products.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Products.storekit; sourceTree = "<group>"; };
 		824AFF7E29B5100100E02F75 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		825E68C829A823640049BF3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		825E68CB29A836F60049BF3C /* Brunswick.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Brunswick.json; sourceTree = "<group>"; };
@@ -123,7 +126,6 @@
 		826EC51429A6AEED00F9E50D /* hello_worldUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hello_worldUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		826EC52129A6B60600F9E50D /* apiCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = apiCall.swift; sourceTree = "<group>"; };
 		826EC52F29A6B81400F9E50D /* Train.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Train.swift; sourceTree = "<group>"; };
-		82A011912B97E484007E5771 /* Products.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Products.storekit; sourceTree = "<group>"; };
 		82A011922B97E547007E5771 /* store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = store.swift; sourceTree = "<group>"; };
 		82B1B0C629A6C0E60012ADE3 /* TrainData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainData.swift; sourceTree = "<group>"; };
 		82B1B0C829A6C57C0012ADE3 /* vehicle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = vehicle.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				82EB4C672B97E1F4003C78B2 /* StoreHelper in Frameworks */,
+				8240001C2B991CF50036DD74 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,6 +170,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8240001A2B991CF50036DD74 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8240001B2B991CF50036DD74 /* StoreKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		825E68C929A836A40049BF3C /* data */ = {
 			isa = PBXGroup;
 			children = (
@@ -219,6 +230,7 @@
 				826EC50729A6AEED00F9E50D /* MarcMapTests */,
 				826EC51129A6AEED00F9E50D /* MarcMapUITests */,
 				826EC4F529A6AEEA00F9E50D /* Products */,
+				8240001A2B991CF50036DD74 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -245,7 +257,7 @@
 				826EC52129A6B60600F9E50D /* apiCall.swift */,
 				826EC4FB29A6AEED00F9E50D /* Assets.xcassets */,
 				826EC4FD29A6AEED00F9E50D /* Preview Content */,
-				82A011912B97E484007E5771 /* Products.storekit */,
+				8240001D2B992F1A0036DD74 /* Products.storekit */,
 			);
 			path = MarcMap;
 			sourceTree = "<group>";
@@ -668,7 +680,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 17;
+				CURRENT_PROJECT_VERSION = 26;
 				DEVELOPMENT_ASSET_PATHS = "\"MarcMap/Preview Content\"";
 				DEVELOPMENT_TEAM = HJCD65FY5D;
 				ENABLE_PREVIEWS = YES;
@@ -705,7 +717,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 17;
+				CURRENT_PROJECT_VERSION = 26;
 				DEVELOPMENT_ASSET_PATHS = "\"MarcMap/Preview Content\"";
 				DEVELOPMENT_TEAM = HJCD65FY5D;
 				ENABLE_PREVIEWS = YES;

@@ -1,16 +1,46 @@
 {
-  "identifier" : "ACD1F467",
+  "identifier" : "C74602EB",
   "nonRenewingSubscriptions" : [
 
   ],
   "products" : [
     {
-      "displayPrice" : "0.99",
+      "displayPrice" : "2.99",
       "familyShareable" : false,
-      "internalID" : "B2B42E14",
+      "internalID" : "6478932943",
       "localizations" : [
         {
-          "description" : "",
+          "description" : "Thank you for donating!",
+          "displayName" : "Medium Donation",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "donation2",
+      "referenceName" : "medium-donation ",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "4.99",
+      "familyShareable" : false,
+      "internalID" : "6478933543",
+      "localizations" : [
+        {
+          "description" : "Thanks for donating!",
+          "displayName" : "Mega Donation",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "donation3",
+      "referenceName" : "mega-donation",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "0.99",
+      "familyShareable" : false,
+      "internalID" : "6478932853",
+      "localizations" : [
+        {
+          "description" : "Thanks for the support! ",
           "displayName" : "Small Donation",
           "locale" : "en_US"
         }
@@ -18,40 +48,13 @@
       "productID" : "donation1",
       "referenceName" : "small-donation",
       "type" : "NonConsumable"
-    },
-    {
-      "displayPrice" : "4.99",
-      "familyShareable" : false,
-      "internalID" : "9512E44A",
-      "localizations" : [
-        {
-          "description" : "",
-          "displayName" : "Mega Donation",
-          "locale" : "en_US"
-        }
-      ],
-      "productID" : "donation3",
-      "referenceName" : "mega-donation ",
-      "type" : "NonConsumable"
-    },
-    {
-      "displayPrice" : "2.99",
-      "familyShareable" : false,
-      "internalID" : "ABE83A29",
-      "localizations" : [
-        {
-          "description" : "",
-          "displayName" : "Medium Donation",
-          "locale" : "en_US"
-        }
-      ],
-      "productID" : "donation2",
-      "referenceName" : "medium-donation",
-      "type" : "NonConsumable"
     }
   ],
   "settings" : {
+    "_applicationInternalID" : "6445867355",
+    "_developerTeamID" : "HJCD65FY5D",
     "_failTransactionsEnabled" : false,
+    "_lastSynchronizedDate" : 731459357.443892,
     "_locale" : "en_US",
     "_storefront" : "USA",
     "_storeKitErrors" : [

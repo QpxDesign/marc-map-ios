@@ -10,18 +10,25 @@ import StoreKit
 
 @available(iOS 16.0, *)
 struct SettingsView: View {
+    func getProducts() async -> [Product] {
+        return try! await Product.products(for: ["donation2", "donation1", "donation3"])
+    }
     @State var userLocation: CLLocation?
     let store = Store()
-
+    @State var products : [Product] = []
    let manager = LocationManager()
-
-
   var body: some View {
         
         VStack {
             HeaderView(title:"Info").onAppear() {
                 manager.requestLocation()
                 userLocation = manager.location
+                Task {
+                    products = await getProducts()
+                }
+
+        
+           
             }
             Text("About").bold().font(.system(size:25)).multilineTextAlignment(.leading).frame(maxWidth: .infinity, alignment: .leading).padding(.leading,15)
             
@@ -34,9 +41,11 @@ struct SettingsView: View {
             Text("Made with ❤️ in Maryland").padding(.leading,15).frame(maxWidth: .infinity, alignment: .leading).padding(.bottom,1)
             Text("Donate").font(.system(size: 24, weight: .light)).fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
             Text("Developing and Running MarcMap takes a significant amount of time, effort, and money. To keep MarcMap Free for all, please consider donating below. Any amount is greatly appreciated.").padding(.leading,15).frame(maxWidth: .infinity, alignment: .leading).padding(.bottom,1)
+
             HStack {
-                ForEach(store.products) {
-                    product in
+                
+                ForEach($products) {
+                    $product in
                     ZStack {
                         Button(product.displayPrice) {
                             Task {
