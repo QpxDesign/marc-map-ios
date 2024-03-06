@@ -45,6 +45,7 @@
 		826EC51529A6AEED00F9E50D /* hello_worldUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826EC51429A6AEED00F9E50D /* hello_worldUITestsLaunchTests.swift */; };
 		826EC52229A6B60600F9E50D /* apiCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826EC52129A6B60600F9E50D /* apiCall.swift */; };
 		826EC53029A6B81400F9E50D /* Train.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826EC52F29A6B81400F9E50D /* Train.swift */; };
+		82A011932B97E547007E5771 /* store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A011922B97E547007E5771 /* store.swift */; };
 		82B1B0C729A6C0E60012ADE3 /* TrainData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B1B0C629A6C0E60012ADE3 /* TrainData.swift */; };
 		82B1B0C929A6C57C0012ADE3 /* vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B1B0C829A6C57C0012ADE3 /* vehicle.swift */; };
 		82B1B0CB29A6C5CD0012ADE3 /* trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B1B0CA29A6C5CD0012ADE3 /* trip.swift */; };
@@ -59,6 +60,7 @@
 		82BD3FA42AFFE5C0000983A1 /* TrainPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82BD3FA32AFFE5C0000983A1 /* TrainPopup.swift */; };
 		82E5EEF42AA4C0C80017F59B /* timetableResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E5EEF32AA4C0C80017F59B /* timetableResponse.swift */; };
 		82E9F5B42B181DE200737D50 /* NewNewMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E9F5B32B181DE200737D50 /* NewNewMapView.swift */; };
+		82EB4C672B97E1F4003C78B2 /* StoreHelper in Frameworks */ = {isa = PBXBuildFile; productRef = 82EB4C662B97E1F4003C78B2 /* StoreHelper */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,6 +123,8 @@
 		826EC51429A6AEED00F9E50D /* hello_worldUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hello_worldUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		826EC52129A6B60600F9E50D /* apiCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = apiCall.swift; sourceTree = "<group>"; };
 		826EC52F29A6B81400F9E50D /* Train.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Train.swift; sourceTree = "<group>"; };
+		82A011912B97E484007E5771 /* Products.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Products.storekit; sourceTree = "<group>"; };
+		82A011922B97E547007E5771 /* store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = store.swift; sourceTree = "<group>"; };
 		82B1B0C629A6C0E60012ADE3 /* TrainData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainData.swift; sourceTree = "<group>"; };
 		82B1B0C829A6C57C0012ADE3 /* vehicle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = vehicle.swift; sourceTree = "<group>"; };
 		82B1B0CA29A6C5CD0012ADE3 /* trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = trip.swift; sourceTree = "<group>"; };
@@ -142,6 +146,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82EB4C672B97E1F4003C78B2 /* StoreHelper in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,6 +245,7 @@
 				826EC52129A6B60600F9E50D /* apiCall.swift */,
 				826EC4FB29A6AEED00F9E50D /* Assets.xcassets */,
 				826EC4FD29A6AEED00F9E50D /* Preview Content */,
+				82A011912B97E484007E5771 /* Products.storekit */,
 			);
 			path = MarcMap;
 			sourceTree = "<group>";
@@ -274,6 +280,7 @@
 			children = (
 				82B1B0D429A6E95C0012ADE3 /* FormatTripID.swift */,
 				8232D80629ABE5AB001549B6 /* GetTrainsGoingToStation.swift */,
+				82A011922B97E547007E5771 /* store.swift */,
 				82B1B0D629A6EA6F0012ADE3 /* RouteIdToName.swift */,
 				825E68D529A838F70049BF3C /* getRouteFromFile.swift */,
 				825E68E829A966D50049BF3C /* GetStationFromStopId.swift */,
@@ -336,6 +343,9 @@
 			dependencies = (
 			);
 			name = MarcMap;
+			packageProductDependencies = (
+				82EB4C662B97E1F4003C78B2 /* StoreHelper */,
+			);
 			productName = "hello-world";
 			productReference = 826EC4F429A6AEEA00F9E50D /* MarcMap.app */;
 			productType = "com.apple.product-type.application";
@@ -408,6 +418,9 @@
 				Base,
 			);
 			mainGroup = 826EC4EB29A6AEEA00F9E50D;
+			packageReferences = (
+				82EB4C652B97E1F4003C78B2 /* XCRemoteSwiftPackageReference "StoreHelper" */,
+			);
 			productRefGroup = 826EC4F529A6AEEA00F9E50D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -493,6 +506,7 @@
 				825E68DE29A849D30049BF3C /* tripUpdate.swift in Sources */,
 				82B1B0D529A6E95C0012ADE3 /* FormatTripID.swift in Sources */,
 				82E5EEF42AA4C0C80017F59B /* timetableResponse.swift in Sources */,
+				82A011932B97E547007E5771 /* store.swift in Sources */,
 				826EC53029A6B81400F9E50D /* Train.swift in Sources */,
 				821CD81F2B19669200DCA93C /* NewTrainDetailedView.swift in Sources */,
 				825E68EF29A96E720049BF3C /* FormatTime.swift in Sources */,
@@ -654,7 +668,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 15;
+				CURRENT_PROJECT_VERSION = 17;
 				DEVELOPMENT_ASSET_PATHS = "\"MarcMap/Preview Content\"";
 				DEVELOPMENT_TEAM = HJCD65FY5D;
 				ENABLE_PREVIEWS = YES;
@@ -675,7 +689,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.20.2;
+				MARKETING_VERSION = 1.20.4;
 				PRODUCT_BUNDLE_IDENTIFIER = "qpxdesign.marc-map";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -691,7 +705,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 15;
+				CURRENT_PROJECT_VERSION = 17;
 				DEVELOPMENT_ASSET_PATHS = "\"MarcMap/Preview Content\"";
 				DEVELOPMENT_TEAM = HJCD65FY5D;
 				ENABLE_PREVIEWS = YES;
@@ -712,7 +726,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.20.2;
+				MARKETING_VERSION = 1.20.4;
 				PRODUCT_BUNDLE_IDENTIFIER = "qpxdesign.marc-map";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -833,6 +847,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		82EB4C652B97E1F4003C78B2 /* XCRemoteSwiftPackageReference "StoreHelper" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/russell-archer/StoreHelper.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.62.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		82EB4C662B97E1F4003C78B2 /* StoreHelper */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 82EB4C652B97E1F4003C78B2 /* XCRemoteSwiftPackageReference "StoreHelper" */;
+			productName = StoreHelper;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 826EC4EC29A6AEEA00F9E50D /* Project object */;
 }

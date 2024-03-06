@@ -40,6 +40,7 @@ struct ContentView: View {
                     .tabItem {
                         Label("Info", systemImage: "info.circle.fill").accentColor(.white).background(Color.white).foregroundColor(Color.white)
                     }
+                
             }.onAppear() {
                 apiCall().getTrains{(Trains) in
                     self.trains = Trains ?? []

@@ -6,12 +6,18 @@
 //
 import SwiftUI
 import CoreLocation
+import StoreKit
 
 @available(iOS 16.0, *)
 struct SettingsView: View {
     @State var userLocation: CLLocation?
+    let store = Store()
+
    let manager = LocationManager()
-    var body: some View {
+
+
+  var body: some View {
+        
         VStack {
             HeaderView(title:"Info").onAppear() {
                 manager.requestLocation()
@@ -26,9 +32,21 @@ struct SettingsView: View {
             Text("Data Sourced from the Maryland Transit Administration (MTA)").padding(.leading,15).frame(maxWidth: .infinity, alignment: .leading).padding(.bottom,1)
             Link("Privacy Policy",destination: URL(string: "https://marcmap.app/privacy")!).foregroundColor(Color.blue).padding(0).frame(maxWidth: .infinity, alignment: .leading).padding(.leading,15).padding(.bottom,1)
             Text("Made with ❤️ in Maryland").padding(.leading,15).frame(maxWidth: .infinity, alignment: .leading).padding(.bottom,1)
-        
+            Text("Donate").font(.system(size: 24, weight: .light)).fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+            Text("Developing and Running MarcMap takes a significant amount of time, effort, and money. To keep MarcMap Free for all, please consider donating below. Any amount is greatly appreciated.").padding(.leading,15).frame(maxWidth: .infinity, alignment: .leading).padding(.bottom,1)
+            HStack {
+                ForEach(store.products) {
+                    product in
+                    ZStack {
+                        Button(product.displayPrice) {
+                            Task {
+                                try await store.purchase(product)
+                            }
+                        }.font(.system(size: 24)).fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/).foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/).padding(15)
+                    }
+                }}
+
             Spacer()
-       
         }.frame(maxWidth: .infinity)
   
     }
