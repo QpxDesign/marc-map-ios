@@ -9,7 +9,10 @@ import Foundation
 import SwiftUI
 class apiCall {
     func getTrains(completion:@escaping ([Train]?) -> ()) {
-        guard let url = URL(string: "https://api.marcmap.app/mtaAPI") else {
+        if UserDefaults.standard.string(forKey: "user_id") == nil || UserDefaults.standard.string(forKey: "user_id") == "nil" {
+            UserDefaults.standard.set(NSUUID().uuidString, forKey: "user_id")
+        }
+        guard let url = URL(string: "https://api.marcmap.app/mtaAPI?\(UserDefaults.standard.string(forKey: "user_id") ??  "")") else {
             return }
         
         URLSession.shared.dataTask(with: url) { (data, response, error) in
@@ -30,7 +33,10 @@ class apiCall {
         .resume()
     }
     func getTripUpdates(completion:@escaping ([tripUpdate]?) -> ()) {
-        guard let url = URL(string: "https://api.marcmap.app/tripUpdatesAPI") else {
+        if UserDefaults.standard.string(forKey: "user_id") == nil || UserDefaults.standard.string(forKey: "user_id") == "nil" {
+            UserDefaults.standard.set(NSUUID().uuidString, forKey: "user_id")
+        }
+        guard let url = URL(string: "https://api.marcmap.app/tripUpdatesAPI?\(UserDefaults.standard.string(forKey: "user_id") ??  "")") else {
             return }
         
         URLSession.shared.dataTask(with: url) { (data, _, _) in
@@ -48,8 +54,11 @@ class apiCall {
         
     }
     func getTimetable( lineName: String, date: String,  direction :String, completion:@escaping ([timetableResponse]?) -> ()) {
-        print("https://api.marcmap.app/getTimetable?line=\(lineName)&date=\(date.replacingOccurrences(of: "/", with: "%2F"))&direction=\(direction)")
-        guard let url = URL(string: "https://api.marcmap.app/getTimetable?line=\(lineName)&date=\(date.replacingOccurrences(of: "/", with: "%2F"))&direction=\(direction)") else {
+        if UserDefaults.standard.string(forKey: "user_id") == nil || UserDefaults.standard.string(forKey: "user_id") == "nil" {
+            UserDefaults.standard.set(NSUUID().uuidString, forKey: "user_id")
+        }
+        print("https://api.marcmap.app/getTimetable?line=\(lineName)&date=\(date.replacingOccurrences(of: "/", with: "%2F"))&direction=\(direction)&dev_id=\(UserDefaults.standard.string(forKey: "user_id") ??  "")")
+        guard let url = URL(string: "https://api.marcmap.app/getTimetable?line=\(lineName)&date=\(date.replacingOccurrences(of: "/", with: "%2F"))&direction=\(direction)&dev_id=\(UserDefaults.standard.string(forKey: "user_id") ??  "")") else {
             return }
         
         URLSession.shared.dataTask(with: url) { (data, _, _) in

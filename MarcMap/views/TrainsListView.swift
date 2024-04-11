@@ -19,7 +19,10 @@ struct TrainsListView: View {
     @State var tripDetails = [tripUpdate]()
     @State var activeTrainId = ""
     @State var trainShowed : [Bool] = []
+    @State var takeToDonate: Bool = false
+    @State var showDonateAlert: Bool = false
     var timer = Timer()
+
     var body: some View {
         VStack {
             HeaderView(title:"Trains")
@@ -97,6 +100,20 @@ struct TrainsListView: View {
               
             }
             
+        } .alert("Please Donate", isPresented: $showDonateAlert) {
+                Button {
+                    showDonateAlert = false
+                } label: {
+                    Text("No Thanks.")
+                }
+            Button {
+                takeToDonate = true
+                } label: {
+                    Text("Donate")
+                }
+           
+        }  message: {
+            Text("To keep MarcMap free and adless for all, please consider donating to help cover developmental costs. Any bit helps.")
         }
             //2.
             .onAppear() {
@@ -104,6 +121,9 @@ struct TrainsListView: View {
                 if count == 16  {
                     SKStoreReviewController.requestReview()
                      }
+                if (count % 10 == 0) {
+                    showDonateAlert = true;
+                }
                     apiCall().getTrains { (trains) in
                         self.trains = trains ?? []
                     }
@@ -123,9 +143,15 @@ struct TrainsListView: View {
                     }
      
             }
-            }
+            } .background(
+                NavigationLink(
+                    destination: SettingsView(),
+                    isActive: $takeToDonate
+                ) {
+                    EmptyView()
+                }
+            )
         
         
     }
 }
-
