@@ -27,7 +27,6 @@ struct TrainsListView: View {
         VStack {
             HeaderView(title:"Trains")
             if (!trains.isEmpty) {
-                
                 List(trains.indices,id: \.self) { i  in
                     if (!trainShowed.isEmpty && trainShowed.count == trains.count) {
                         VStack(alignment: .leading) {
@@ -117,13 +116,20 @@ struct TrainsListView: View {
         }
             //2.
             .onAppear() {
+                Task {
+                    for await verificationResult in Transaction.updates {
+                        UserDefaults.standard.set(verificationResult.jwsRepresentation, forKey: "purchaseJWT")
+                    }
+                }
                 var count = UserDefaults.standard.integer(forKey: "processCompletedCountKey")
+                UserDefaults.standard.set(count+1, forKey: "processCompletedCountKey")
                 if count == 16  {
                     SKStoreReviewController.requestReview()
                      }
-                if (count % 10 == 0) {
-                    showDonateAlert = true;
+                if count % 1 == 10 && (UserDefaults.standard.string(forKey: "purchaseJWT") == "" || UserDefaults.standard.string(forKey: "purchaseJWT") == nil)  {
+                    showDonateAlert = true
                 }
+
                     apiCall().getTrains { (trains) in
                         self.trains = trains ?? []
                     }
