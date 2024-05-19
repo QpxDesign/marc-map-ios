@@ -126,7 +126,7 @@ struct TrainsListView: View {
                 if count == 16  {
                     SKStoreReviewController.requestReview()
                      }
-                if count % 1 == 10 && (UserDefaults.standard.string(forKey: "purchaseJWT") == "" || UserDefaults.standard.string(forKey: "purchaseJWT") == nil)  {
+                if count % 10 == 0 && (UserDefaults.standard.string(forKey: "purchaseJWT") == "" || UserDefaults.standard.string(forKey: "purchaseJWT") == nil)  {
                     showDonateAlert = true
                 }
 
@@ -156,7 +156,7 @@ struct TrainsListView: View {
                 ) {
                     EmptyView()
                 }
-            )
+            ).zIndex(1000)
         
         
     }
