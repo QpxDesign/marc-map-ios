@@ -7,10 +7,10 @@
 
 import Foundation
 
-struct StationTrainDetails :  Codable, Identifiable {
+struct StationTrainDetails: Codable, Identifiable {
     let id = UUID()
-    let tripId : String
-    let time : String?
-    let line : String
-    let delay : Int?
+    let tripId: String
+    let time: String?
+    let line: String
+    let delay: Int?
 }

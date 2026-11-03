@@ -11,6 +11,5 @@ struct position: Codable, Identifiable {
     let id = UUID()
     let latitude: Double
     let longitude: Double
-    let bearing : Double?
-
+    let bearing: Double?
 }

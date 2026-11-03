@@ -10,17 +10,11 @@ import MapKit
 
 struct TrainPopup: Identifiable {
     let id = UUID()
-    let coordinate: CLLocationCoordinate2D
-    var show = false
+    var coordinate: CLLocationCoordinate2D
+    var show: Bool = true
+    var expired: Bool = false
     let tripID: String?
-    let line: String?
-    let delay: String?
-    let nextStop: String?
-    let nextStopETA: String?
-    let finalStop: String?
-    let finalStopETA: String?
 }
-
 
 struct StationPopup: Identifiable {
     let id = UUID()

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+
 struct station: Codable, Identifiable {
     let id=UUID()
     let stop_id: [Int]

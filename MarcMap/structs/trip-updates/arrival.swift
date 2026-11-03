@@ -6,8 +6,9 @@
 //
 
 import Foundation
-struct arrival:Codable, Identifiable {
-    let id=UUID()
+
+struct arrival: Codable, Identifiable {
+    let id = UUID()
     let delay: Int?
     let time: String
 }

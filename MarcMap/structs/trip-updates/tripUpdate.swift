@@ -6,9 +6,10 @@
 //
 
 import Foundation
+
 struct tripUpdate: Codable, Identifiable {
     let id = UUID()
     let trip: trip
     var stopTimeUpdate: [stopTimeUpdate]
-    let timestamp : String
+    let timestamp: String
 }

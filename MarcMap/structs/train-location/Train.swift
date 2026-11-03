@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct Train: Codable, Identifiable {
-    let id = UUID()
-    let vehicle : vehicle
+    let id: String
+    let vehicle: vehicle
 }
-

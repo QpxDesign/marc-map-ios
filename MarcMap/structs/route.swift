@@ -12,5 +12,4 @@ struct route: Codable, Identifiable {
     let id = UUID()
     let shape_pt_lat: Double
     let shape_pt_lon: Double
-    
 }

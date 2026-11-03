@@ -10,6 +10,6 @@ import SwiftUI
 struct vehicle: Codable, Identifiable {
     let id = UUID()
     let trip: trip
-    let position : position
-    let timestamp : String
+    let position: position
+    let timestamp: String
 }
