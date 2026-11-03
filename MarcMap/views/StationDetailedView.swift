@@ -26,6 +26,9 @@ enum directionChocies: String, CaseIterable, Identifiable {
 
 struct StationDetailedView: View {
     var stationObj: station
+    @ObservedObject var trainsViewModel: TrainsViewModel
+    @ObservedObject var tripUpdatesViewModel: TripUpdatesViewModel
+    
     @State var trains = [Train]()
     @State var details = [tripUpdate]()
     @State var activeTrain = false
@@ -96,10 +99,10 @@ struct StationDetailedView: View {
                 }
               
                 //  Text("Last Updated: " + FormatTime(timestamp: trains[0].vehicle.timestamp))
-                NavigationLink(destination: FullScreenMap(suppliedLoc: CLLocationCoordinate2D(
+                NavigationLink(destination: FullScreenMap(trainsViewModel: trainsViewModel, tripUpdatesViewModel: tripUpdatesViewModel, suppliedLoc: CLLocationCoordinate2D(
                     latitude: self.stationObj.stop_lat, longitude: self.stationObj.stop_lon
                 ), suppliedSpan: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))) {
-                    EmbeddedMap(loc: CLLocationCoordinate2D(latitude: self.stationObj.stop_lat, longitude: self.stationObj.stop_lon), tripId: "", suppliedSpan: MKCoordinateSpan(latitudeDelta: 0.001, longitudeDelta: 0.001)).frame(width: geometry.size.width * 0.90, height: geometry.size.height * 0.35).cornerRadius(15).padding(.bottom, 0)
+                    EmbeddedMap(loc: CLLocationCoordinate2D(latitude: self.stationObj.stop_lat, longitude: self.stationObj.stop_lon), tripId: "", suppliedSpan: MKCoordinateSpan(latitudeDelta: 0.001, longitudeDelta: 0.001), trainsViewModel: trainsViewModel, tripUpdatesViewModel: tripUpdatesViewModel).frame(width: geometry.size.width * 0.90, height: geometry.size.height * 0.35).cornerRadius(15).padding(.bottom, 0)
                 }.accentColor(Color.black)
 
                 HStack {
@@ -134,7 +137,7 @@ struct StationDetailedView: View {
                                     Image(systemName: "arrow.right")
                                         .font(.system(size: 24, weight: .light))
                                     
-                                    NavigationLink(destination: TrainDetailedView(tripId: GetTrainsGoingToStation(stopId: stationObj.stop_id, trains: trains, details: details)[i].tripId)) {
+                                    NavigationLink(destination: TrainDetailedView(tripId: GetTrainsGoingToStation(stopId: stationObj.stop_id, trains: trains, details: details)[i].tripId, trainsViewModel: trainsViewModel, tripUpdatesViewModel: tripUpdatesViewModel)) {
                                         EmptyView()
                                     }.accentColor(Color.black)
                                         .frame(width: 0)
@@ -227,7 +230,7 @@ struct StationDetailedView: View {
         }.onAppear {
             apiCall().getTrains { trains_tmp in
                 apiCall().getTripUpdates { tripupdate_tmp in
-                    trainsGoingToStation = GetTrainsGoingToStation(stopId: stationObj.stop_id, trains: trains_tmp ?? [], details: tripupdate_tmp ?? [])
+                    trainsGoingToStation = GetTrainsGoingToStation(stopId: stationObj.stop_id, trains: trains_tmp ?? [], details: tripupdate_tmp ?? []) // TODO: - rework
                 }
             }
         }

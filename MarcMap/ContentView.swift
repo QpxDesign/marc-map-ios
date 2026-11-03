@@ -11,24 +11,27 @@ import SwiftUI
 struct ContentView: View {
     // 1.
 
-    init() {
-        UITabBar.appearance().backgroundColor = UIColor.white
-        UITabBar.appearance().unselectedItemTintColor = UIColor.gray
-    }
+    /*
+     init() {
+         UITabBar.appearance().backgroundColor = UIColor.white
+         UITabBar.appearance().unselectedItemTintColor = UIColor.gray
+     }*/
 
-    @State var trains = [Train]()
+    @ObservedObject private var trainsViewModel = TrainsViewModel()
+    @ObservedObject private var tripUpdatesViewModel = TripUpdatesViewModel()
+
     var body: some View {
         NavigationView {
             TabView {
-                TrainsListView()
+                TrainsListView(trainsViewModel: trainsViewModel, tripUpdatesViewModel: tripUpdatesViewModel)
                     .tabItem {
                         Label("Trains", systemImage: "list.dash").accentColor(.white)
                     }
-                FullScreenMap()
+                FullScreenMap(trainsViewModel: trainsViewModel, tripUpdatesViewModel: tripUpdatesViewModel)
                     .tabItem {
                         Label("Map", systemImage: "map.fill").accentColor(.white).background(Color.white).foregroundColor(Color.white)
                     }
-                StationListView()
+                StationListView(trainsViewModel: trainsViewModel, tripUpdatesViewModel: tripUpdatesViewModel)
                     .tabItem {
                         Label("Stations", systemImage: "pin.circle.fill").accentColor(.white).background(Color.white).foregroundColor(Color.white)
                     }
@@ -36,11 +39,6 @@ struct ContentView: View {
                     .tabItem {
                         Label("Info", systemImage: "info.circle.fill").accentColor(.white).background(Color.white).foregroundColor(Color.white)
                     }
-
-            }.onAppear {
-                apiCall().getTrains { Trains in
-                    self.trains = Trains ?? []
-                }
             }
         }.navigationBarTitleDisplayMode(.inline).padding(.top, -20).navigationViewStyle(StackNavigationViewStyle()).accentColor(.black)
     }

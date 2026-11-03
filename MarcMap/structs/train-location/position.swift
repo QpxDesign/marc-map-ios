@@ -12,4 +12,5 @@ struct position: Codable, Identifiable {
     let latitude: Double
     let longitude: Double
     let bearing: Double?
+    let speed: Float?
 }

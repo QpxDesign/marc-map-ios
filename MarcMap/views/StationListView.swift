@@ -10,6 +10,8 @@ import SwiftUI
 
 struct StationListView: View {
     @State var userLocation: CLLocation?
+    @ObservedObject var trainsViewModel: TrainsViewModel
+    @ObservedObject var tripUpdatesViewModel: TripUpdatesViewModel
     @State var stations: [station] = getStations()
 
     let manager = LocationManager()
@@ -37,7 +39,7 @@ struct StationListView: View {
                             HStack(spacing: 0) {
                                 Image(systemName: "arrow.right")
                                     .font(.system(size: 24, weight: .light))
-                                NavigationLink(destination: StationDetailedView(stationObj: station, dateInput: Date())) {
+                                NavigationLink(destination: StationDetailedView(stationObj: station, trainsViewModel: trainsViewModel, tripUpdatesViewModel: tripUpdatesViewModel, dateInput: Date())) {
                                     EmptyView()
                                 }.accentColor(Color.black)
                                     .frame(width: 0)
@@ -48,12 +50,6 @@ struct StationListView: View {
                 }
             }
         }
-    }
-}
-
-struct StationListView_Previews: PreviewProvider {
-    static var previews: some View {
-        StationListView()
     }
 }
 

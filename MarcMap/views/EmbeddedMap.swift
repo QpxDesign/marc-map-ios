@@ -14,7 +14,9 @@ struct EmbeddedMap: View {
     let tripId: String
     @State var suppliedSpan: MKCoordinateSpan?
 
-    @ObservedObject var trainsViewModel = TrainsViewModel()
+    @ObservedObject var trainsViewModel: TrainsViewModel
+    @ObservedObject var tripUpdatesViewModel: TripUpdatesViewModel
+
     @State private var StationPopups: [StationPopup] = []
     @State private var trainPopup: TrainPopup? = nil
     @State var span: MKCoordinateSpan = .init(latitudeDelta: 0.05, longitudeDelta: 0.05)
@@ -49,7 +51,7 @@ struct EmbeddedMap: View {
                     Annotation("",
                                coordinate: trainPopup?.coordinate ?? CLLocationCoordinate2D(latitude: 38.894, longitude: -77.029))
                     {
-                        NavigationLink(destination: TrainDetailedView(tripId: trainPopup?.tripID ?? "")) {
+                        NavigationLink(destination: TrainDetailedView(tripId: trainPopup?.tripID ?? "", trainsViewModel: trainsViewModel, tripUpdatesViewModel: tripUpdatesViewModel)) {
                             Image("TrainIcon")
                         }.zIndex(5)
                     }
@@ -59,7 +61,7 @@ struct EmbeddedMap: View {
                     Annotation(StationPopups[index1].name,
                                coordinate: StationPopups[index1].coordinate)
                     {
-                        NavigationLink(destination: StationDetailedView(stationObj: StationPopups[index1].station, dateInput: Date())) {
+                        NavigationLink(destination: StationDetailedView(stationObj: StationPopups[index1].station, trainsViewModel: trainsViewModel, tripUpdatesViewModel: tripUpdatesViewModel, dateInput: Date())) {
                             Image("StationIcon")
                         }.zIndex(4)
                     }

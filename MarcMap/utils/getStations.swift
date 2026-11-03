@@ -6,9 +6,10 @@
 //
 
 import Foundation
+
 func getStations() -> [station] {
-    var stations : [station] = [station]()
-    if let url = Bundle.main.url(forResource: "StopData", withExtension: "json") {
+    var stations = [station]()
+    if let url = Bundle.main.url(forResource: "StopDataPretty", withExtension: "json") {
         do {
             let data = try Data(contentsOf: url)
             let decoder = JSONDecoder()

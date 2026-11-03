@@ -10,7 +10,8 @@ import MapKit
 import SwiftUI
 
 struct FullScreenMap: View {
-    @ObservedObject var trainsViewModel = TrainsViewModel()
+    @ObservedObject var trainsViewModel: TrainsViewModel
+    @ObservedObject var tripUpdatesViewModel: TripUpdatesViewModel
     @State private var TrainPopups: [TrainPopup] = []
     @State private var StationPopups: [StationPopup] = []
     @State var suppliedLoc: CLLocationCoordinate2D?
@@ -59,7 +60,7 @@ struct FullScreenMap: View {
                     Annotation("",
                                coordinate: popup.coordinate)
                     {
-                        NavigationLink(destination: TrainDetailedView(tripId: popup.tripID ?? "")) {
+                        NavigationLink(destination: TrainDetailedView(tripId: popup.tripID ?? "", trainsViewModel: trainsViewModel, tripUpdatesViewModel: tripUpdatesViewModel)) {
                             Image("TrainIcon")
                         }.zIndex(5)
                     }
@@ -68,7 +69,7 @@ struct FullScreenMap: View {
                     Annotation(StationPopups[index1].name,
                                coordinate: StationPopups[index1].coordinate)
                     {
-                        NavigationLink(destination: StationDetailedView(stationObj: StationPopups[index1].station, dateInput: Date())) {
+                        NavigationLink(destination: StationDetailedView(stationObj: StationPopups[index1].station, trainsViewModel: trainsViewModel, tripUpdatesViewModel: tripUpdatesViewModel, dateInput: Date())) {
                             Image("StationIcon")
                         }.zIndex(4)
                     }
@@ -77,7 +78,7 @@ struct FullScreenMap: View {
                 updateTrainPopups(train_data: trains)
                 
             })
-            Image(systemName: "location.fill").foregroundColor(.white).font(.system(size: 28.0)).padding(12).background(Color.black).position(x: 50, y: 35).onTapGesture {
+            Image(systemName: "location.fill").foregroundColor(.white).font(.system(size: 28.0)).padding(12).background(Color.black).position(x: 50, y: 30).onTapGesture {
                 let userLocation = manager.location
                 loc = CLLocationCoordinate2D(latitude: userLocation?.coordinate.latitude ?? 38.9072, longitude: userLocation?.coordinate.longitude ?? 77.0369)
                 span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)

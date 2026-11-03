@@ -18,7 +18,9 @@ class TrainsViewModel: ObservableObject {
     }
 
     init() {
-        updateData()
+        if trains.isEmpty {
+            updateData()
+        }
         _ = Timer.scheduledTimer(withTimeInterval: 10, repeats: true) { _ in
             self.updateData()
         }
@@ -27,7 +29,7 @@ class TrainsViewModel: ObservableObject {
 
 class TripUpdatesViewModel: ObservableObject {
     @Published var tripUpdates: [tripUpdate] = []
-    @Published var isLoading = true
+    @Published var isLoading = false
 
     func updateData() {
         apiCall().getTripUpdates { t in
@@ -37,7 +39,9 @@ class TripUpdatesViewModel: ObservableObject {
     }
 
     init() {
-        updateData()
+        if tripUpdates.isEmpty {
+            updateData()
+        }
         _ = Timer.scheduledTimer(withTimeInterval: 10, repeats: true) { _ in
             self.updateData()
         }

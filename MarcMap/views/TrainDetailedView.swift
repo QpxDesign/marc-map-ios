@@ -11,10 +11,9 @@ import SwiftUI
 struct TrainDetailedView: View {
     var tripId: String
     
-    @StateObject private var trainsViewModel = TrainsViewModel()
-    @StateObject private var tripUpdatesViewModel = TripUpdatesViewModel()
-    /// @State var details = [Train]()
-    /// @State var tripDetails = [tripUpdate]()
+    @ObservedObject var trainsViewModel: TrainsViewModel
+    @ObservedObject var tripUpdatesViewModel: TripUpdatesViewModel
+
     @State var region = MKCoordinateRegion(
         center: CLLocationCoordinate2D(latitude: 38.9072, longitude: -77.0369),
         latitudinalMeters: 15000,
@@ -26,7 +25,10 @@ struct TrainDetailedView: View {
     let camd: [CLLocationCoordinate2D] = getRouteFromFile(filename: "Camden") ?? [CLLocationCoordinate2D(latitude: 0, longitude: 0)]
     
     var body: some View {
-        if trainsViewModel.isLoading || tripUpdatesViewModel.isLoading {
+        let matching_trip_update = tripUpdatesViewModel.tripUpdates.filter { $0.trip.tripId == tripId }
+        let matching_train = trainsViewModel.trains.filter { $0.vehicle.trip.tripId == tripId }
+
+        if (matching_trip_update.isEmpty || matching_train.isEmpty) && (trainsViewModel.isLoading || tripUpdatesViewModel.isLoading) {
             HStack {
                 Text("Loading...").bold().multilineTextAlignment(.leading).padding(.leading, 20).padding(.bottom, 15).foregroundColor(Color.white).font(.system(size: 34))
                 Spacer()
@@ -37,20 +39,22 @@ struct TrainDetailedView: View {
         } else {
             GeometryReader {
                 _ in
-                let matching_trip_update = tripUpdatesViewModel.tripUpdates.filter { $0.trip.tripId == tripId }
-                let matching_train = trainsViewModel.trains.filter { $0.vehicle.trip.tripId == tripId }
                 if matching_trip_update.isEmpty || matching_train.isEmpty {
-                    TrainsListView()
+                    TrainsListView(trainsViewModel: trainsViewModel, tripUpdatesViewModel: tripUpdatesViewModel)
                 } else {
                     VStack {
                         HStack {
                             Text(FormatTripId(tripId: tripId)).bold().multilineTextAlignment(.leading).padding(.leading, 20).padding(.bottom, 15).foregroundColor(Color.white).font(.system(size: 34))
+                            if matching_train[0].vehicle.position.speed != nil {
+                                let speed = matching_train[0].vehicle.position.speed?.rounded().description ?? ""
+                            
+                                Text("\(speed)mph").foregroundColor(Color.white).font(.system(size: 18)).monospaced()
+                            }
                         }.frame(maxWidth: .infinity, alignment: .leading).background(CustomColors.MarcOrange)
                      
                         Text("Last Updated: " + FormatTime(timestamp: matching_train[0].vehicle.timestamp))
-                        NavigationLink(destination: FullScreenMap(suppliedLoc: CLLocationCoordinate2D(latitude: matching_train[0].vehicle.position.latitude, longitude: matching_train[0].vehicle.position.longitude), suppliedSpan: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))) {
-                            EmbeddedMap(loc: CLLocationCoordinate2D(latitude: matching_train[0].vehicle.position.latitude, longitude: matching_train[0].vehicle.position.longitude), tripId: matching_train[0].vehicle.trip.tripId)
-                            // region: region, BrunswickLineCoordinates: brunswick, PennLineCoordinates: penn, CamdenLineCoordinates: camd, FredrickBranchLineCoordinates: fred, tripId: tripId).frame(width: geometry.size.width * 0.90, height: geometry.size.height * 0.35).cornerRadius(15).padding(.bottom, 0
+                        NavigationLink(destination: FullScreenMap(trainsViewModel: trainsViewModel, tripUpdatesViewModel: tripUpdatesViewModel, suppliedLoc: CLLocationCoordinate2D(latitude: matching_train[0].vehicle.position.latitude, longitude: matching_train[0].vehicle.position.longitude), suppliedSpan: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))) {
+                            EmbeddedMap(loc: CLLocationCoordinate2D(latitude: matching_train[0].vehicle.position.latitude, longitude: matching_train[0].vehicle.position.longitude), tripId: matching_train[0].vehicle.trip.tripId, trainsViewModel: trainsViewModel, tripUpdatesViewModel: tripUpdatesViewModel)
                         }.accentColor(Color.black)
                     
                         if !matching_trip_update[0].stopTimeUpdate.isEmpty {
@@ -59,21 +63,27 @@ struct TrainDetailedView: View {
                             let t = removeDuplicates(arr: tD + tDa)
                             VStack(alignment: .trailing) {
                                 List(t) { stop in
-                                    HStack {
-                                        if Double(stop.departure?.time ?? "0") ?? 0 > NSDate().timeIntervalSince1970 + 30 || Double(stop.arrival?.time ?? "0") ?? 0 > NSDate().timeIntervalSince1970 + 30 {
-                                            Text(GetStationFromStopId(stopID: Int(stop.stopId) ?? 0).stop_name)
-                                            Spacer()
-                                            Text(stop.arrival?.time != nil ? FormatTime(timestamp: stop.arrival?.time ?? "") : stop.departure?.time != nil ? FormatTime(timestamp: stop.departure?.time ?? "") : "Unknown").bold()
-                                        } else {
+                                    let delta = NSDate().timeIntervalSince1970 + 30
+                                    let dep_time = Double(stop.departure?.time ?? "0") ?? 0
+                                    let arr_time = Double(stop.arrival?.time ?? "0") ?? 0
+                                    if dep_time > delta || arr_time > delta {
+                                        NavigationLink(destination: StationDetailedView(stationObj: GetStationFromStopId(stopID: Int(stop.stopId) ?? 0), trainsViewModel: trainsViewModel, tripUpdatesViewModel: tripUpdatesViewModel)) {
+                                            HStack {
+                                                Text(GetStationFromStopId(stopID: Int(stop.stopId) ?? 0).stop_name)
+                                                Spacer()
+                                                Text(stop.arrival?.time != nil ? FormatTime(timestamp: stop.arrival?.time ?? "") : stop.departure?.time != nil ? FormatTime(timestamp: stop.departure?.time ?? "") : "Unknown").bold()
+                                            }
+                                        }
+                                    } else { // inactive stops
+                                        HStack {
                                             Text(GetStationFromStopId(stopID: Int(stop.stopId) ?? 0).stop_name).foregroundColor(Color.gray)
                                             Spacer()
                                             Text(stop.arrival?.time != nil ? FormatTime(timestamp: stop.arrival?.time ?? "0") : stop.departure?.time != nil ? FormatTime(timestamp: stop.departure?.time ?? "0") : "Unknown").bold().foregroundColor(Color.gray)
                                         }
                                     }
-                                    //  }
                                 }
                                 HStack {
-                                    Text("Last Stop: " + GetStationFromStopId(stopID: Int(matching_trip_update[0].stopTimeUpdate.last?.stopId ?? "0") ?? 0).stop_name).foregroundColor(Color.white).padding(10).background(CustomColors.MarcBlue).bold().frame(maxWidth: .infinity)
+                                    Text("Last Stop: " + GetStationFromStopId(stopID: Int(matching_trip_update[0].stopTimeUpdate.last?.stopId ?? "0") ?? 0).stop_name).foregroundColor(Color.white).padding(10).background(CustomColors.MarcBlue).bold().frame(maxWidth: .infinity).multilineTextAlignment(.center)
                                 
                                 }.frame(maxWidth: .infinity, alignment: .center).font(.system(size: 18)).background(CustomColors.MarcBlue).padding(.horizontal, 10)
                             }.frame(alignment: .leading).padding(.top, 0)
