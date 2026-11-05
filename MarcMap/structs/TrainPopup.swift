@@ -11,6 +11,7 @@ import MapKit
 struct TrainPopup: Identifiable {
     let id = UUID()
     var coordinate: CLLocationCoordinate2D
+    var bearing: Double
     var show: Bool = true
     var expired: Bool = false
     let tripID: String?

@@ -21,7 +21,7 @@ class TrainsViewModel: ObservableObject {
         if trains.isEmpty {
             updateData()
         }
-        _ = Timer.scheduledTimer(withTimeInterval: 10, repeats: true) { _ in
+        _ = Timer.scheduledTimer(withTimeInterval: 6, repeats: true) { _ in
             self.updateData()
         }
     }
@@ -42,7 +42,7 @@ class TripUpdatesViewModel: ObservableObject {
         if tripUpdates.isEmpty {
             updateData()
         }
-        _ = Timer.scheduledTimer(withTimeInterval: 10, repeats: true) { _ in
+        _ = Timer.scheduledTimer(withTimeInterval: 6, repeats: true) { _ in
             self.updateData()
         }
     }

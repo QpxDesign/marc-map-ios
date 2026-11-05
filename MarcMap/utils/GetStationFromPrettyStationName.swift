@@ -7,21 +7,14 @@
 
 import Foundation
 
-func GetStationFromPrettyStationName(name: String) -> station? {
-    var ans = [station]()
-    if let url = Bundle.main.url(forResource: "StopDataPretty", withExtension: "json") {
-        do {
-            let data = try Data(contentsOf: url)
-            let decoder = JSONDecoder()
-            let jsonData = try decoder.decode([station].self, from: data)
-            for i in jsonData {
-                ans.append(i)
-            }
-
-        } catch {
-            print("error:\(error)")
-        }
+func GetStationFromPrettyStationName(name: String, stations: [station]) -> station? {
+    let filtered = stations.filter {
+        $0.pretty_stop_name.trimmingCharacters(in: .whitespaces).lowercased() == name.trimmingCharacters(in: .whitespaces).lowercased()
     }
-    let filtered = ans.filter { $0.pretty_stop_name == name }
+
+    if filtered.isEmpty {
+        print("ERROR RESOLVING STATION FROM PRETTY_NAME: \(name)")
+        return nil
+    }
     return filtered[0]
 }

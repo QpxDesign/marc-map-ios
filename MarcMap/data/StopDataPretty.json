@@ -968,7 +968,7 @@
       { "trainID": "train 453 (r)", "time": "9:55pm", "direction": "outbound" }
     ],
     "defaultLine": ["penn"],
-    "pretty_stop_name": "Bwi Rail Station"
+    "pretty_stop_name": "BWI Rail Station"
   },
   {
     "stop_id": [11992, 11985],

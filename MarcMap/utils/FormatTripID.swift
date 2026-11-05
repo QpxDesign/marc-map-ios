@@ -7,6 +7,8 @@
 
 import Foundation
 
-func FormatTripId(tripId : String) -> String {
-    return tripId.replacingOccurrences(of: "Train", with: "Train ").replacingOccurrences(of: "Saturday", with: " Saturday").replacingOccurrences(of:"Sunday", with:" Sunday")
+func FormatTripId(tripId: String) -> String {
+    return tripId.replacingOccurrences(of: "Train", with: "Train ").replacingOccurrences(of: "Saturday", with: " Saturday").replacingOccurrences(of: "Sunday", with: " Sunday")
+
+    //   return tripId.replacingOccurrences(of: "Train", with: "Train ").replacingOccurrences(of: "Saturday", with: " Saturday").replacingOccurrences(of: "Sunday", with: " Sunday")
 }

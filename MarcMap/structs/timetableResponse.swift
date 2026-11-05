@@ -9,9 +9,6 @@ import Foundation
 
 struct timetableResponse: Codable, Identifiable {
     let id = UUID()
-    let stop_name: String?
-    let trains: [String]?
-    let times: [String]?
-    let error: String?
-    let msg: String?
+    let trip_id: String
+    let arrival_time: String
 }

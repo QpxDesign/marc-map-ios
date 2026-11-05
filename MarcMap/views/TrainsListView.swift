@@ -10,10 +10,20 @@ import Foundation
 import StoreKit
 import SwiftUI
 
-@available(iOS 16.0, *)
+struct SectionHeader: View {
+    let icon_name: String
+    let title_text: String
+
+    var body: some View {
+        HStack(alignment: .center) {
+            Image(systemName: icon_name).padding(0).font(.system(size: 23))
+            Text(title_text).frame(maxWidth: .infinity, alignment: .leading).font(.system(size: 26, weight: .semibold)).padding(.leading, -2).padding(.bottom, -5).multilineTextAlignment(.leading).monospaced().kerning(-1.5)
+        }.padding(.leading, 6)
+    }
+}
+
 struct TrainsListView: View {
-    // 1.
-    @State var userLocation: CLLocation?
+    let stations: [station]
     @ObservedObject var trainsViewModel: TrainsViewModel
     @ObservedObject var tripUpdatesViewModel: TripUpdatesViewModel
     @State var showDonateAlert: Bool = false
@@ -22,67 +32,30 @@ struct TrainsListView: View {
     let manager = LocationManager()
 
     var body: some View {
-        VStack {
-            HeaderView(title: "Trains").onAppear {
-                manager.requestLocation()
-                userLocation = manager.location
-
-                trainsViewModel.trains.sort {
-                    let a1 = CLLocation(latitude: $0.vehicle.position.latitude, longitude: $0.vehicle.position.longitude)
-                    let d1 = a1.distance(from: userLocation ?? CLLocation(latitude: 38.9072, longitude: -77.0369))
-                    let a2 = CLLocation(latitude: $1.vehicle.position.latitude, longitude: $1.vehicle.position.longitude)
-                    let d2 = a2.distance(from: userLocation ?? CLLocation(latitude: 38.9072, longitude: -77.0369))
-                    print(d1)
-                    return d1 < d2
-                }
-            }
+        VStack(alignment: .leading) {
+            HeaderView(title: "Trains")
             if trainsViewModel.isLoading || tripUpdatesViewModel.isLoading {
-                Text("Loading...")
+                Text("Loading...").padding(.top, 10).font(.system(size: 28, weight: .light)).multilineTextAlignment(.center).frame(maxWidth: .infinity)
                 Spacer()
             } else if !trainsViewModel.trains.isEmpty && !tripUpdatesViewModel.tripUpdates.isEmpty {
-                List(trainsViewModel.trains, id: \.id) { train in
-                    VStack(alignment: .leading) {
-                        NavigationLink(destination: TrainDetailedView(tripId: train.vehicle.trip.tripId, trainsViewModel: trainsViewModel, tripUpdatesViewModel: tripUpdatesViewModel)) {
-                            let matching_trip_update = tripUpdatesViewModel.tripUpdates.filter { $0.trip.tripId == train.vehicle.trip.tripId }
-                            HStack {
-                                if matching_trip_update.isEmpty {
-                                    Text(FormatTripId(tripId: train.vehicle.trip.tripId)).font(.title).fontWeight(.bold)
-                                    Text(RouteIdToName(routeId: train.vehicle.trip.routeId))
-                                } else {
-                                    VStack(alignment: .leading) {
-                                        Text(FormatTripId(tripId: train.vehicle.trip.tripId)).font(.title).fontWeight(.bold)
-                                        if !matching_trip_update[0].stopTimeUpdate.isEmpty {
-                                            Text("\(RouteIdToName(routeId: train.vehicle.trip.routeId)) (\(GetStationFromStopId(stopID: Int(matching_trip_update[0].stopTimeUpdate.last?.stopId ?? "0") ?? 0).pretty_stop_name)) ").font(.system(size: 18))
-                                        } else {
-                                            Text(RouteIdToName(routeId: train.vehicle.trip.routeId)).font(.system(size: 18))
-                                        }
-                                        Text("Status: \(getStatus(train: train, updates: matching_trip_update[0]))")
-                                    }
-                                    Spacer()
-                                    let late_threshold_sec = 60 * 3 // 3min
-                                    let delay = matching_trip_update[0].stopTimeUpdate.last?.departure?.delay ?? 0
-                                    let delay_min = Int(delay / 60)
+                ScrollView {
+                    VStack(spacing: 0) {
+                        VStack {
+                            //    SectionHeader(icon_name: "star.fill", title_text: "Favorites").padding(.top, 12)
+                            TrainList(stations: stations, trainsViewModel: trainsViewModel, tripUpdatesViewModel: tripUpdatesViewModel, favoritesOnly: true).padding(.bottom, 12)
+                        }
+                        VStack {
+                            //   SectionHeader(icon_name: "lightrail", title_text: "Tracked Trains").padding(.top, 12)
+                            TrainList(stations: stations, trainsViewModel: trainsViewModel, tripUpdatesViewModel: tripUpdatesViewModel, favoritesOnly: false)
+                        }
 
-                                    if delay > late_threshold_sec {
-                                        HStack {
-                                            Rectangle().frame(width: 12, height: 12, alignment: .center).foregroundColor(Color.red).cornerRadius(1000)
-                                            Text("\(delay_min)m").monospaced()
-                                        }
-                                    } else {
-                                        Rectangle().frame(width: 12, height: 12, alignment: .center).foregroundColor(Color.green).cornerRadius(1000)
-                                        // Text("\(delay_min)m").monospaced() TMP
-                                    }
-                                }
-
-                                Image(systemName: "arrow.right").padding(3)
-                                    .font(.system(size: 24, weight: .light))
-                            }
-                        }.navigationLinkIndicatorVisibility(.hidden)
+                        Spacer()
                     }
                 }
+                // Text("Favorite").frame(maxWidth: .infinity, alignment: .leading).font(.system(size: 22, weight: .light, design: .rounded)).padding(.leading, 20).padding(.bottom, 0).multilineTextAlignment(.leading)
 
             } else {
-                Text("No Trains Found")
+                Text("No Trains Found").padding(.top, 10).font(.system(size: 28, weight: .light)).multilineTextAlignment(.center).frame(maxWidth: .infinity)
                 Spacer()
             }
         }
@@ -114,9 +87,13 @@ struct TrainsListView: View {
                     requestReview()
                 }
             }
-            if count % 10 == 0 && (UserDefaults.standard.string(forKey: "purchaseJWT") == "" || UserDefaults.standard.string(forKey: "purchaseJWT") == nil) {
+            if count % 19 == 0 && (UserDefaults.standard.string(forKey: "purchaseJWT") == "" || UserDefaults.standard.string(forKey: "purchaseJWT") == nil) {
                 showDonateAlert = true
             }
         }
     }
+}
+
+#Preview("Content View") {
+    ContentView()
 }

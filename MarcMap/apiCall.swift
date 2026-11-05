@@ -15,6 +15,9 @@ class apiCall {
         }
         guard let url = URL(string: "https://api.marcmap.app/mtaAPI?\(UserDefaults.standard.string(forKey: "user_id") ?? "")") else {
             print("WOOPS! 1")
+            DispatchQueue.main.async {
+                completion([])
+            }
             return
         }
 
@@ -29,9 +32,15 @@ class apiCall {
             }
             catch {
                 print("Error Decoding Data (2) \(error)")
+                DispatchQueue.main.async {
+                    completion([])
+                }
                 return
             }
             if tData == nil {
+                DispatchQueue.main.async {
+                    completion([])
+                }
                 return
             }
 
@@ -54,6 +63,9 @@ class apiCall {
             UserDefaults.standard.set(NSUUID().uuidString, forKey: "user_id")
         }
         guard let url = URL(string: "https://api.marcmap.app/tripUpdatesAPI?\(UserDefaults.standard.string(forKey: "user_id") ?? "")") else {
+            DispatchQueue.main.async {
+                completion([])
+            }
             return
         }
 
@@ -71,11 +83,12 @@ class apiCall {
         .resume()
     }
 
-    func getTimetable(lineName: String, date: String, direction: String, completion: @escaping ([timetableResponse]?) -> ()) {
+    func getTimetable(lineName: String, day_of_week: Int, direction: String, stop_id: String, completion: @escaping ([timetableResponse]?) -> ()) {
         if UserDefaults.standard.string(forKey: "user_id") == nil || UserDefaults.standard.string(forKey: "user_id") == "nil" {
             UserDefaults.standard.set(NSUUID().uuidString, forKey: "user_id")
         }
-        guard let url = URL(string: "https://api.marcmap.app/getTimetable?line=\(lineName)&date=\(date.replacingOccurrences(of: "/", with: "%2F"))&direction=\(direction)&dev_id=\(UserDefaults.standard.string(forKey: "user_id") ?? "")") else {
+        // https://api.marcmap.app/getTimetableNew
+        guard let url = URL(string: "http://localhost:9000/getTimetableNew?line=\(lineName)&day_of_week=\(day_of_week)&direction=\(direction)&stop_id=\(stop_id)&dev_id=\(UserDefaults.standard.string(forKey: "user_id") ?? "")") else {
             return
         }
 

@@ -26,6 +26,7 @@ enum directionChocies: String, CaseIterable, Identifiable {
 
 struct StationDetailedView: View {
     var stationObj: station
+    let stations: [station]
     @ObservedObject var trainsViewModel: TrainsViewModel
     @ObservedObject var tripUpdatesViewModel: TripUpdatesViewModel
     
@@ -33,29 +34,61 @@ struct StationDetailedView: View {
     @State var details = [tripUpdate]()
     @State var activeTrain = false
     @State var showAllTrains = false
-    @State var trainsGoingToStation: [StationTrainDetails] = []
+    
+    @State var trainsGoingToStation: [Train] = []
     
     @State var directionInput: directionChocies = .outbound
     @State var dateInput: Date = .init()
     @State var lineInput: lineChoice = .Camden
     
-    @State var timetableTrains: [String] = []
-    @State var timetableTimes: [String] = []
+    @State var timetableTrains: [timetableResponse] = []
     
     let brunswick: [CLLocationCoordinate2D] = getRouteFromFile(filename: "Brunswick") ?? [CLLocationCoordinate2D(latitude: 0, longitude: 0)]
     let penn: [CLLocationCoordinate2D] = getRouteFromFile(filename: "Penn") ?? [CLLocationCoordinate2D(latitude: 0, longitude: 0)]
     let fred: [CLLocationCoordinate2D] = getRouteFromFile(filename: "FredrickBranch") ?? [CLLocationCoordinate2D(latitude: 0, longitude: 0)]
     let camd: [CLLocationCoordinate2D] = getRouteFromFile(filename: "Camden") ?? [CLLocationCoordinate2D(latitude: 0, longitude: 0)]
     
-    var timer1 = Timer()
-    var timer2 = Timer()
+    func updateTimetable() {
+        var formatted_stop_id = "\(stationObj.stop_id)"
+        formatted_stop_id.replace("[", with: "")
+        formatted_stop_id.replace("]", with: "")
+        formatted_stop_id.replace(" ", with: "")
+        let dayOfWeek: Int = Calendar.current.dateComponents([.weekday], from: dateInput).weekday ?? 7 // 1 - 7, with 1 being Sunday and 7 being Saturday
+        let formattedDayOfWeek: Int
+        if dayOfWeek == 1 {
+            formattedDayOfWeek = 7
+        } else if dayOfWeek >= 2, dayOfWeek <= 6 {
+            formattedDayOfWeek = dayOfWeek - 1
+        } else {
+            formattedDayOfWeek = 6
+        }
+         
+        apiCall().getTimetable(lineName: lineInput.rawValue, day_of_week: formattedDayOfWeek, direction: directionInput.rawValue, stop_id: formatted_stop_id) { tt in
+            timetableTrains = tt ?? []
+        }
+    }
+    
+    func formatDate(d: String) -> String {
+        let inputFormat = DateFormatter()
+        inputFormat.dateFormat = "HH:mm:ss"
+        
+        let outputFormat = DateFormatter()
+        outputFormat.dateFormat = "h:mm a"
+        
+        guard let date = inputFormat.date(from: d) else {
+            print("Error parsing date '\(d)'")
+            return d
+        }
+
+        return outputFormat.string(from: date)
+    }
     
     var body: some View {
         GeometryReader { geometry in
             VStack {
                 HStack {
-                    Text(stationObj.stop_name).bold().multilineTextAlignment(.leading).padding(.leading, 20).padding(.bottom, 15).foregroundColor(Color.white).font(.system(size: 34))
-                }.frame(maxWidth: .infinity, alignment: .leading).background(CustomColors.MarcOrange).onAppear {
+                    Text(stationObj.pretty_stop_name).bold().multilineTextAlignment(.leading).padding(.leading, 20).padding(.trailing, 10).padding(.bottom, 15).foregroundColor(Color.white).font(.system(size: 34))
+                }.frame(maxWidth: .infinity, alignment: .leading).padding(.top, 40).background(CustomColors.MarcOrange).onAppear { // added paddingTop 40 for duo
                     if stationObj.defaultLine[0].lowercased() == "penn" {
                         lineInput = .Penn
                     }
@@ -65,46 +98,15 @@ struct StationDetailedView: View {
                     if stationObj.defaultLine[0].lowercased() == "camden" {
                         lineInput = .Camden
                     }
-                    let dateFormatter = DateFormatter()
-                    dateFormatter.dateFormat = "MM/dd/yyyy"
-                    let formattedDate = dateFormatter.string(from: dateInput)
-                    apiCall().getTimetable(lineName: lineInput.rawValue, date: formattedDate, direction: directionInput.rawValue) { (tt: [timetableResponse]?) in
-                        if (!(tt ?? []).filter { $0.stop_name?.lowercased() ?? "" == stationObj.stop_name.lowercased() }.isEmpty && !(tt ?? []).filter { $0.stop_name?.lowercased() ?? "" == stationObj.stop_name.lowercased() }.isEmpty) {
-                            self.timetableTimes = (tt ?? []).filter { $0.stop_name?.lowercased() == stationObj.stop_name.lowercased() }[0].times ?? []
-                            self.timetableTrains = (tt ?? []).filter { $0.stop_name?.lowercased() == stationObj.stop_name.lowercased() }[0].trains ?? []
-                        }
-                    }
-                    apiCall().getTrains { trains in
-                        self.trains = trains ?? []
-                           
-                        Timer.scheduledTimer(withTimeInterval: 10, repeats: true) { _ in
-                            if !activeTrain {
-                                apiCall().getTrains { trains in
-                                    self.trains = trains ?? []
-                                }
-                            }
-                        }
-                    }
-                    apiCall().getTripUpdates { updates in
-                        self.details = updates ?? []
-                    }
-                  
-                    Timer.scheduledTimer(withTimeInterval: 10, repeats: true) { _ in
-                        if !activeTrain {
-                            apiCall().getTripUpdates { updates in
-                                self.details = updates ?? []
-                            }
-                        }
-                    }
                 }
-              
+                    
                 //  Text("Last Updated: " + FormatTime(timestamp: trains[0].vehicle.timestamp))
-                NavigationLink(destination: FullScreenMap(trainsViewModel: trainsViewModel, tripUpdatesViewModel: tripUpdatesViewModel, suppliedLoc: CLLocationCoordinate2D(
+                NavigationLink(destination: FullScreenMap(stations: stations, trainsViewModel: trainsViewModel, tripUpdatesViewModel: tripUpdatesViewModel, suppliedLoc: CLLocationCoordinate2D(
                     latitude: self.stationObj.stop_lat, longitude: self.stationObj.stop_lon
                 ), suppliedSpan: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))) {
-                    EmbeddedMap(loc: CLLocationCoordinate2D(latitude: self.stationObj.stop_lat, longitude: self.stationObj.stop_lon), tripId: "", suppliedSpan: MKCoordinateSpan(latitudeDelta: 0.001, longitudeDelta: 0.001), trainsViewModel: trainsViewModel, tripUpdatesViewModel: tripUpdatesViewModel).frame(width: geometry.size.width * 0.90, height: geometry.size.height * 0.35).cornerRadius(15).padding(.bottom, 0)
-                }.accentColor(Color.black)
-
+                    EmbeddedMap(loc: CLLocationCoordinate2D(latitude: self.stationObj.stop_lat, longitude: self.stationObj.stop_lon), tripId: "", suppliedSpan: MKCoordinateSpan(latitudeDelta: 0.001, longitudeDelta: 0.001), stations: stations, trainsViewModel: trainsViewModel, tripUpdatesViewModel: tripUpdatesViewModel).frame(width: geometry.size.width * 0.90, height: 200).cornerRadius(15).padding(.bottom, 0).allowsHitTesting(false)
+                }
+                    
                 HStack {
                     HStack {
                         Text("Tracked Trains").fontWeight(Font.Weight.medium)
@@ -114,77 +116,42 @@ struct StationDetailedView: View {
                     HStack {
                         Text("All Trains").fontWeight(Font.Weight.medium).foregroundColor(Color.white)
                     }.padding([.leading, .trailing], 15).padding([.vertical, .horizontal], 5).background(showAllTrains ? Color.orange : Color.gray).cornerRadius(25).onTapGesture {
+                        updateTimetable()
                         showAllTrains = true
                     }
                 }
+                   
                 if !showAllTrains {
-                    List($trainsGoingToStation.indices, id: \.self) { i in
-                        VStack(alignment: .leading) {
-                            HStack {
-                                Text(FormatTripId(tripId: trainsGoingToStation[i].tripId))
-                                    .font(.title)
-                                    .fontWeight(.bold)
+                    List(trainsGoingToStation) { train in
+                        let matching_trip_update = tripUpdatesViewModel.tripUpdates.filter { $0.trip.tripId == train.vehicle.trip.tripId }
+                        if !matching_trip_update.isEmpty {
+                            let stops_away = GetTrainsUpcomingStations(train: train, details: matching_trip_update[0], stations: stations).firstIndex(of: stationObj.pretty_stop_name)
                                 
-                                Text(RouteIdToName(routeId: trainsGoingToStation[i].line))
-                                if trainsGoingToStation[i].delay ?? 0 > 300 {
-                                    Rectangle().frame(width: 10, height: 10, alignment: .center).foregroundColor(Color.red).cornerRadius(1000)
-                                } else {
-                                    Rectangle().frame(width: 10, height: 10, alignment: .center).foregroundColor(Color.green).cornerRadius(1000)
-                                }
-                                
-                                Spacer()
-                                HStack(spacing: 0) {
-                                    Image(systemName: "arrow.right")
-                                        .font(.system(size: 24, weight: .light))
+                            VStack(alignment: .leading) {
+                                NavigationLink(destination: TrainDetailedView(tripId: train.vehicle.trip.tripId, stations: stations, trainsViewModel: trainsViewModel, tripUpdatesViewModel: tripUpdatesViewModel)) {
+                                    TrainListItem(train: train, trip_update: matching_trip_update[0], stations: stations, stopsAway: stops_away, favorited: false)
+                                        
+                                }.navigationLinkIndicatorVisibility(.hidden)
                                     
-                                    NavigationLink(destination: TrainDetailedView(tripId: GetTrainsGoingToStation(stopId: stationObj.stop_id, trains: trains, details: details)[i].tripId, trainsViewModel: trainsViewModel, tripUpdatesViewModel: tripUpdatesViewModel)) {
-                                        EmptyView()
-                                    }.accentColor(Color.black)
-                                        .frame(width: 0)
-                                        .opacity(0)
-                                }.onTapGesture {
-                                    activeTrain = true
-                                }
-                                
                             }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
                         }
-                    }
-                
+                    }.contentMargins(.top, 20)
+                        
                 } else {
                     HStack {
                         Picker("Line", selection: $lineInput) {
                             Text("Penn ").tag(lineChoice.Penn)
                             Text("Camden").tag(lineChoice.Camden)
                             Text("Brunswick").tag(lineChoice.Brunswick)
-                        }.background(CustomColors.MarcBlue).accentColor(Color.white).padding([.leading, .trailing], 15).padding([.vertical, .horizontal], 5).onChange(of: lineInput) { _, newLineInput in
-                            lineInput = newLineInput
-                            let dateFormatter = DateFormatter()
-                            dateFormatter.dateFormat = "MM/dd/yyyy"
-                            let formattedDate = dateFormatter.string(from: dateInput)
-                            apiCall().getTimetable(lineName: lineInput.rawValue, date: formattedDate, direction: directionInput.rawValue) { (tt: [timetableResponse]?) in
-                                if (!(tt ?? []).filter { $0.stop_name?.lowercased() ?? "" == stationObj.stop_name.lowercased() }.isEmpty && !(tt ?? []).filter { $0.stop_name?.lowercased() ?? "" == stationObj.stop_name.lowercased() }.isEmpty) {
-                                    self.timetableTimes = (tt ?? []).filter { $0.stop_name?.lowercased() == stationObj.stop_name.lowercased() }[0].times ?? []
-                                    self.timetableTrains = (tt ?? []).filter { $0.stop_name?.lowercased() == stationObj.stop_name.lowercased() }[0].trains ?? []
-                                } else {
-                                    self.timetableTimes = []
-                                    self.timetableTrains = []
-                                }
-                            }
+                        }.background(CustomColors.MarcBlue).accentColor(Color.white).padding([.leading, .trailing], 15).padding([.vertical, .horizontal], 5).onChange(of: lineInput) { _, _ in
+                            updateTimetable()
                         }
                         Picker("Direction", selection: $directionInput) {
                             Text("Outbound").tag(directionChocies.inbound)
                             Text("Inbound").tag(directionChocies.outbound)
                         }.background(CustomColors.MarcBlue).accentColor(Color.white).padding([.leading, .trailing], 15).padding([.vertical, .horizontal], 5).onChange(of: directionInput) { _, newDirectionInput in
                             directionInput = newDirectionInput
-                            let dateFormatter = DateFormatter()
-                            dateFormatter.dateFormat = "MM/dd/yyyy"
-                            let formattedDate = dateFormatter.string(from: dateInput)
-                            apiCall().getTimetable(lineName: lineInput.rawValue, date: formattedDate, direction: directionInput.rawValue) { (tt: [timetableResponse]?) in
-                                if (!(tt ?? []).filter { $0.stop_name?.lowercased() ?? "" == stationObj.stop_name.lowercased() }.isEmpty && !(tt ?? []).filter { $0.stop_name?.lowercased() ?? "" == stationObj.stop_name.lowercased() }.isEmpty) {
-                                    self.timetableTimes = (tt ?? []).filter { $0.stop_name?.lowercased() ?? "" == stationObj.stop_name.lowercased() }[0].times ?? []
-                                    self.timetableTrains = (tt ?? []).filter { $0.stop_name?.lowercased() ?? "" == stationObj.stop_name.lowercased() }[0].trains ?? []
-                                }
-                            }
+                            updateTimetable()
                         }
                     }
                     HStack {
@@ -192,47 +159,31 @@ struct StationDetailedView: View {
                             "",
                             selection: $dateInput,
                             displayedComponents: [.date]
-                        ).labelsHidden().environment(\.locale, Locale(identifier: "en")).onChange(of: dateInput) { _, newValue in
-                            let dateFormatter = DateFormatter()
-                            dateFormatter.dateFormat = "MM/dd/yyyy"
-                            let formattedDate = dateFormatter.string(from: newValue)
-                            apiCall().getTimetable(lineName: lineInput.rawValue, date: formattedDate, direction: directionInput.rawValue) { (tt: [timetableResponse]?) in
-                                if !(tt ?? []).isEmpty && (tt ?? [])[0].error == "true" {
-                                    self.timetableTimes = []
-                                    self.timetableTrains = []
-                                }
-                                if (!(tt ?? []).filter { $0.stop_name?.lowercased() ?? "" == stationObj.stop_name.lowercased() }.isEmpty && !(tt ?? []).filter { $0.stop_name?.lowercased() ?? "" == stationObj.stop_name.lowercased() }.isEmpty) {
-                                    self.timetableTimes = (tt ?? []).filter { $0.stop_name?.lowercased() ?? "" == stationObj.stop_name.lowercased() }[0].times ?? []
-                                    self.timetableTrains = (tt ?? []).filter { $0.stop_name?.lowercased() == stationObj.stop_name.lowercased() }[0].trains ?? []
-                                }
-                            }
+                        ).labelsHidden().environment(\.locale, Locale(identifier: "en")).onChange(of: dateInput) { _, _ in
+                            updateTimetable()
                         }
                     }
-                    
-                    List(timetableTimes.indices) { i in
+                        
+                    List(timetableTrains) { timetableTrain in
                         VStack(alignment: .leading) {
                             HStack {
-                                Text(timetableTrains[i])
+                                Text(FormatTripId(tripId: timetableTrain.trip_id))
                                     .font(.system(size: 20))
                                     .fontWeight(.bold)
-                                
-                                Text(timetableTimes[i])
+                                    
+                                Text(formatDate(d: timetableTrain.arrival_time))
                                 Spacer()
                                 Text(lineInput.rawValue).font(.system(size: 18))
-                                
+                                    
                             }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
                             Spacer()
                         }
-                    }.id(timetableTimes)
+                    }.contentMargins(.top, 20)
                 }
             }
             Spacer()
-        }.onAppear {
-            apiCall().getTrains { trains_tmp in
-                apiCall().getTripUpdates { tripupdate_tmp in
-                    trainsGoingToStation = GetTrainsGoingToStation(stopId: stationObj.stop_id, trains: trains_tmp ?? [], details: tripupdate_tmp ?? []) // TODO: - rework
-                }
-            }
-        }
+        }.onReceive(trainsViewModel.$trains, perform: { trains in // update markers
+            trainsGoingToStation = GetTrainsGoingToStation(pretty_stop_name: stationObj.pretty_stop_name, trains: trains, details: self.tripUpdatesViewModel.tripUpdates, stations: stations)
+        })
     }
 }
