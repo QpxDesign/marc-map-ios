@@ -7,9 +7,11 @@
 
 import Foundation
 
-struct tripUpdate: Codable, Identifiable {
-    let id = UUID()
+struct tripUpdate: Codable, Identifiable, Equatable {
     let trip: trip
     var stopTimeUpdate: [stopTimeUpdate]
     let timestamp: String
+    var id: String {
+        trip.tripId
+    }
 }

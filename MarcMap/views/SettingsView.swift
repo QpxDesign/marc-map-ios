@@ -7,17 +7,18 @@
 import StoreKit
 import SwiftUI
 
-@available(iOS 16.0, *)
 struct SettingsView: View {
+    @ObservedObject var headerViewModel: HeaderViewModel
     func getProducts() async -> [Product] {
         return try! await Product.products(for: ["donation2", "donation1", "donation3"])
     }
 
     let store = Store()
     @State var products: [Product] = []
+
     var body: some View {
         VStack {
-            HeaderView(title: "Info")
+            HeaderView(title: "Info", headerViewModel: headerViewModel)
             ScrollView {
                 HStack {
                     Text("Created by").padding(0).padding(.top, 10)
@@ -27,7 +28,7 @@ struct SettingsView: View {
                         products = await getProducts()
                     }
                 }.frame(maxWidth: .infinity, alignment: .leading).padding(.leading, 15).padding(.bottom, 1)
-                Text("Please email marc_map_contact @ proton.me if you encounter any issues or have any feedback!").padding(.leading, 15).frame(maxWidth: .infinity, alignment: .leading).padding(.bottom, 1)
+                Text(verbatim: "Please email marc_map_contact@proton.me if you encounter any issues or have any feedback!").padding(.leading, 15).frame(maxWidth: .infinity, alignment: .leading).padding(.bottom, 1).padding(.trailing, 10)
                 Text("Made with ❤️ in Maryland").padding(.leading, 15).frame(maxWidth: .infinity, alignment: .leading)
                 Text("Reset Favorites").foregroundColor(Color.blue).frame(maxWidth: .infinity, alignment: .leading).padding(.leading, 15).padding(.top, 1).onTapGesture {
                     resetFavorites()
@@ -50,7 +51,7 @@ struct SettingsView: View {
                     }
                 }
                 Text("Hiring?").font(.system(size: 32, weight: .light)).fontWeight(/*@START_MENU_TOKEN@*/ .bold/*@END_MENU_TOKEN@*/).padding(.top, 5)
-                Text("I'm a current junior studying Computer Science and Media Arts & Culture at Occidental College, and I'm very open to any internship opportunities. I built this my junior year of high school, and I've done a lot since! Check out my portfolio (click on my name above).").padding(.leading, 15).frame(maxWidth: .infinity, alignment: .leading).padding(.bottom, 1)
+                Text("I'm a current junior studying Computer Science and Media Arts & Culture at Occidental College, and I'm very open to any internship opportunities. I built this my junior year of high school, and I've done a lot since! Check out my portfolio (click on my name above).").padding(.leading, 15).frame(maxWidth: .infinity, alignment: .leading).padding(.bottom, 1).padding(.trailing, 10)
 
                 Spacer()
             }

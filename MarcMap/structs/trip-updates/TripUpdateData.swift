@@ -8,7 +8,9 @@
 import Foundation
 
 struct TripUpdateData: Codable, Identifiable {
-    let id = UUID()
     let header: APIHeader
     let entity: [tu_entity]
+    var id: String {
+        header.timestamp
+    }
 }

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Train: Codable, Identifiable {
+struct Train: Codable, Identifiable, Equatable {
     let id: String
     let vehicle: vehicle
 }

@@ -7,6 +7,7 @@
 
 import CoreLocation
 import Foundation
+import Loupe
 import StoreKit
 import SwiftUI
 
@@ -23,9 +24,8 @@ struct SectionHeader: View {
 }
 
 struct TrainsListView: View {
-    let stations: [station]
-    @ObservedObject var trainsViewModel: TrainsViewModel
-    @ObservedObject var tripUpdatesViewModel: TripUpdatesViewModel
+    @StateObject var masterViewModel: MasterViewModel
+
     @State var showDonateAlert: Bool = false
     @Environment(\.requestReview) private var requestReview
 
@@ -33,22 +33,21 @@ struct TrainsListView: View {
 
     var body: some View {
         VStack(alignment: .leading) {
-            HeaderView(title: "Trains")
-            if trainsViewModel.isLoading || tripUpdatesViewModel.isLoading {
+            HeaderView(title: "Trains", headerViewModel: masterViewModel.headerViewModel)
+            if masterViewModel.isLoading {
                 Text("Loading...").padding(.top, 10).font(.system(size: 28, weight: .light)).multilineTextAlignment(.center).frame(maxWidth: .infinity)
                 Spacer()
-            } else if !trainsViewModel.trains.isEmpty && !tripUpdatesViewModel.tripUpdates.isEmpty {
+            } else if !masterViewModel.data.isEmpty {
                 ScrollView {
                     VStack(spacing: 0) {
                         VStack {
                             //    SectionHeader(icon_name: "star.fill", title_text: "Favorites").padding(.top, 12)
-                            TrainList(stations: stations, trainsViewModel: trainsViewModel, tripUpdatesViewModel: tripUpdatesViewModel, favoritesOnly: true).padding(.bottom, 12)
+                            TrainList(masterViewModel: masterViewModel, favoritesOnly: true).padding(.bottom, 12)
                         }
                         VStack {
                             //   SectionHeader(icon_name: "lightrail", title_text: "Tracked Trains").padding(.top, 12)
-                            TrainList(stations: stations, trainsViewModel: trainsViewModel, tripUpdatesViewModel: tripUpdatesViewModel, favoritesOnly: false)
+                            TrainList(masterViewModel: masterViewModel, favoritesOnly: false)
                         }
-
                         Spacer()
                     }
                 }
@@ -65,7 +64,7 @@ struct TrainsListView: View {
             } label: {
                 Text("No Thanks.")
             }
-            NavigationLink(destination: SettingsView()) {
+            NavigationLink(destination: SettingsView(headerViewModel: masterViewModel.headerViewModel)) {
                 Button {} label: {
                     Text("Donate")
                 }

@@ -8,6 +8,6 @@
 import Foundation
 
 struct tu_entity: Codable, Identifiable {
-    let id = UUID()
     let tripUpdate: tripUpdate
+    let id: String
 }

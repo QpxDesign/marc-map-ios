@@ -6,26 +6,8 @@
 //
 
 import CoreLocation
+import MapKit
 import SwiftUI
-
-func loadStations() -> [station] {
-    var stations: [station] = []
-    if let url = Bundle.main.url(forResource: "StopDataPretty", withExtension: "json") {
-        do {
-            let data = try Data(contentsOf: url)
-            let decoder = JSONDecoder()
-            let jsonData = try decoder.decode([station].self, from: data)
-
-            for i in jsonData {
-                stations.append(i)
-            }
-
-        } catch {
-            print("error:\(error)")
-        }
-    }
-    return stations
-}
 
 struct ContentView: View {
     // 1.
@@ -36,31 +18,35 @@ struct ContentView: View {
          UITabBar.appearance().unselectedItemTintColor = UIColor.gray
      }*/
 
-    @ObservedObject private var trainsViewModel = TrainsViewModel()
-    @ObservedObject private var tripUpdatesViewModel = TripUpdatesViewModel()
-    var stations = loadStations()
+    @StateObject var masterViewModel = MasterViewModel()
+
+    private let stations = loadStations()
+    @State private var position: MapCameraPosition = .region(MKCoordinateRegion(center: .init(latitude: 38.9072, longitude: -77.0369), span: .init(latitudeDelta: 0.25, longitudeDelta: 0.25)))
+    @Namespace var mapScope
 
     var body: some View {
         NavigationView {
             TabView {
-                TrainsListView(stations: stations, trainsViewModel: trainsViewModel, tripUpdatesViewModel: tripUpdatesViewModel)
+                TrainsListView(masterViewModel: masterViewModel)
                     .tabItem {
                         Label("Trains", systemImage: "list.dash").accentColor(.white)
                     }
-                FullScreenMap(stations: stations, trainsViewModel: trainsViewModel, tripUpdatesViewModel: tripUpdatesViewModel)
+
+                FullScreenMap(stations: stations, masterViewModel: masterViewModel)
                     .tabItem {
                         Label("Map", systemImage: "map.fill").accentColor(.white).background(Color.white).foregroundColor(Color.white)
                     }
-                StationListView(trainsViewModel: trainsViewModel, tripUpdatesViewModel: tripUpdatesViewModel, stations: stations)
+
+                StationListView(masterViewModel: masterViewModel)
                     .tabItem {
                         Label("Stations", systemImage: "pin.circle.fill").accentColor(.white).background(Color.white).foregroundColor(Color.white)
                     }
-                SettingsView()
+                SettingsView(headerViewModel: masterViewModel.headerViewModel)
                     .tabItem {
                         Label("Info", systemImage: "info.circle.fill").accentColor(.white).background(Color.white).foregroundColor(Color.white)
                     }
             }
-        }.navigationBarTitleDisplayMode(.inline).padding(.top, -20).navigationViewStyle(StackNavigationViewStyle())
+        }.navigationBarTitleDisplayMode(.inline).navigationViewStyle(StackNavigationViewStyle()) // .padding(.top, -20) */
     }
 }
 
@@ -71,3 +57,13 @@ struct ContentView_Previews: PreviewProvider {
         }
     }
 }
+
+/*
+ NavigationStack {
+     List(masterViewModel.data) { d in
+         NavigationLink(d.trip_id, value: d)
+     }
+ }.navigationDestination(for: CombinedTrainObject.self) { cto in
+     TrainDetailedView(data: cto)
+ }
+ */

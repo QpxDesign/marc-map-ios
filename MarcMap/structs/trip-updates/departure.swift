@@ -7,8 +7,10 @@
 
 import Foundation
 
-struct departure: Codable, Identifiable {
-    let id = UUID()
+struct departure: Codable, Identifiable, Equatable, Hashable {
     let delay: Int?
     let time: String
+    var id: String {
+        time
+    }
 }

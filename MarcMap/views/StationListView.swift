@@ -10,15 +10,13 @@ import SwiftUI
 
 struct StationListView: View {
     @State var userLocation: CLLocation?
-    @ObservedObject var trainsViewModel: TrainsViewModel
-    @ObservedObject var tripUpdatesViewModel: TripUpdatesViewModel
-    var stations: [station]
+    @StateObject var masterViewModel: MasterViewModel
     @State var sorted_stations: [station] = []
 
     let manager = LocationManager()
     var body: some View {
-        VStack(alignment: .leading) {
-            HeaderView(title: "Stations")
+        VStack {
+            HeaderView(title: "Stations", headerViewModel: masterViewModel.headerViewModel)
             Spacer()
 
             if !sorted_stations.isEmpty {
@@ -31,7 +29,7 @@ struct StationListView: View {
                             HStack(spacing: 0) {
                                 Image(systemName: "arrow.right")
                                     .font(.system(size: 24, weight: .light))
-                                NavigationLink(destination: StationDetailedView(stationObj: station, stations: stations, trainsViewModel: trainsViewModel, tripUpdatesViewModel: tripUpdatesViewModel, dateInput: Date())) {
+                                NavigationLink(destination: StationDetailedView(stationObj: station, masterViewModel: masterViewModel, dateInput: Date())) {
                                     EmptyView()
                                 }.accentColor(Color.black)
                                     .frame(width: 0)
@@ -44,7 +42,7 @@ struct StationListView: View {
         }.onAppear {
             manager.requestLocation()
             userLocation = manager.location
-            sorted_stations = stations.sorted { // TODO: add sorted_stations
+            sorted_stations = masterViewModel.stations.sorted { // TODO: remove stations from view model (to avoid reloading this whenever trains/tripupdates changes, as stations should be static
                 let a1 = CLLocation(latitude: $0.stop_lat, longitude: $0.stop_lon)
                 let d1 = a1.distance(from: userLocation ?? CLLocation(latitude: 38.9072, longitude: -77.0369))
                 let a2 = CLLocation(latitude: $1.stop_lat, longitude: $1.stop_lon)
@@ -59,7 +57,7 @@ func getDistanceToStation(stop_lat: Double, stop_lon: Double, userLocation: CLLo
     let a1 = CLLocation(latitude: stop_lat, longitude: stop_lon)
     var d1 = a1.distance(from: userLocation ?? CLLocation(latitude: 0, longitude: 0))
     if userLocation == nil {
-        return "n/a"
+        return ""
     }
     d1 = d1/1000 // M TO KM
     d1 = d1/1.609 // KM TO MILES

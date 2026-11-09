@@ -8,7 +8,6 @@
 import Foundation
 
 struct station: Codable, Identifiable {
-    let id=UUID()
     let stop_id: [Int]
     let stop_name: String
     let pretty_stop_name: String
@@ -16,10 +15,13 @@ struct station: Codable, Identifiable {
     let stop_lon: Double
     let static_stops: [timetable_stop]
     let defaultLine: [String]
+    var id: String {
+        pretty_stop_name
+    }
 }
 
 struct timetable_stop: Codable, Identifiable {
-    let id=UUID()
+    let id = UUID()
     let trainID: String?
     let time: String?
     let direction: String?

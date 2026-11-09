@@ -1,0 +1,15 @@
+{
+  "originHash" : "4a59e4bfe0653b932af599b43582fe5c2a1cce9b43e93552de379051dcf2e8c2",
+  "pins" : [
+    {
+      "identity" : "loupe",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Aeastr/Loupe.git",
+      "state" : {
+        "revision" : "eb0d2dc4fa053447b643ec7a2d62fc007432014b",
+        "version" : "3.0.0"
+      }
+    }
+  ],
+  "version" : 3
+}

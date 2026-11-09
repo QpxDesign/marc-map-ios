@@ -7,9 +7,11 @@
 
 import Foundation
 
-struct stopTimeUpdate: Codable, Identifiable {
-    let id = UUID()
+struct stopTimeUpdate: Codable, Identifiable, Hashable {
     let departure: departure?
     let arrival: arrival?
     let stopId: String
+    var id: String {
+        stopId
+    }
 }

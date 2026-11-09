@@ -26,22 +26,22 @@ enum directionChocies: String, CaseIterable, Identifiable {
 
 struct StationDetailedView: View {
     var stationObj: station
-    let stations: [station]
-    @ObservedObject var trainsViewModel: TrainsViewModel
-    @ObservedObject var tripUpdatesViewModel: TripUpdatesViewModel
+    @StateObject var masterViewModel: MasterViewModel
     
-    @State var trains = [Train]()
-    @State var details = [tripUpdate]()
+    // @State var trains = [Train]()
+    // @State var details = [tripUpdate]()
     @State var activeTrain = false
     @State var showAllTrains = false
     
-    @State var trainsGoingToStation: [Train] = []
+    @State var trainsGoingToStation: [CombinedTrainObject] = []
     
     @State var directionInput: directionChocies = .outbound
     @State var dateInput: Date = .init()
     @State var lineInput: lineChoice = .Camden
     
     @State var timetableTrains: [timetableResponse] = []
+    
+    let stations = loadStations()
     
     let brunswick: [CLLocationCoordinate2D] = getRouteFromFile(filename: "Brunswick") ?? [CLLocationCoordinate2D(latitude: 0, longitude: 0)]
     let penn: [CLLocationCoordinate2D] = getRouteFromFile(filename: "Penn") ?? [CLLocationCoordinate2D(latitude: 0, longitude: 0)]
@@ -88,7 +88,7 @@ struct StationDetailedView: View {
             VStack {
                 HStack {
                     Text(stationObj.pretty_stop_name).bold().multilineTextAlignment(.leading).padding(.leading, 20).padding(.trailing, 10).padding(.bottom, 15).foregroundColor(Color.white).font(.system(size: 34))
-                }.frame(maxWidth: .infinity, alignment: .leading).padding(.top, 40).background(CustomColors.MarcOrange).onAppear { // added paddingTop 40 for duo
+                }.frame(maxWidth: .infinity, alignment: .leading).padding(.top, 0).background(CustomColors.MarcOrange).onAppear { // added paddingTop 40 for duo
                     if stationObj.defaultLine[0].lowercased() == "penn" {
                         lineInput = .Penn
                     }
@@ -99,14 +99,14 @@ struct StationDetailedView: View {
                         lineInput = .Camden
                     }
                 }
-                    
+                
                 //  Text("Last Updated: " + FormatTime(timestamp: trains[0].vehicle.timestamp))
-                NavigationLink(destination: FullScreenMap(stations: stations, trainsViewModel: trainsViewModel, tripUpdatesViewModel: tripUpdatesViewModel, suppliedLoc: CLLocationCoordinate2D(
+                NavigationLink(destination: FullScreenMap(stations: stations, masterViewModel: masterViewModel, suppliedLoc: CLLocationCoordinate2D(
                     latitude: self.stationObj.stop_lat, longitude: self.stationObj.stop_lon
                 ), suppliedSpan: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))) {
-                    EmbeddedMap(loc: CLLocationCoordinate2D(latitude: self.stationObj.stop_lat, longitude: self.stationObj.stop_lon), tripId: "", suppliedSpan: MKCoordinateSpan(latitudeDelta: 0.001, longitudeDelta: 0.001), stations: stations, trainsViewModel: trainsViewModel, tripUpdatesViewModel: tripUpdatesViewModel).frame(width: geometry.size.width * 0.90, height: 200).cornerRadius(15).padding(.bottom, 0).allowsHitTesting(false)
+                    EmbeddedMap(locationViewModel: LocationViewModel(supplied_loc: CLLocationCoordinate2D(latitude: self.stationObj.stop_lat, longitude: self.stationObj.stop_lon)), masterViewModel: masterViewModel, tripId: "", suppliedSpan: MKCoordinateSpan(latitudeDelta: 0.001, longitudeDelta: 0.001)).frame(width: geometry.size.width * 0.90, height: 200).cornerRadius(15).padding(.bottom, 0).allowsHitTesting(false)
                 }
-                    
+     
                 HStack {
                     HStack {
                         Text("Tracked Trains").fontWeight(Font.Weight.medium)
@@ -120,23 +120,19 @@ struct StationDetailedView: View {
                         showAllTrains = true
                     }
                 }
-                   
+                
                 if !showAllTrains {
-                    List(trainsGoingToStation) { train in
-                        let matching_trip_update = tripUpdatesViewModel.tripUpdates.filter { $0.trip.tripId == train.vehicle.trip.tripId }
-                        if !matching_trip_update.isEmpty {
-                            let stops_away = GetTrainsUpcomingStations(train: train, details: matching_trip_update[0], stations: stations).firstIndex(of: stationObj.pretty_stop_name)
+                    List(trainsGoingToStation) { combined in
+                        VStack(alignment: .leading) {
+                            NavigationLink(destination: TrainDetailedView(masterViewModel: masterViewModel, data: combined)) {
+                                TrainListItem(masterViewModel: masterViewModel, train: combined, stopsAway: GetTrainsUpcomingStations(data: combined, stations: stations).firstIndex(of: stationObj.pretty_stop_name), favorited: false)
                                 
-                            VStack(alignment: .leading) {
-                                NavigationLink(destination: TrainDetailedView(tripId: train.vehicle.trip.tripId, stations: stations, trainsViewModel: trainsViewModel, tripUpdatesViewModel: tripUpdatesViewModel)) {
-                                    TrainListItem(train: train, trip_update: matching_trip_update[0], stations: stations, stopsAway: stops_away, favorited: false)
-                                        
-                                }.navigationLinkIndicatorVisibility(.hidden)
-                                    
-                            }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
-                        }
-                    }.contentMargins(.top, 20)
+                            }.navigationLinkIndicatorVisibility(.hidden)
+                            
+                        }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
                         
+                    }.contentMargins(.top, 20)
+                    
                 } else {
                     HStack {
                         Picker("Line", selection: $lineInput) {
@@ -163,18 +159,18 @@ struct StationDetailedView: View {
                             updateTimetable()
                         }
                     }
-                        
+                    
                     List(timetableTrains) { timetableTrain in
                         VStack(alignment: .leading) {
                             HStack {
                                 Text(FormatTripId(tripId: timetableTrain.trip_id))
                                     .font(.system(size: 20))
                                     .fontWeight(.bold)
-                                    
+                                
                                 Text(formatDate(d: timetableTrain.arrival_time))
                                 Spacer()
                                 Text(lineInput.rawValue).font(.system(size: 18))
-                                    
+                                
                             }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
                             Spacer()
                         }
@@ -182,8 +178,8 @@ struct StationDetailedView: View {
                 }
             }
             Spacer()
-        }.onReceive(trainsViewModel.$trains, perform: { trains in // update markers
-            trainsGoingToStation = GetTrainsGoingToStation(pretty_stop_name: stationObj.pretty_stop_name, trains: trains, details: self.tripUpdatesViewModel.tripUpdates, stations: stations)
+        }.onReceive(masterViewModel.$data, perform: { trains in // update markers
+            trainsGoingToStation = GetTrainsGoingToStation(pretty_stop_name: stationObj.pretty_stop_name, data: trains, stations: masterViewModel.stations)
         })
     }
 }

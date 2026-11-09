@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct position: Codable, Identifiable {
+struct position: Codable, Identifiable, Hashable {
     let id = UUID()
     let latitude: Double
     let longitude: Double

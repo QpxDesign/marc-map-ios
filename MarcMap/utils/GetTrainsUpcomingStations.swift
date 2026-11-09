@@ -10,26 +10,24 @@ import Foundation
 
 let orderedStops: [String: [String]] = ["Brunswick_Frederick": ["Frederick", "Monocacy", "Dickerson", "Barnesville", "Boyds", "Germantown", "Metropolitan Grove", "Gaithersburg", "Washington Grove", "Rockville", "Garrett Park", "Kensington", "Silver Spring", "Union Station (DC)"], "Brunswick_WV": ["Martinsburg", "Duffields", "Harpers Ferry", "Brunswick", "Point of Rocks", "Dickerson", "Barnesville", "Boyds", "Germantown", "Metropolitan Grove", "Gaithersburg", "Washington Grove", "Rockville", "Garrett Park", "Kensington", "Silver Spring", "Union Station (DC)"], "Brunswick_Camden": ["Martinsburg", "Duffields", "Harpers Ferry", "Brunswick", "Frederick", "Monocacy", "Point of Rocks", "Dickerson", "Barnesville", "Boyds", "Germantown", "Metropolitan Grove", "Gaithersburg", "Washington Grove", "Rockville", "Garrett Park", "Kensington", "Silver Spring", "College Park", "Laurel", "Camden Station"], "Penn": ["Perryville", "Aberdeen", "Edgewood", "Martin Airport", "Penn Station", "West Baltimore", "Halethorpe", "BWI Rail Station", "Odenton", "Bowie State", "Seabrook", "New Carrollton", "Union Station (DC)"], "Camden": ["Camden Station", "St Denis", "Dorsey", "Jessup", "Savage", "Laurel Racetrack", "Laurel", "Muirkirk", "Greenbelt", "College Park", "Riverdale", "Union Station (DC)"]]
 
-func GetTrainsUpcomingStations(train: Train, details: tripUpdate, stations: [station]) -> [String] {
-    var route_name = RouteIdToName(routeId: train.vehicle.trip.routeId)
+func GetTrainsUpcomingStations(data: CombinedTrainObject, stations: [station]) -> [String] {
+    var route_name = RouteIdToName(routeId: data.route_id)
         
-    if details.stopTimeUpdate.isEmpty {
+    if data.stopTimeUpdates.isEmpty {
         return []
     }
         
-    let updates = details
-        
     if route_name == "Brunswick" {
-        if !updates.stopTimeUpdate.filter({ ["11972", "11944", "11971", "11945"].contains($0.stopId) }).isEmpty {
+        if !data.stopTimeUpdates.filter({ ["11972", "11944", "11971", "11945"].contains($0.stopId) }).isEmpty {
             route_name = "Brunswick_Frederick"
-        } else if !updates.stopTimeUpdate.filter({ $0.stopId == "12006" }).isEmpty {
+        } else if !data.stopTimeUpdates.filter({ $0.stopId == "12006" }).isEmpty {
             route_name = "Brunswick_Camden"
         } else {
             route_name = "Brunswick_WV"
         }
     }
-    let origin: station = GetStationFromStopId(stopID: Int(updates.stopTimeUpdate.first?.stopId ?? "") ?? 0, stations: stations)
-    let des: station = GetStationFromStopId(stopID: Int(updates.stopTimeUpdate.last?.stopId ?? "") ?? 0, stations: stations)
+    let origin: station = GetStationFromStopId(stopID: Int(data.stopTimeUpdates.first?.stopId ?? "") ?? 0, stations: stations)
+    let des: station = GetStationFromStopId(stopID: Int(data.stopTimeUpdates.last?.stopId ?? "") ?? 0, stations: stations)
         
     if origin.stop_id == des.stop_id {
         return []
@@ -50,7 +48,7 @@ func GetTrainsUpcomingStations(train: Train, details: tripUpdate, stations: [sta
     // if its closer to des than station is to des, that means it's passed that station
     // if its within x distance of a station, that means it's at a station
     let des_loc = CLLocation(latitude: des.stop_lat, longitude: -des.stop_lon)
-    let train_loc = CLLocation(latitude: train.vehicle.position.latitude, longitude: -train.vehicle.position.longitude)
+    let train_loc = CLLocation(latitude: data.position.latitude, longitude: -data.position.longitude)
         
     let train_distance_to_des = des_loc.distance(from: train_loc)
     var filtered: [String] = []
@@ -59,12 +57,12 @@ func GetTrainsUpcomingStations(train: Train, details: tripUpdate, stations: [sta
         
         // remove stations that a train isn't stopping at
         
-        if updates.stopTimeUpdate.filter { station_obj?.stop_id.contains(Int($0.stopId) ?? 0) ?? false }.isEmpty {
+        if data.stopTimeUpdates.filter { station_obj?.stop_id.contains(Int($0.stopId) ?? 0) ?? false }.isEmpty {
             continue
         }
             
         // filter out stations it departed more than 30 seconds ago
-        if !updates.stopTimeUpdate.filter({ station_obj?.stop_id.contains(Int($0.stopId) ?? 0) ?? false && Double($0.departure?.time ?? String(Double.infinity)) ?? Double.infinity < NSDate().timeIntervalSince1970 - 30 }).isEmpty {
+        if !data.stopTimeUpdates.filter({ station_obj?.stop_id.contains(Int($0.stopId) ?? 0) ?? false && Double($0.departure?.time ?? String(Double.infinity)) ?? Double.infinity < NSDate().timeIntervalSince1970 - 30 }).isEmpty {
             continue
         }
         

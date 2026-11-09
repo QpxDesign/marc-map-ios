@@ -8,13 +8,16 @@
 import Foundation
 import MapKit
 
-struct TrainPopup: Identifiable {
-    let id = UUID()
-    var coordinate: CLLocationCoordinate2D
-    var bearing: Double
+struct TrainPopup {
+    var trainData: CombinedTrainObject
     var show: Bool = true
     var expired: Bool = false
-    let tripID: String?
+}
+
+extension TrainPopup: Identifiable {
+    var id: String {
+        trainData.trip_id ?? UUID().uuidString
+    }
 }
 
 struct StationPopup: Identifiable {

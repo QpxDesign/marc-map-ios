@@ -8,10 +8,10 @@
 import CoreLocation
 import Foundation
 
-func getStatus(train: Train, updates: tripUpdate, stations: [station]) -> String {
-    let train_loc = CLLocation(latitude: train.vehicle.position.latitude, longitude: -train.vehicle.position.longitude)
+func getStatus(data: CombinedTrainObject, stations: [station]) -> String {
+    let train_loc = CLLocation(latitude: data.position.latitude, longitude: -data.position.longitude)
 
-    let filtered = GetTrainsUpcomingStations(train: train, details: updates, stations: stations)
+    let filtered = GetTrainsUpcomingStations(data: data, stations: stations)
 
     if filtered.isEmpty {
         return "Unknown"

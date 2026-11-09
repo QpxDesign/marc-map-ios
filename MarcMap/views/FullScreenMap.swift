@@ -7,16 +7,56 @@
 
 import CoreLocationUI
 import Foundation
+import Loupe
 import MapKit
 import SwiftUI
 
+// .ignoresSafeArea(.all).onReceive(self.masterViewModel.$trains, perform: { trains in // update markers updateTrainPopups(train_data: trains)})
+/*
+ ZStack {
+     Map(position: $position, scope: mapScope) {
+         MapPolyline(coordinates: brunswickRoute)
+             .stroke(CustomColors.BrunswickColor, lineWidth: 10)
+
+         MapPolyline(coordinates: fredrickRoute)
+             .stroke(CustomColors.BrunswickColor, lineWidth: 10)
+
+         MapPolyline(coordinates: pennRoute)
+             .stroke(CustomColors.PennColor, lineWidth: 10)
+
+         MapPolyline(coordinates: camdenRoute)
+             .stroke(CustomColors.CamdenColor, lineWidth: 10)
+
+         ForEach(TrainPopups) { popup in
+             Annotation("",
+                        coordinate: CLLocationCoordinate2D(latitude: popup.trainData.position.latitude, longitude: popup.trainData.position.longitude))
+             {
+                 NavigationLink(destination: TrainDetailedView(masterViewModel: masterViewModel, data: popup.trainData)) {
+                     ZStack {
+                         Image("TrainIcon").rotationEffect(
+                             Angle(degrees: (popup.trainData.position.bearing ?? 90) - 90)
+                         )
+                     }
+                 }
+             }
+         }
+         ForEach(stations) { station in
+             Annotation(station.pretty_stop_name,
+                        coordinate: CLLocationCoordinate2D(latitude: station.stop_lat, longitude: station.stop_lon))
+             {
+                 NavigationLink(destination: StationDetailedView(stationObj: station, masterViewModel: masterViewModel, dateInput: Date())) {
+                     Image("StationIcon").debugCompute()
+                 }.zIndex(4)
+             }
+         }
+     }
+
+ */
+
 struct FullScreenMap: View {
-    let stations: [station]
-    @ObservedObject var trainsViewModel: TrainsViewModel
-    @ObservedObject var tripUpdatesViewModel: TripUpdatesViewModel
-    
-    @State private var TrainPopups: [TrainPopup] = []
-    @State private var StationPopups: [StationPopup] = []
+    var stations: [station]
+    @StateObject var masterViewModel: MasterViewModel
+
     @State var suppliedLoc: CLLocationCoordinate2D?
     @State var suppliedSpan: MKCoordinateSpan?
     @State var loc: CLLocationCoordinate2D = .init(latitude: 38.9072, longitude: -77.0369)
@@ -24,70 +64,61 @@ struct FullScreenMap: View {
     @State private var position: MapCameraPosition = .automatic
     @Namespace var mapScope
 
-    func updateTrainPopups(train_data: [Train]) {
-        // update location/data for existing popups
-        for var popup in TrainPopups {
-            let matching_train = train_data.filter { $0.vehicle.trip.tripId == popup.tripID }
-            if matching_train.isEmpty {
-                popup.expired = true
-                continue
-            } else {
-                popup.coordinate.latitude = matching_train[0].vehicle.position.latitude
-                popup.coordinate.longitude = matching_train[0].vehicle.position.longitude
-            }
-        }
+    @State private var TrainPopups: [TrainPopup] = []
+    @State private var StationPopups: [StationPopup] = []
+
+    private let brunswickRoute: [CLLocationCoordinate2D] = getRouteFromFile(filename: "Brunswick") ?? []
+    private let fredrickRoute: [CLLocationCoordinate2D] = getRouteFromFile(filename: "FredrickBranch") ?? []
+    private let pennRoute: [CLLocationCoordinate2D] = getRouteFromFile(filename: "Penn") ?? []
+    private let camdenRoute: [CLLocationCoordinate2D] = getRouteFromFile(filename: "Camden") ?? []
+
+    func updateTrainPopups() {
         // remove old popups
-        TrainPopups = TrainPopups.filter { $0.expired == true }
-        
-        // add new ones
-        for train in train_data {
-            let matching_popup = TrainPopups.filter { $0.tripID == train.vehicle.trip.tripId }
-            if !matching_popup.isEmpty {
-                continue
-            }
-        
-            TrainPopups.append(TrainPopup(coordinate: CLLocationCoordinate2D(latitude: train.vehicle.position.latitude, longitude: train.vehicle.position.longitude), bearing: train.vehicle.position.bearing ?? 0, tripID: train.vehicle.trip.tripId))
+        var new: [TrainPopup] = []
+        for t in masterViewModel.data {
+            new.append(TrainPopup(trainData: t))
         }
+        TrainPopups = new
     }
-    
+
     let manager = LocationManager()
     var body: some View {
         ZStack {
             Map(position: $position, scope: mapScope) {
-                MapPolyline(coordinates: getRouteFromFile(filename: "Brunswick") ?? [CLLocationCoordinate2D(latitude: 0, longitude: 0)]).stroke(CustomColors.BrunswickColor, lineWidth: 10.0)
-                MapPolyline(coordinates: getRouteFromFile(filename: "FredrickBranch") ?? [CLLocationCoordinate2D(latitude: 0, longitude: 0)]).stroke(CustomColors.BrunswickColor, lineWidth: 10.0)
-                
-                MapPolyline(coordinates: getRouteFromFile(filename: "Penn") ?? [CLLocationCoordinate2D(latitude: 0, longitude: 0)]).stroke(CustomColors.PennColor, lineWidth: 10.0)
-                MapPolyline(coordinates: getRouteFromFile(filename: "Camden") ?? [CLLocationCoordinate2D(latitude: 0, longitude: 0)]).stroke(CustomColors.CamdenColor, lineWidth: 10.0)
-                
+                MapPolyline(coordinates: brunswickRoute)
+                    .stroke(CustomColors.BrunswickColor, lineWidth: 10)
+
+                MapPolyline(coordinates: fredrickRoute)
+                    .stroke(CustomColors.BrunswickColor, lineWidth: 10)
+
+                MapPolyline(coordinates: pennRoute)
+                    .stroke(CustomColors.PennColor, lineWidth: 10)
+
+                MapPolyline(coordinates: camdenRoute)
+                    .stroke(CustomColors.CamdenColor, lineWidth: 10)
+
+                StationAnnotations(
+                    stations: stations,
+                    masterViewModel: masterViewModel
+                )
+
                 ForEach(TrainPopups) { popup in
                     Annotation("",
-                               coordinate: popup.coordinate)
+                               coordinate: CLLocationCoordinate2D(latitude: popup.trainData.position.latitude, longitude: popup.trainData.position.longitude))
                     {
-                        NavigationLink(destination: TrainDetailedView(tripId: popup.tripID ?? "", stations: stations, trainsViewModel: trainsViewModel, tripUpdatesViewModel: tripUpdatesViewModel)) {
+                        NavigationLink(destination: TrainDetailedView(masterViewModel: masterViewModel, data: popup.trainData)) {
                             ZStack {
-                                // .offset(x: -10.0, y: -10.0)
                                 Image("TrainIcon").rotationEffect(
-                                    Angle(degrees: popup.bearing - 90)
+                                    Angle(degrees: (popup.trainData.position.bearing ?? 90) - 90)
                                 )
                             }
-                        }.zIndex(5)
+                        }
                     }
                 }
-                ForEach(StationPopups.indices, id: \.self) { index1 in
-                    Annotation(StationPopups[index1].name,
-                               coordinate: StationPopups[index1].coordinate)
-                    {
-                        NavigationLink(destination: StationDetailedView(stationObj: StationPopups[index1].station, stations: stations, trainsViewModel: trainsViewModel, tripUpdatesViewModel: tripUpdatesViewModel, dateInput: Date())) {
-                            Image("StationIcon")
-                        }.zIndex(4)
-                    }
-                }
-            }.ignoresSafeArea(.all).onReceive(self.trainsViewModel.$trains, perform: { trains in // update markers
-                updateTrainPopups(train_data: trains)
-                
+            }.onReceive(masterViewModel.$data, perform: { _ in
+                updateTrainPopups()
             })
-            
+
             HStack {
                 Image(systemName: "location.fill").foregroundColor(.white).font(.system(size: 28.0)).padding(14).background(CustomColors.MarcBlue).cornerRadius(1000).padding(.bottom, 14).padding(.trailing, 18)
                     .onTapGesture {
@@ -96,14 +127,11 @@ struct FullScreenMap: View {
                         span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
                         position = .region(MKCoordinateRegion(center: loc, span: span))
                     }
-            
+
             }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
-              
+
         }.onAppear {
-            for station in stations {
-                StationPopups.append(StationPopup(coordinate: CLLocationCoordinate2D(latitude: station.stop_lat, longitude: station.stop_lon), name: station.pretty_stop_name, station: station))
-            }
-            updateTrainPopups(train_data: trainsViewModel.trains)
+            print("adding lines...")
             if suppliedLoc != nil {
                 position = .region(MKCoordinateRegion(center: suppliedLoc ?? loc, span: suppliedSpan ?? span))
             } else {
@@ -112,13 +140,35 @@ struct FullScreenMap: View {
         }
     }
 }
-   
-#Preview("Map Only (No Stations / Trains)") {
-    let tmp1 = TrainsViewModel()
-    let tmp2 = TripUpdatesViewModel()
-    FullScreenMap(stations: [], trainsViewModel: tmp1, tripUpdatesViewModel: tmp2)
-}
 
 #Preview("Content View") {
     ContentView()
+}
+
+struct StationAnnotations: MapContent {
+    let stations: [station]
+    let masterViewModel: MasterViewModel
+
+    var body: some MapContent {
+        ForEach(stations) { station in
+            Annotation(
+                station.pretty_stop_name,
+                coordinate: CLLocationCoordinate2D(
+                    latitude: station.stop_lat,
+                    longitude: station.stop_lon
+                )
+            ) {
+                NavigationLink(
+                    destination: StationDetailedView(
+                        stationObj: station,
+                        masterViewModel: masterViewModel,
+                        dateInput: Date()
+                    )
+                ) {
+                    Image("StationIcon")
+                }
+                .zIndex(4)
+            }
+        }
+    }
 }

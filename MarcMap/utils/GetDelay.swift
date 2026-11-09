@@ -8,19 +8,19 @@
 
 import Foundation
 
-func GetDelay(updates: tripUpdate) -> Int {
-    if updates.stopTimeUpdate.isEmpty {
+func GetDelay(data: CombinedTrainObject) -> Int {
+    if data.stopTimeUpdates.isEmpty {
         return 0
     }
     let threshold = 0.0
     let curr_time = NSDate().timeIntervalSince1970
-    for i in updates.stopTimeUpdate.indices {
-        let dep = Double(updates.stopTimeUpdate[i].departure?.time ?? String(Double.infinity)) ?? Double.infinity
+    for i in data.stopTimeUpdates.indices {
+        let dep = Double(data.stopTimeUpdates[i].departure?.time ?? String(Double.infinity)) ?? Double.infinity
 
-        if dep < curr_time - threshold && i+1 < updates.stopTimeUpdate.count {
-            let next_arr = Double(updates.stopTimeUpdate[i+1].arrival?.time ?? "0.0") ?? 0.0
+        if dep < curr_time - threshold && i+1 < data.stopTimeUpdates.count {
+            let next_arr = Double(data.stopTimeUpdates[i+1].arrival?.time ?? "0.0") ?? 0.0
             if next_arr > curr_time {
-                return updates.stopTimeUpdate[i+1].arrival?.delay ?? 0
+                return data.stopTimeUpdates[i+1].arrival?.delay ?? 0
             }
         }
     }

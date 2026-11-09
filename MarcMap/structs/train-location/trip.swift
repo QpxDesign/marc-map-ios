@@ -7,9 +7,11 @@
 
 import SwiftUI
 
-struct trip: Codable, Identifiable {
-    let id = UUID()
+struct trip: Codable, Identifiable, Equatable {
     let tripId: String
     let routeId: String
     let startDate: String
+    var id: String {
+        tripId
+    }
 }

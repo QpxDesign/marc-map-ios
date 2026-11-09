@@ -7,9 +7,11 @@
 
 import SwiftUI
 
-struct APIHeader: Codable, Identifiable {
-    let id = UUID()
+struct APIHeader: Codable, Identifiable, Equatable {
     let gtfsRealtimeVersion: String
     let incrementality: String
     let timestamp: String
+    var id: String {
+        timestamp
+    }
 }

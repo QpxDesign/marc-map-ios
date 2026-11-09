@@ -7,8 +7,10 @@
 
 import SwiftUI
 
-struct TrainData: Codable, Identifiable {
-    let id = UUID()
+struct TrainData: Codable, Identifiable, Equatable {
     let header: APIHeader
     let entity: [Train]
+    var id: String {
+        self.header.timestamp
+    }
 }
