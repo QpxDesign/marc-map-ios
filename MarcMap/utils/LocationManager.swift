@@ -33,21 +33,23 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
             manager.requestLocation()
         } else {
             // other procedures when location service is not permitted.
-            if CLLocationManager.locationServicesEnabled() {
-                switch manager.authorizationStatus {
-                case .notDetermined:
-                    manager.requestWhenInUseAuthorization()
-                case .restricted, .denied:
+            DispatchQueue.global().async {
+                if CLLocationManager.locationServicesEnabled() {
+                    switch manager.authorizationStatus {
+                    case .notDetermined:
+                        manager.requestWhenInUseAuthorization()
+                    case .restricted, .denied:
+                        // Show an alert letting the user know they need to enable location services
+                        break
+                    case .authorizedAlways, .authorizedWhenInUse:
+                        // Do nothing
+                        break
+                    @unknown default:
+                        fatalError()
+                    }
+                } else {
                     // Show an alert letting the user know they need to enable location services
-                    break
-                case .authorizedAlways, .authorizedWhenInUse:
-                    // Do nothing
-                    break
-                @unknown default:
-                    fatalError()
                 }
-            } else {
-                // Show an alert letting the user know they need to enable location services
             }
         }
     }

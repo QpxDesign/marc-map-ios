@@ -123,7 +123,7 @@ struct FullScreenMap: View {
                 Image(systemName: "location.fill").foregroundColor(.white).font(.system(size: 28.0)).padding(14).background(CustomColors.MarcBlue).cornerRadius(1000).padding(.bottom, 14).padding(.trailing, 18)
                     .onTapGesture {
                         let userLocation = manager.location
-                        loc = CLLocationCoordinate2D(latitude: userLocation?.coordinate.latitude ?? 38.9072, longitude: userLocation?.coordinate.longitude ?? 77.0369)
+                        loc = CLLocationCoordinate2D(latitude: userLocation?.coordinate.latitude ?? 38.9072, longitude: userLocation?.coordinate.longitude ?? -77.0369)
                         span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
                         position = .region(MKCoordinateRegion(center: loc, span: span))
                     }

@@ -55,7 +55,7 @@ struct StationListView: View {
 
 func getDistanceToStation(stop_lat: Double, stop_lon: Double, userLocation: CLLocation?) -> String {
     let a1 = CLLocation(latitude: stop_lat, longitude: stop_lon)
-    var d1 = a1.distance(from: userLocation ?? CLLocation(latitude: 0, longitude: 0))
+    var d1 = a1.distance(from: userLocation ?? CLLocation(latitude: 38.9072, longitude: -77.0369))
     if userLocation == nil {
         return ""
     }

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TrainData: Codable, Identifiable, Equatable {
     let header: APIHeader
-    let entity: [Train]
+    let entity: [Train]?
     var id: String {
         self.header.timestamp
     }

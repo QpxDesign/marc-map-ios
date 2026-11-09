@@ -32,6 +32,7 @@ struct StationDetailedView: View {
     // @State var details = [tripUpdate]()
     @State var activeTrain = false
     @State var showAllTrains = false
+    @State var noTrainsToday = false
     
     @State var trainsGoingToStation: [CombinedTrainObject] = []
     
@@ -55,16 +56,37 @@ struct StationDetailedView: View {
         formatted_stop_id.replace(" ", with: "")
         let dayOfWeek: Int = Calendar.current.dateComponents([.weekday], from: dateInput).weekday ?? 7 // 1 - 7, with 1 being Sunday and 7 being Saturday
         let formattedDayOfWeek: Int
+        
         if dayOfWeek == 1 {
-            formattedDayOfWeek = 7
-        } else if dayOfWeek >= 2, dayOfWeek <= 6 {
-            formattedDayOfWeek = dayOfWeek - 1
+            formattedDayOfWeek = 6 // 6 = sunday, 0 = monday
+        } else if dayOfWeek == 2 {
+            formattedDayOfWeek = 0
+        } else if dayOfWeek == 3 {
+            formattedDayOfWeek = 1 // 5 = saturday
+        } else if dayOfWeek == 4 {
+            formattedDayOfWeek = 2 // 5 = saturday
+        } else if dayOfWeek == 5 {
+            formattedDayOfWeek = 3 // 5 = saturday
+        } else if dayOfWeek == 6 {
+            formattedDayOfWeek = 4
         } else {
-            formattedDayOfWeek = 6
+            formattedDayOfWeek = 5
         }
+        print("HELLO: \(formattedDayOfWeek)")
         
         apiCall().getTimetable(lineName: lineInput.rawValue, day_of_week: formattedDayOfWeek, direction: directionInput.rawValue, stop_id: formatted_stop_id) { tt in
             timetableTrains = tt ?? []
+            print(timetableTrains)
+            timetableTrains.sort { tt1, tt2 in
+                let inputFormat = DateFormatter()
+                inputFormat.dateFormat = "HH:mm:ss"
+                
+                guard let date1 = inputFormat.date(from: tt1.arrival_time), let date2 = inputFormat.date(from: tt2.arrival_time) else {
+                    return true
+                }
+                
+                return date1.timeIntervalSince1970 < date2.timeIntervalSince1970
+            }
         }
     }
     
@@ -101,9 +123,11 @@ struct StationDetailedView: View {
                     if stationObj.defaultLine[0].lowercased() == "brunswick" || stationObj.defaultLine[0].lowercased() == "camden" {
                         let dayOfWeek: Int = Calendar.current.dateComponents([.weekday], from: dateInput).weekday ?? 7 // 1 - 7, with 1 being Sunday and 7 being Saturday
                         if dayOfWeek == 1 {
+                            noTrainsToday = true
                             dateInput = Calendar.current.date(byAdding: .day, value: 1, to: Date()) ?? dateInput
                         }
                         if dayOfWeek == 7 {
+                            noTrainsToday = true
                             dateInput = Calendar.current.date(byAdding: .day, value: 2, to: Date()) ?? dateInput
                         }
                     }
@@ -168,6 +192,9 @@ struct StationDetailedView: View {
                         ).labelsHidden().environment(\.locale, Locale(identifier: "en")).onChange(of: dateInput) { _, _ in
                             updateTimetable()
                         }
+                    }
+                    if noTrainsToday {
+                        Text("No trains today. Showing next weekday.")
                     }
                     
                     List(timetableTrains) { timetableTrain in

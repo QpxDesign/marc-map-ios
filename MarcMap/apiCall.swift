@@ -71,7 +71,7 @@ nonisolated func getTripUpdates(completion: @escaping ([tripUpdate]?) -> ()) {
     URLSession.shared.dataTask(with: url) { data, _, _ in
         guard let tData = try? JSONDecoder().decode(TripUpdateData.self, from: data ?? Data()) else { return }
         var updates: [tripUpdate] = []
-        for t in tData.entity {
+        for t in tData.entity ?? [] {
             let tmp = t.tripUpdate
             updates.append(tmp)
         }
