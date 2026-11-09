@@ -34,6 +34,7 @@
 		825E68EF29A96E720049BF3C /* FormatTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825E68EE29A96E720049BF3C /* FormatTime.swift */; };
 		825E68F529A9828D0049BF3C /* TaskbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825E68F429A9828D0049BF3C /* TaskbarView.swift */; };
 		825E68FD29AA927E0049BF3C /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825E68FC29AA927E0049BF3C /* LocationManager.swift */; };
+		8261521630A2566A00D1C906 /* TrainDetailedViewStatic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8261521530A2566700D1C906 /* TrainDetailedViewStatic.swift */; };
 		826EC4F829A6AEEA00F9E50D /* hello_worldApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826EC4F729A6AEEA00F9E50D /* hello_worldApp.swift */; };
 		826EC4FA29A6AEEA00F9E50D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826EC4F929A6AEEA00F9E50D /* ContentView.swift */; };
 		826EC4FC29A6AEED00F9E50D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 826EC4FB29A6AEED00F9E50D /* Assets.xcassets */; };
@@ -114,6 +115,7 @@
 		825E68EE29A96E720049BF3C /* FormatTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatTime.swift; sourceTree = "<group>"; };
 		825E68F429A9828D0049BF3C /* TaskbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskbarView.swift; sourceTree = "<group>"; };
 		825E68FC29AA927E0049BF3C /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		8261521530A2566700D1C906 /* TrainDetailedViewStatic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainDetailedViewStatic.swift; sourceTree = "<group>"; };
 		826EC4F429A6AEEA00F9E50D /* MarcMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarcMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		826EC4F729A6AEEA00F9E50D /* hello_worldApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hello_worldApp.swift; sourceTree = "<group>"; };
 		826EC4F929A6AEEA00F9E50D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -350,6 +352,7 @@
 			children = (
 				82B1B0DF29A6F4010012ADE3 /* TrainsListView.swift */,
 				82B1B0E129A6F4240012ADE3 /* TrainDetailedView.swift */,
+				8261521530A2566700D1C906 /* TrainDetailedViewStatic.swift */,
 				8232D7FE29ABBF83001549B6 /* StationListView.swift */,
 				824AFF7E29B5100100E02F75 /* SettingsView.swift */,
 				82E9F5B32B181DE200737D50 /* FullScreenMap.swift */,
@@ -524,6 +527,7 @@
 				821BB067309FCEBA006B585D /* CombinedTrainObject.swift in Sources */,
 				8232D80D29AD5940001549B6 /* HeaderView.swift in Sources */,
 				825E68DA29A8495F0049BF3C /* TripUpdateData.swift in Sources */,
+				8261521630A2566A00D1C906 /* TrainDetailedViewStatic.swift in Sources */,
 				825E68E729A84B070049BF3C /* arrival.swift in Sources */,
 				825E68E929A966D50049BF3C /* GetStationFromStopId.swift in Sources */,
 				82B1B0D729A6EA6F0012ADE3 /* RouteIdToName.swift in Sources */,
@@ -708,7 +712,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 39;
+				CURRENT_PROJECT_VERSION = 41;
 				DEVELOPMENT_ASSET_PATHS = "\"MarcMap/Preview Content\"";
 				DEVELOPMENT_TEAM = HJCD65FY5D;
 				ENABLE_PREVIEWS = YES;
@@ -748,7 +752,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 39;
+				CURRENT_PROJECT_VERSION = 41;
 				DEVELOPMENT_ASSET_PATHS = "\"MarcMap/Preview Content\"";
 				DEVELOPMENT_TEAM = HJCD65FY5D;
 				ENABLE_PREVIEWS = YES;

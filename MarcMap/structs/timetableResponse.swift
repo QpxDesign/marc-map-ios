@@ -8,7 +8,10 @@
 import Foundation
 
 struct timetableResponse: Codable, Identifiable {
-    let id = UUID()
     let trip_id: String
     let arrival_time: String
+    let headsign: String
+    var id: String {
+        trip_id
+    }
 }

@@ -50,8 +50,8 @@ struct TrainListItem: View, Equatable {
                         Text("\(s) stop\(s > 1 ? "s" : "") away").monospaced()
                     }
                 } else {
+                    Text("\(getStatus(data: train, stations: stations))")
                     Text("Final Destination: \(GetStationFromStopId(stopID: Int(train.stopTimeUpdates.last?.stopId ?? "0") ?? 0, stations: stations).pretty_stop_name)")
-                    Text("Status: \(getStatus(data: train, stations: stations))")
                 }
             }
             Spacer()
@@ -96,6 +96,22 @@ struct TrainList: View, Equatable {
         lhs.sorted_data == rhs.sorted_data
     }
 
+    func update() {
+        sorted_data = masterViewModel.data.sorted {
+            let a1 = CLLocation(latitude: $0.position.latitude, longitude: $0.position.longitude)
+            let d1 = a1.distance(from: userLocation ?? CLLocation(latitude: 38.9072, longitude: -77.0369))
+            let a2 = CLLocation(latitude: $1.position.latitude, longitude: $1.position.longitude)
+            let d2 = a2.distance(from: userLocation ?? CLLocation(latitude: 38.9072, longitude: -77.0369))
+            return d1 < d2
+        }
+        let favs = getFavorites()
+        if favoritesOnly != nil, favoritesOnly.unsafelyUnwrapped {
+            sorted_data = masterViewModel.data.filter { favs.contains($0.trip_id) }
+        } else if favoritesOnly != nil, !favoritesOnly.unsafelyUnwrapped {
+            sorted_data = masterViewModel.data.filter { !favs.contains($0.trip_id) }
+        }
+    }
+
     var body: some View {
         VStack {
             ForEach(sorted_data) { train in
@@ -112,33 +128,11 @@ struct TrainList: View, Equatable {
             }.frame(maxWidth: .infinity, alignment: .leading).onAppear {
                 manager.requestLocation()
                 userLocation = manager.location
-                sorted_data = masterViewModel.data.sorted {
-                    let a1 = CLLocation(latitude: $0.position.latitude, longitude: $0.position.longitude)
-                    let d1 = a1.distance(from: userLocation ?? CLLocation(latitude: 38.9072, longitude: -77.0369))
-                    let a2 = CLLocation(latitude: $1.position.latitude, longitude: $1.position.longitude)
-                    let d2 = a2.distance(from: userLocation ?? CLLocation(latitude: 38.9072, longitude: -77.0369))
-                    return d1 < d2
-                }
-                let favs = getFavorites()
-                if favoritesOnly != nil, favoritesOnly.unsafelyUnwrapped {
-                    sorted_data = masterViewModel.data.filter { favs.contains($0.trip_id) }
-                } else if favoritesOnly != nil, !favoritesOnly.unsafelyUnwrapped {
-                    sorted_data = masterViewModel.data.filter { !favs.contains($0.trip_id) }
-                }
+                update()
             }
         }.onReceive(masterViewModel.$data, perform: { _ in // update markers
-            sorted_data = masterViewModel.data.sorted {
-                let a1 = CLLocation(latitude: $0.position.latitude, longitude: $0.position.longitude)
-                let d1 = a1.distance(from: userLocation ?? CLLocation(latitude: 38.9072, longitude: -77.0369))
-                let a2 = CLLocation(latitude: $1.position.latitude, longitude: $1.position.longitude)
-                let d2 = a2.distance(from: userLocation ?? CLLocation(latitude: 38.9072, longitude: -77.0369))
-                return d1 < d2
-            }
+            update()
 
         })
     }
 }
-
-/*
-
- */

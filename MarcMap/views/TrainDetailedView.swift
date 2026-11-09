@@ -66,7 +66,7 @@ struct TrainDetailedView: View {
                             let arr_time = Double(stop.arrival?.time ?? "0") ?? 0
                             if dep_time > delta || arr_time > delta {
                                 HStack {
-                                    Text(GetStationFromStopId(stopID: Int(stop.stopId) ?? 0, stations: stations).stop_name)
+                                    Text(GetStationFromStopId(stopID: Int(stop.stopId) ?? 0, stations: stations).pretty_stop_name)
                                     Spacer()
                                     Text(stop.arrival?.time != nil ? FormatTime(timestamp: stop.arrival?.time ?? "") : stop.departure?.time != nil ? FormatTime(timestamp: stop.departure?.time ?? "") : "Unknown").bold()
                                 }

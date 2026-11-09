@@ -18,7 +18,7 @@ struct SectionHeader: View {
     var body: some View {
         HStack(alignment: .center) {
             Image(systemName: icon_name).padding(0).font(.system(size: 23))
-            Text(title_text).frame(maxWidth: .infinity, alignment: .leading).font(.system(size: 26, weight: .semibold)).padding(.leading, -2).padding(.bottom, -5).multilineTextAlignment(.leading).monospaced().kerning(-1.5)
+            Text(title_text).frame(maxWidth: .infinity, alignment: .leading).font(.system(size: 26, weight: .semibold)).padding(.leading, -2).multilineTextAlignment(.leading).monospaced().kerning(-1.5)
         }.padding(.leading, 6)
     }
 }
@@ -54,7 +54,11 @@ struct TrainsListView: View {
                 // Text("Favorite").frame(maxWidth: .infinity, alignment: .leading).font(.system(size: 22, weight: .light, design: .rounded)).padding(.leading, 20).padding(.bottom, 0).multilineTextAlignment(.leading)
 
             } else {
-                Text("No Trains Found").padding(.top, 10).font(.system(size: 28, weight: .light)).multilineTextAlignment(.center).frame(maxWidth: .infinity)
+                Text("No trains are current transmitting tracking data.").font(.system(size: 24, weight: .light)).multilineTextAlignment(.center).frame(maxWidth: .infinity).padding(10)
+                SectionHeader(icon_name: "flag.pattern.checkered.circle.fill", title_text: "Nearby Stations").padding(.leading, 18)
+                StationList(masterViewModel: masterViewModel)
+
+                // TODO: Show nearby stations instead?
                 Spacer()
             }
         }

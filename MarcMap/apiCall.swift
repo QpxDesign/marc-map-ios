@@ -101,4 +101,24 @@ func getTimetable(lineName: String, day_of_week: Int, direction: String, stop_id
     }
     .resume()
 }
+
+func getSchedule(trip_id: String, completion: @escaping ([stopTimeUpdate]?) -> ()) {
+    if UserDefaults.standard.string(forKey: "user_id") == nil || UserDefaults.standard.string(forKey: "user_id") == "nil" {
+        UserDefaults.standard.set(NSUUID().uuidString, forKey: "user_id")
+    }
+    // https://api.marcmap.app/getTimetableNew
+    guard let url = URL(string: "https://api.marcmap.app/getTrainSchedule?trip_id=\(trip_id)&dev_id=\(UserDefaults.standard.string(forKey: "user_id") ?? "")") else {
+        return
+    }
+
+    URLSession.shared.dataTask(with: url) { data, _, _ in
+        guard let tData = try? JSONDecoder().decode([stopTimeUpdate].self, from: data ?? Data()) else {
+            return
+        }
+        DispatchQueue.main.async {
+            completion(tData)
+        }
+    }
+    .resume()
+}
 }

@@ -24,13 +24,14 @@ enum directionChocies: String, CaseIterable, Identifiable {
     }
 }
 
+let direction_lookup: [String: String] = ["Penn_Outbound": "Towards DC", "Penn_Inbound": "Towards Baltimore", "Camden_Inbound": "Towards Baltimore", "Camden_Outbound": "Towards DC", "Brunswick_Inbound": "Towards Brunswick", "Brunswick_Outbound": "Towards DC/Baltimore"]
+
 struct StationDetailedView: View {
     var stationObj: station
     @StateObject var masterViewModel: MasterViewModel
     
     // @State var trains = [Train]()
     // @State var details = [tripUpdate]()
-    @State var activeTrain = false
     @State var showAllTrains = false
     @State var noTrainsToday = false
     
@@ -41,6 +42,7 @@ struct StationDetailedView: View {
     @State var lineInput: lineChoice = .Camden
     
     @State var timetableTrains: [timetableResponse] = []
+    @State var isLoadingTimetableTrains: Bool = true
     
     let stations = loadStations()
     
@@ -72,11 +74,13 @@ struct StationDetailedView: View {
         } else {
             formattedDayOfWeek = 5
         }
+        
         print("HELLO: \(formattedDayOfWeek)")
         
         apiCall().getTimetable(lineName: lineInput.rawValue, day_of_week: formattedDayOfWeek, direction: directionInput.rawValue, stop_id: formatted_stop_id) { tt in
             timetableTrains = tt ?? []
             print(timetableTrains)
+            isLoadingTimetableTrains = false
             timetableTrains.sort { tt1, tt2 in
                 let inputFormat = DateFormatter()
                 inputFormat.dateFormat = "HH:mm:ss"
@@ -131,6 +135,9 @@ struct StationDetailedView: View {
                             dateInput = Calendar.current.date(byAdding: .day, value: 2, to: Date()) ?? dateInput
                         }
                     }
+                    if trainsGoingToStation.isEmpty {
+                        showAllTrains = true
+                    }
                     updateTimetable()
                 }
                 
@@ -156,6 +163,9 @@ struct StationDetailedView: View {
                 }
                 
                 if !showAllTrains {
+                    if trainsGoingToStation.isEmpty {
+                        Text("None").font(.system(size: 24, weight: .light)).padding(.top, 12).multilineTextAlignment(.center).italic()
+                    }
                     List(trainsGoingToStation) { combined in
                         VStack(alignment: .leading) {
                             NavigationLink(destination: TrainDetailedView(masterViewModel: masterViewModel, data: combined)) {
@@ -166,22 +176,24 @@ struct StationDetailedView: View {
                         }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
                         
                     }.contentMargins(.top, 20)
-                    
+                  
                 } else {
                     HStack {
                         Picker("Line", selection: $lineInput) {
-                            Text("Penn ").tag(lineChoice.Penn)
-                            Text("Camden").tag(lineChoice.Camden)
-                            Text("Brunswick").tag(lineChoice.Brunswick)
+                            Text("Penn").padding(5).tag(lineChoice.Penn)
+                            Text("Camden").padding(5).tag(lineChoice.Camden)
+                            Text("Brunswick").padding(5).tag(lineChoice.Brunswick)
                         }.background(CustomColors.MarcBlue).accentColor(Color.white).padding([.leading, .trailing], 15).padding([.vertical, .horizontal], 5).onChange(of: lineInput) { _, _ in
                             updateTimetable()
+                            noTrainsToday = false
                         }
                         Picker("Direction", selection: $directionInput) {
-                            Text("Outbound").tag(directionChocies.inbound)
-                            Text("Inbound").tag(directionChocies.outbound)
-                        }.background(CustomColors.MarcBlue).accentColor(Color.white).padding([.leading, .trailing], 15).padding([.vertical, .horizontal], 5).onChange(of: directionInput) { _, newDirectionInput in
+                            Text(direction_lookup["\(lineInput.rawValue)_Outbound"] ?? "Outbound").tag(directionChocies.outbound).multilineTextAlignment(.center)
+                            Text(direction_lookup["\(lineInput.rawValue)_Inbound"] ?? "Inbound").tag(directionChocies.inbound).multilineTextAlignment(.center)
+                        }.multilineTextAlignment(.center).background(CustomColors.MarcBlue).accentColor(Color.white).padding([.leading, .trailing], 15).padding([.vertical, .horizontal], 5).onChange(of: directionInput) { _, newDirectionInput in
                             directionInput = newDirectionInput
                             updateTimetable()
+                            noTrainsToday = false
                         }
                     }
                     HStack {
@@ -191,25 +203,33 @@ struct StationDetailedView: View {
                             displayedComponents: [.date]
                         ).labelsHidden().environment(\.locale, Locale(identifier: "en")).onChange(of: dateInput) { _, _ in
                             updateTimetable()
+                            noTrainsToday = false
                         }
                     }
                     if noTrainsToday {
                         Text("No trains today. Showing next weekday.")
+                    } else if timetableTrains.isEmpty && !isLoadingTimetableTrains {
+                        Text("None").font(.system(size: 24, weight: .light)).padding(.top, 12).multilineTextAlignment(.center).italic()
+                    } else if isLoadingTimetableTrains {
+                        Text("Loading...").font(.system(size: 24, weight: .light)).padding(.top, 12).multilineTextAlignment(.center).italic()
                     }
                     
                     List(timetableTrains) { timetableTrain in
-                        VStack(alignment: .leading) {
-                            HStack {
-                                Text(FormatTripId(tripId: timetableTrain.trip_id))
-                                    .font(.system(size: 20))
-                                    .fontWeight(.bold)
-                                
-                                Text(formatDate(d: timetableTrain.arrival_time))
-                                Spacer()
-                                Text(lineInput.rawValue).font(.system(size: 18))
-                                
-                            }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
-                            Spacer()
+                        NavigationLink(destination: TrainDetailedViewStatic(trip_id: timetableTrain.trip_id, stations: stations)) {
+                            VStack(alignment: .leading) {
+                                VStack(alignment: .leading) {
+                                    HStack {
+                                        Text(FormatTripId(tripId: timetableTrain.trip_id))
+                                            .font(.system(size: 20))
+                                            .fontWeight(.bold)
+                                        
+                                        Text(formatDate(d: timetableTrain.arrival_time))
+                                        Spacer()
+                                        Text(timetableTrain.headsign).monospaced().multilineTextAlignment(.leading)
+                                    }
+                                    
+                                }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+                            }
                         }
                     }.contentMargins(.top, 20)
                 }
@@ -219,4 +239,11 @@ struct StationDetailedView: View {
             trainsGoingToStation = GetTrainsGoingToStation(pretty_stop_name: stationObj.pretty_stop_name, data: trains, stations: masterViewModel.stations)
         })
     }
+}
+
+#Preview("One Station") {
+    let masterViewModel = MasterViewModel()
+    let stations = masterViewModel.stations
+    let station_obj = stations[0]
+    StationDetailedView(stationObj: station_obj, masterViewModel: masterViewModel)
 }

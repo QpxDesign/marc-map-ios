@@ -8,6 +8,8 @@
 import Foundation
 
 struct stopTimeUpdate: Codable, Identifiable, Hashable {
+    let is_static: Bool?
+    let calendar: [String]?
     let departure: departure?
     let arrival: arrival?
     let stopId: String

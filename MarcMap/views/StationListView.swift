@@ -8,17 +8,15 @@
 import CoreLocation
 import SwiftUI
 
-struct StationListView: View {
-    @State var userLocation: CLLocation?
+struct StationList: View {
     @StateObject var masterViewModel: MasterViewModel
-    @State var sorted_stations: [station] = []
+    @State var userLocation: CLLocation?
 
+    @State var sorted_stations: [station] = []
     let manager = LocationManager()
+
     var body: some View {
         VStack {
-            HeaderView(title: "Stations", headerViewModel: masterViewModel.headerViewModel)
-            Spacer()
-
             if !sorted_stations.isEmpty {
                 List(sorted_stations) { station in
                     VStack(alignment: .leading) {
@@ -49,6 +47,18 @@ struct StationListView: View {
                 let d2 = a2.distance(from: userLocation ?? CLLocation(latitude: 38.9072, longitude: -77.0369))
                 return d1 < d2
             }
+        }
+    }
+}
+
+struct StationListView: View {
+    @StateObject var masterViewModel: MasterViewModel
+
+    var body: some View {
+        VStack {
+            HeaderView(title: "Stations", headerViewModel: masterViewModel.headerViewModel)
+            StationList(masterViewModel: masterViewModel)
+            Spacer()
         }
     }
 }
