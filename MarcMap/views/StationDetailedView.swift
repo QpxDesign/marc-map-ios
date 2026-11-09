@@ -62,7 +62,7 @@ struct StationDetailedView: View {
         } else {
             formattedDayOfWeek = 6
         }
-         
+        
         apiCall().getTimetable(lineName: lineInput.rawValue, day_of_week: formattedDayOfWeek, direction: directionInput.rawValue, stop_id: formatted_stop_id) { tt in
             timetableTrains = tt ?? []
         }
@@ -98,6 +98,16 @@ struct StationDetailedView: View {
                     if stationObj.defaultLine[0].lowercased() == "camden" {
                         lineInput = .Camden
                     }
+                    if stationObj.defaultLine[0].lowercased() == "brunswick" || stationObj.defaultLine[0].lowercased() == "camden" {
+                        let dayOfWeek: Int = Calendar.current.dateComponents([.weekday], from: dateInput).weekday ?? 7 // 1 - 7, with 1 being Sunday and 7 being Saturday
+                        if dayOfWeek == 1 {
+                            dateInput = Calendar.current.date(byAdding: .day, value: 1, to: Date()) ?? dateInput
+                        }
+                        if dayOfWeek == 7 {
+                            dateInput = Calendar.current.date(byAdding: .day, value: 2, to: Date()) ?? dateInput
+                        }
+                    }
+                    updateTimetable()
                 }
                 
                 //  Text("Last Updated: " + FormatTime(timestamp: trains[0].vehicle.timestamp))

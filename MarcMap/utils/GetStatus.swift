@@ -20,7 +20,7 @@ func getStatus(data: CombinedTrainObject, stations: [station]) -> String {
     let station_obj = GetStationFromPrettyStationName(name: filtered[0], stations: stations)
     let station_loc = CLLocation(latitude: station_obj?.stop_lat ?? 0, longitude: -(station_obj?.stop_lon ?? 0))
     let station_train_dist = station_loc.distance(from: train_loc)
-    let threshold_1 = 500.0 // "At ..." (meters)
+    let threshold_1 = 200.0 // "At ..." (meters)
     let threshold_2 = 1609.0 * 2 // "Approaching ..." (two miles in meters)
 
     if station_train_dist < threshold_1 {
